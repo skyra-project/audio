@@ -3,7 +3,7 @@
 	"out": "./docs/",
 	"readme": "./README.md",
 	"name": "@skyra/audio",
-	"exclude": ["**/node_modules/**", "tests/**", "rollup.config.ts"],
+	"exclude": ["**/node_modules/**", "tests/**", "src/index.ts"],
 	"mode": "file",
 	"excludeExternals": true,
 	"excludePrivate": true,
