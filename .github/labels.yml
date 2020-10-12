@@ -19,7 +19,7 @@
 - name: 'Bug: Unverified'
   description: Issues that report unverified bugs. Pending for inspection.
   color: f9d0c4
-- name: 'Event: Hacktoberfest'
+- name: 'Event.ts: Hacktoberfest'
   description: Issues and PRs related to Hacktoberfest.
   color: FF4500
 - name: 'Meta: Bike-Shedding'
@@ -147,6 +147,9 @@
 - name: 'Type: Dependencies'
   description: Pull requests that update a dependency file
   color: 0025ff
+- name: 'Type: Discussion'
+  description: Issues that discuss a new feature, implementation, or a api's interface.
+  color: ffffff
 - name: 'Type: Enhancement'
   description: Issues and PRs related to feature enhancement.
   color: 1d76db
@@ -155,6 +158,9 @@
   color: 1d76db
 - name: 'Type: Performance'
   description: Issues and PRs related to the performance of the api's interface.
+  color: 1d76db
+- name: 'Type: Plugin'
+  description: Issues and PRs related to plugins.
   color: 1d76db
 - name: 'Type: Proposal'
   description: Issues that request a new feature or a change in the api's interface.

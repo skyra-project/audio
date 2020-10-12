@@ -1,10 +1,7 @@
 {
 	"extends": "../tsconfig.base.json",
 	"compilerOptions": {
-		"target": "ES2019",
-		"noImplicitAny": false,
 		"noEmit": true,
-		"incremental": false,
 		"baseUrl": "."
 	},
 	"include": [".", "../src/**/*"],

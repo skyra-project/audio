@@ -1,18 +1,18 @@
-# @skyra/voice
+# @skyra/audio
 
-[![GitHub](https://img.shields.io/github/license/skyra-project/voice)](https://github.com/skyra-project/voice/blob/main/LICENSE.md)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/skyra-project/voice.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/skyra-project/voice/alerts/)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/skyra-project/voice.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/skyra-project/voice/context:javascript)
-[![Coverage Status](https://coveralls.io/repos/github/skyra-project/voice/badge.svg?branch=main)](https://coveralls.io/github/skyra-project/voice?branch=main)
-[![Depfu](https://badges.depfu.com/badges/bf9d66331db86da298b9ef3d47543270/count.svg)](https://depfu.com/github/skyra-project/voice?project_id=16849)
+[![GitHub](https://img.shields.io/github/license/skyra-project/audio)](https://github.com/skyra-project/audio/blob/main/LICENSE.md)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/skyra-project/audio.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/skyra-project/audio/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/skyra-project/audio.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/skyra-project/audio/context:javascript)
+[![Coverage Status](https://coveralls.io/repos/github/skyra-project/audio/badge.svg?branch=main)](https://coveralls.io/github/skyra-project/audio?branch=main)
+[![Depfu](https://badges.depfu.com/badges/bf9d66331db86da298b9ef3d47543270/count.svg)](https://depfu.com/github/skyra-project/audio?project_id=16849)
 
-[![npm](https://img.shields.io/npm/v/@skyra/voice?color=crimson&label=NPM&logo=npm&style=flat-square)](https://www.npmjs.com/package/@skyra/voice)
-![npm bundle size minified (scoped)](https://img.shields.io/bundlephobia/min/@skyra/voice?label=minified&logo=webpack)
-![npm bundle size minzipped (scoped)](https://img.shields.io/bundlephobia/minzip/@skyra/voice?label=minified&logo=webpack)
+[![npm](https://img.shields.io/npm/v/@skyra/audio?color=crimson&label=NPM&logo=npm&style=flat-square)](https://www.npmjs.com/package/@skyra/audio)
+![npm bundle size minified (scoped)](https://img.shields.io/bundlephobia/min/@skyra/audio?label=minified&logo=webpack)
+![npm bundle size minzipped (scoped)](https://img.shields.io/bundlephobia/minzip/@skyra/audio?label=minified&logo=webpack)
 
 **Table of Contents**
 
--   [@skyra/voice](#skyravoice)
+-   [@skyra/audio](#skyraaudio)
     -   [About](#about)
     -   [Installation and Usage](#installation-and-usage)
         -   [Package managers](#package-managers)
@@ -33,16 +33,16 @@
 ### Package managers
 
 ```bash
-yarn add @skyra/voice
-# or npm install @skyra/voice
+yarn add @skyra/audio
+# or npm install @skyra/audio
 ```
 
 #### Usage
 
 ```js
-const { Node } = require('@skyra/voice');
+const { Node } = require('@skyra/audio');
 
-const voice = new Node({
+const node = new Node({
 	password: '', // your Lavalink password
 	userID: '', // the user ID of your bot
 	shardCount: 0, // the total number of shards that your bot is running (optional, useful if you're load balancing)
@@ -60,7 +60,7 @@ const voice = new Node({
 ```
 
 ```ts
-import { Node } from '@skyra/voice';
+import { Node } from '@skyra/audio';
 
 // Same as before
 ```
@@ -110,11 +110,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/kyranet"><img src="https://avatars0.githubusercontent.com/u/24852502?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Antonio Román</b></sub></a><br /><a href="https://github.com/skyra-project/voice/commits?author=kyranet" title="Code">💻</a> <a href="https://github.com/skyra-project/voice/commits?author=kyranet" title="Tests">⚠️</a> <a href="#ideas-kyranet" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-kyranet" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://github.com/kyranet"><img src="https://avatars0.githubusercontent.com/u/24852502?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Antonio Román</b></sub></a><br /><a href="https://github.com/skyra-project/audio/commits?author=kyranet" title="Code">💻</a> <a href="https://github.com/skyra-project/audio/commits?author=kyranet" title="Tests">⚠️</a> <a href="#ideas-kyranet" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-kyranet" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://favware.tech/"><img src="https://avatars3.githubusercontent.com/u/4019718?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jeroen Claassens</b></sub></a><br /><a href="https://github.com/skyra-project/audio/commits?author=Favna" title="Code">💻</a> <a href="#infra-Favna" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-Favna" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 
-<!-- markdownlint-enable -->
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->

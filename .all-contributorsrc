@@ -1,5 +1,5 @@
 {
-  "projectName": "voice",
+  "projectName": "audio",
   "projectOwner": "skyra-project",
   "repoType": "github",
   "repoHost": "https://github.com",
@@ -20,6 +20,17 @@
         "test",
         "ideas",
         "infra"
+      ]
+    },
+    {
+      "login": "Favna",
+      "name": "Jeroen Claassens",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4019718?v=4",
+      "profile": "https://favware.tech/",
+      "contributions": [
+        "code",
+        "infra",
+        "maintenance"
       ]
     }
   ],
