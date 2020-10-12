@@ -1,0 +1,114 @@
+{
+	"name": "@skyra/audio",
+	"version": "0.0.1",
+	"description": "A TypeScript wrapper for Lavalink.",
+	"author": "@skyra",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"module": "dist/index.es.js",
+	"browser": "dist/index.umd.js",
+	"unpkg": "dist/index.umd.js",
+	"types": "dist/index.d.ts",
+	"homepage": "https://skyra-project.github.io/voice",
+	"private": false,
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"prepublishOnly": "yarn build",
+		"lint": "eslint src tests --ext ts --fix",
+		"format": "prettier --write {src,tests}/**/*.ts",
+		"docs": "typedoc",
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"update": "yarn upgrade-interactive --latest",
+		"build": "rollup -c rollup.config.ts",
+		"watch": "yarn build -w",
+		"sversion": "standard-version",
+		"commit": "git-cz",
+		"cz": "git-cz"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^11.0.0",
+		"@commitlint/config-conventional": "^11.0.0",
+		"@skyra/eslint-config": "^5.3.3",
+		"@types/backoff": "^2.5.1",
+		"@types/jest": "^26.0.14",
+		"@types/node": "^14.11.2",
+		"@types/ws": "^7.2.7",
+		"@typescript-eslint/eslint-plugin": "^4.2.0",
+		"@typescript-eslint/parser": "^4.2.0",
+		"cz-conventional-changelog": "^3.3.0",
+		"discord-api-types": "^0.6.0",
+		"eslint": "^7.9.0",
+		"eslint-config-prettier": "^6.12.0",
+		"eslint-plugin-prettier": "^3.1.4",
+		"husky": "^4.3.0",
+		"jest": "^26.4.2",
+		"jest-circus": "^26.4.2",
+		"lint-staged": "^10.4.0",
+		"prettier": "^2.1.2",
+		"pretty-quick": "^3.0.2",
+		"rollup": "^2.28.2",
+		"rollup-plugin-cleaner": "^1.0.0",
+		"rollup-plugin-terser": "^7.0.2",
+		"rollup-plugin-typescript2": "^0.27.3",
+		"standard-version": "^9.0.0",
+		"ts-jest": "^26.4.0",
+		"ts-node": "^9.0.0",
+		"typedoc": "^0.19.2",
+		"typescript": "^4.0.3"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/skyra-project/voice.git"
+	},
+	"engines": {
+		"node": ">=12",
+		"npm": ">=6"
+	},
+	"keywords": [
+		"voice",
+		"lavalink",
+		"typescript",
+		"ts",
+		"utility"
+	],
+	"bugs": {
+		"url": "https://github.com/skyra-project/voice/issues"
+	},
+	"husky": {
+		"hooks": {
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+			"pre-commit": "yarn pretty-quick --staged && yarn lint-staged"
+		}
+	},
+	"commitlint": {
+		"extends": [
+			"@commitlint/config-conventional"
+		]
+	},
+	"lint-staged": {
+		"*.{mjs,js,ts}": "eslint --fix --ext mjs,js,ts"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"resolutions": {
+		"acorn": "^7.3.1",
+		"minimist": "^1.2.2",
+		"kind-of": "^6.0.3",
+		"jest-environment-jsdom": "https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.0.2.tgz",
+		"jest-jasmine2": "https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.0.2.tgz",
+		"dot-prop": "^5.2.0"
+	},
+	"dependencies": {
+		"backoff": "^2.5.0",
+		"ws": "^7.3.1"
+	}
+}
