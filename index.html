@@ -1,0 +1,400 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@skyra/audio</title>
+	<meta name="description" content="Documentation for @skyra/audio">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@skyra/audio</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>@skyra/audio</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#skyraaudio" id="skyraaudio" style="color: inherit; text-decoration: none;">
+					<h1>@skyra/audio</h1>
+				</a>
+				<p><a href="https://github.com/skyra-project/audio/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/skyra-project/audio" alt="GitHub"></a>
+					<a href="https://lgtm.com/projects/g/skyra-project/audio/alerts/"><img src="https://img.shields.io/lgtm/alerts/g/skyra-project/audio.svg?logo=lgtm&logoWidth=18" alt="Total alerts"></a>
+					<a href="https://lgtm.com/projects/g/skyra-project/audio/context:javascript"><img src="https://img.shields.io/lgtm/grade/javascript/g/skyra-project/audio.svg?logo=lgtm&logoWidth=18" alt="Language grade: JavaScript"></a>
+					<a href="https://coveralls.io/github/skyra-project/audio?branch=main"><img src="https://coveralls.io/repos/github/skyra-project/audio/badge.svg?branch=main" alt="Coverage Status"></a>
+					<a href="https://depfu.com/github/skyra-project/audio?project_id=17045"><img src="https://badges.depfu.com/badges/f67681c7b5f9b8357a4ab749f381f5da/count.svg" alt="Depfu"></a>
+					<a href="https://www.npmjs.com/package/@skyra/audio"><img src="https://img.shields.io/npm/v/@skyra/audio?color=crimson&label=NPM&logo=npm&style=flat-square" alt="npm"></a>
+				<img src="https://img.shields.io/bundlephobia/min/@skyra/audio?label=minified&logo=webpack" alt="npm bundle size minified (scoped)"></p>
+				<p><strong>Table of Contents</strong></p>
+				<ul>
+					<li><a href="#skyraaudio">@skyra/audio</a><ul>
+							<li><a href="#about">About</a></li>
+							<li><a href="#installation-and-usage">Installation and Usage</a><ul>
+									<li><a href="#package-managers">Package managers</a><ul>
+											<li><a href="#usage">Usage</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="#meta">Meta</a><ul>
+									<li><a href="#license">License</a></li>
+									<li><a href="#contributing">Contributing</a></li>
+									<li><a href="#buy-us-some-doughnuts">Buy us some doughnuts</a></li>
+									<li><a href="#contributors-%E2%9C%A8">Contributors ✨</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<a href="#about" id="about" style="color: inherit; text-decoration: none;">
+					<h2>About</h2>
+				</a>
+				<ul>
+					<li>A JavaScript wrapper for the <a href="https://github.com/Frederikam/Lavalink">Lavalink</a> audio client for Discord. Only supports Lavalink v3.</li>
+					<li>This is a derivative work of <a href="https://github.com/lavalibs/lavalink.js">lavalink.js</a>, this wouldn&#39;t be possible without the author&#39;s work.</li>
+				</ul>
+				<a href="#installation-and-usage" id="installation-and-usage" style="color: inherit; text-decoration: none;">
+					<h2>Installation and Usage</h2>
+				</a>
+				<a href="#package-managers" id="package-managers" style="color: inherit; text-decoration: none;">
+					<h3>Package managers</h3>
+				</a>
+				<pre><code class="language-bash">yarn add @skyra/audio
+<span class="hljs-comment"># or npm install @skyra/audio</span></code></pre>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h4>Usage</h4>
+				</a>
+				<pre><code class="language-js"><span class="hljs-keyword">const</span> { Node } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@skyra/audio&#x27;</span>);
+
+<span class="hljs-keyword">const</span> node = <span class="hljs-keyword">new</span> Node({
+    <span class="hljs-attr">password</span>: <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-comment">// your Lavalink password</span>
+    <span class="hljs-attr">userID</span>: <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-comment">// the user ID of your bot</span>
+    <span class="hljs-attr">shardCount</span>: <span class="hljs-number">0</span>, <span class="hljs-comment">// the total number of shards that your bot is running (optional, useful if you&#x27;re load balancing)</span>
+    <span class="hljs-attr">hosts</span>: {
+        <span class="hljs-attr">rest</span>: <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-comment">// the http host of your lavalink instance (optional)</span>
+        <span class="hljs-attr">ws</span>: <span class="hljs-string">&#x27;&#x27;</span> <span class="hljs-comment">// the ws host of your lavalink instance (optional)</span>
+    },
+    <span class="hljs-attr">host</span>: <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-comment">// a URL to your lavalink instance without protocol (optional, can be used instead of specifying hosts option)</span>
+    send(guildID, packet) {
+        <span class="hljs-comment">// send this packet to the gateway</span>
+        <span class="hljs-comment">// you are responsible for properly serializing and encoding the packet for transmission</span>
+        <span class="hljs-keyword">return</span> gateway.connections.get(Long.fromString(guildID).shiftRight(<span class="hljs-number">22</span>).mod(<span class="hljs-built_in">this</span>.shardCount)).send(packet);
+    }
+});</code></pre>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { Node } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@skyra/audio&#x27;</span>;
+
+<span class="hljs-comment">// Same as before</span></code></pre>
+				<a href="#meta" id="meta" style="color: inherit; text-decoration: none;">
+					<h2>Meta</h2>
+				</a>
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h3>License</h3>
+				</a>
+				<p>Copyright © 2020, <a href="https://github.com/skyra-project">Skyra Project</a>.
+				Released under the <a href="LICENSE.md">MIT License</a>.</p>
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h3>Contributing</h3>
+				</a>
+				<ol>
+					<li>Fork it!</li>
+					<li>Create your feature branch: <code>git checkout -b my-new-feature</code></li>
+					<li>Commit your changes: <code>git commit -am &#39;Add some feature&#39;</code></li>
+					<li>Push to the branch: <code>git push origin my-new-feature</code></li>
+					<li>Submit a pull request!</li>
+				</ol>
+				<a href="#buy-us-some-doughnuts" id="buy-us-some-doughnuts" style="color: inherit; text-decoration: none;">
+					<h3>Buy us some doughnuts</h3>
+				</a>
+				<p>Skyra Project is open source and always will be, even if we don&#39;t get donations. That said, we know there are amazing people who
+				may still want to donate just to show their appreciation. Thanks you very much in advance!</p>
+				<p>We accept donations through Patreon, BitCoin, Ethereum, and Litecoin. You can use the buttons below to donate through your method of choice.</p>
+				<table>
+					<thead>
+						<tr>
+							<th align="center">Donate With</th>
+							<th align="center">QR</th>
+							<th align="center">Address</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td align="center">Patreon</td>
+							<td align="center"><img src="https://cdn.skyra.pw/gh-assets/patreon.png" alt="PatreonImage"></td>
+							<td align="center"><a href="https://www.patreon.com/kyranet">Click Here</a></td>
+						</tr>
+						<tr>
+							<td align="center">PayPal</td>
+							<td align="center"><img src="https://cdn.skyra.pw/gh-assets/paypal.png" alt="PayPalImage"></td>
+							<td align="center"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=CET28NRZTDQ8L">Click Here</a></td>
+						</tr>
+						<tr>
+							<td align="center">BitCoin</td>
+							<td align="center"><img src="https://cdn.skyra.pw/gh-assets/bitcoin.png" alt="BitcoinImage"></td>
+							<td align="center"><a href="bitcoin:3JNzCHMTFtxYFWBnVtDM9Tt34zFbKvdwco?amount=0.01&amp;label=Skyra%20Discord%20Bot">3JNzCHMTFtxYFWBnVtDM9Tt34zFbKvdwco</a></td>
+						</tr>
+						<tr>
+							<td align="center">Ethereum</td>
+							<td align="center"><img src="https://cdn.skyra.pw/gh-assets/ethereum.png" alt="EthereumImage"></td>
+							<td align="center"><a href="ethereum:0xcB5EDB76Bc9E389514F905D9680589004C00190c?amount=0.01&amp;label=Skyra%20Discord%20Bot">0xcB5EDB76Bc9E389514F905D9680589004C00190c</a></td>
+						</tr>
+						<tr>
+							<td align="center">Litecoin</td>
+							<td align="center"><img src="https://cdn.skyra.pw/gh-assets/litecoin.png" alt="LitecoinImage"></td>
+							<td align="center"><a href="litecoin:MNVT1keYGMfGp7vWmcYjCS8ntU8LNvjnqM?amount=0.01&amp;label=Skyra%20Discord%20Bot">MNVT1keYGMfGp7vWmcYjCS8ntU8LNvjnqM</a></td>
+						</tr>
+				</tbody></table>
+				<a href="#contributors-✨" id="contributors-✨" style="color: inherit; text-decoration: none;">
+					<h3>Contributors ✨</h3>
+				</a>
+				<p>Thanks goes to these wonderful people (<a href="https://allcontributors.org/docs/en/emoji-key">emoji key</a>):</p>
+				<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+				<!-- prettier-ignore-start -->
+				<!-- markdownlint-disable -->
+				<table>
+					<tr>
+						<td align="center"><a href="https://github.com/kyranet"><img src="https://avatars0.githubusercontent.com/u/24852502?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Antonio Román</b></sub></a><br /><a href="https://github.com/skyra-project/audio/commits?author=kyranet" title="Code">💻</a> <a href="https://github.com/skyra-project/audio/commits?author=kyranet" title="Tests">⚠️</a> <a href="#ideas-kyranet" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-kyranet" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+						<td align="center"><a href="https://favware.tech/"><img src="https://avatars3.githubusercontent.com/u/4019718?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jeroen Claassens</b></sub></a><br /><a href="https://github.com/skyra-project/audio/commits?author=Favna" title="Code">💻</a> <a href="#infra-Favna" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-Favna" title="Maintenance">🚧</a></td>
+					</tr>
+				</table>
+				<!-- markdownlint-restore -->
+				<!-- prettier-ignore-end -->
+				<!-- ALL-CONTRIBUTORS-LIST:END -->
+				<p>This project follows the <a href="https://github.com/all-contributors/all-contributors">all-contributors</a> specification. Contributions of any kind welcome!</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/eventtype.html" class="tsd-kind-icon">Event<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/loadtype.html" class="tsd-kind-icon">Load<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/status.html" class="tsd-kind-icon">Status</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/basecluster.html" class="tsd-kind-icon">Base<wbr>Cluster</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/basenode.html" class="tsd-kind-icon">Base<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/cluster.html" class="tsd-kind-icon">Cluster</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/clusternode.html" class="tsd-kind-icon">Cluster<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/connection.html" class="tsd-kind-icon">Connection</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/httperror.html" class="tsd-kind-icon">HTTPError</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/http.html" class="tsd-kind-icon">Http</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/node.html" class="tsd-kind-icon">Node</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/player.html" class="tsd-kind-icon">Player</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/playerstore.html" class="tsd-kind-icon">Player<wbr>Store</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/routeplanner.html" class="tsd-kind-icon">Route<wbr>Planner</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/basenodeoptions.html" class="tsd-kind-icon">Base<wbr>Node<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/baserouteplannerstatusdetails.html" class="tsd-kind-icon">Base<wbr>Route<wbr>Planner<wbr>Status<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/basesendopcode.html" class="tsd-kind-icon">Base<wbr>Send<wbr>Opcode</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clusterfilter.html" class="tsd-kind-icon">Cluster<wbr>Filter</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clusternodeoptions.html" class="tsd-kind-icon">Cluster<wbr>Node<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clusteroptions.html" class="tsd-kind-icon">Cluster<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/clustersend.html" class="tsd-kind-icon">Cluster<wbr>Send</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/equalizerband.html" class="tsd-kind-icon">Equalizer<wbr>Band</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/headers.html" class="tsd-kind-icon">Headers</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/joinoptions.html" class="tsd-kind-icon">Join<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/nanoiprouteplanner.html" class="tsd-kind-icon">Nano<wbr>IpRoute<wbr>Planner</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/nodeoptions.html" class="tsd-kind-icon">Node<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/nodesend.html" class="tsd-kind-icon">Node<wbr>Send</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/options.html" class="tsd-kind-icon">Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/playeroptions.html" class="tsd-kind-icon">Player<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/playlistinfo.html" class="tsd-kind-icon">Playlist<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/rotatingiprouteplanner.html" class="tsd-kind-icon">Rotating<wbr>IpRoute<wbr>Planner</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/rotatingnanoiprouteplanner.html" class="tsd-kind-icon">Rotating<wbr>Nano<wbr>IpRoute<wbr>Planner</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/sendopcodedestroy.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Destroy</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/sendopcodeequalizer.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Equalizer</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/sendopcodepause.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Pause</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/sendopcodeplay.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Play</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/sendopcodeseek.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Seek</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/sendopcodestop.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Stop</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/sendopcodevoiceupdate.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Voice<wbr>Update</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/sendopcodevolume.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Volume</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/sendable.html" class="tsd-kind-icon">Sendable</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/stats.html" class="tsd-kind-icon">Stats</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/track.html" class="tsd-kind-icon">Track</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/trackinfo.html" class="tsd-kind-icon">Track<wbr>Info</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/trackresponse.html" class="tsd-kind-icon">Track<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/voiceserverupdate.html" class="tsd-kind-icon">Voice<wbr>Server<wbr>Update</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/voicestateupdate.html" class="tsd-kind-icon">Voice<wbr>State<wbr>Update</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#routeplannerstatus" class="tsd-kind-icon">Route<wbr>Planner<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#sendopcode" class="tsd-kind-icon">Send<wbr>Opcode</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
