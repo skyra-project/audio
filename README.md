@@ -5,10 +5,8 @@
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/skyra-project/audio.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/skyra-project/audio/context:javascript)
 [![Coverage Status](https://coveralls.io/repos/github/skyra-project/audio/badge.svg?branch=main)](https://coveralls.io/github/skyra-project/audio?branch=main)
 [![Depfu](https://badges.depfu.com/badges/f67681c7b5f9b8357a4ab749f381f5da/count.svg)](https://depfu.com/github/skyra-project/audio?project_id=17045)
-
 [![npm](https://img.shields.io/npm/v/@skyra/audio?color=crimson&label=NPM&logo=npm&style=flat-square)](https://www.npmjs.com/package/@skyra/audio)
 ![npm bundle size minified (scoped)](https://img.shields.io/bundlephobia/min/@skyra/audio?label=minified&logo=webpack)
-![npm bundle size minzipped (scoped)](https://img.shields.io/bundlephobia/minzip/@skyra/audio?label=minified&logo=webpack)
 
 **Table of Contents**
 
