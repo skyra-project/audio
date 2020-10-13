@@ -8,4 +8,5 @@ export * from './core/Player';
 export * from './core/PlayerStore';
 export * from './core/RoutePlanner';
 export * from './Node';
-export * from './types/SendPayloads';
+export * from './types/OutgoingPayloads';
+export * from './types/IncomingPayloads';

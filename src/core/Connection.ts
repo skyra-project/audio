@@ -1,7 +1,9 @@
 import { Backoff, exponential } from 'backoff';
 import type { IncomingMessage } from 'http';
-import * as WebSocket from 'ws';
+import WebSocket from 'ws';
 import type { BaseNode } from '../base/BaseNode';
+import type { IncomingPayload } from '../types/IncomingPayloads';
+import type { OutgoingPayload } from '../types/OutgoingPayloads';
 
 interface Sendable {
 	resolve: () => void;
@@ -31,42 +33,14 @@ export class Connection<T extends BaseNode = BaseNode> {
 	public reconnectTimeout = 100; // TODO: remove in next major version
 
 	private _backoff!: Backoff;
-
-	private _listeners = {
-		open: () => {
-			this.backoff.reset();
-			this.node.emit('open');
-			this._flush()
-				.then(() => this.configureResuming(this.options.resumeTimeout, this.options.resumeKey))
-				.catch((e) => this.node.emit('error', e));
-		},
-		close: (code: number, reason: string) => {
-			this.node.emit('close', code, reason);
-			this._reconnect();
-		},
-		upgrade: (req: IncomingMessage) => this.node.emit('upgrade', req),
-		message: (d: WebSocket.Data) => {
-			if (Array.isArray(d)) d = Buffer.concat(d);
-			else if (d instanceof ArrayBuffer) d = Buffer.from(d);
-
-			let pk: any;
-			try {
-				pk = JSON.parse(d.toString());
-			} catch (e) {
-				this.node.emit('error', e);
-				return;
-			}
-
-			if (pk.guildId && this.node.players.has(pk.guildId)) this.node.players.get(pk.guildId).emit(pk.op, pk);
-			this.node.emit(pk.op, pk);
-		},
-		error: (err: any) => {
-			this.node.emit('error', err);
-			this._reconnect();
-		}
-	};
-
 	private _queue: Array<Sendable> = [];
+
+	private _send: Connection<T>['wsSend'];
+	private _open: Connection<T>['onOpen'];
+	private _close: Connection<T>['onClose'];
+	private _upgrade: Connection<T>['onUpgrade'];
+	private _message: Connection<T>['onMessage'];
+	private _error: Connection<T>['onError'];
 
 	public constructor(node: T, url: string, options: Options = {}) {
 		this.node = node;
@@ -75,8 +49,12 @@ export class Connection<T extends BaseNode = BaseNode> {
 		this.resumeKey = options.resumeKey;
 
 		this.backoff = exponential();
-		this._send = this._send.bind(this);
-		this.connect();
+		this._send = this.wsSend.bind(this);
+		this._open = this.onOpen.bind(this);
+		this._close = this.onClose.bind(this);
+		this._upgrade = this.onUpgrade.bind(this);
+		this._message = this.onMessage.bind(this);
+		this._error = this.onError.bind(this);
 	}
 
 	public get backoff(): Backoff {
@@ -84,13 +62,15 @@ export class Connection<T extends BaseNode = BaseNode> {
 	}
 
 	public set backoff(b: Backoff) {
-		b.on('ready', (number, delay) => {
+		// Remove current backoff in case we assign the current one again.
+		if (this._backoff) this._backoff.removeAllListeners();
+
+		b.on('ready', (_number, delay) => {
 			this.reconnectTimeout = delay;
 			this.connect();
 		});
-		b.on('backoff', (number, delay) => (this.reconnectTimeout = delay));
+		b.on('backoff', (_number, delay) => (this.reconnectTimeout = delay));
 
-		if (this._backoff) this._backoff.removeAllListeners();
 		this._backoff = b;
 	}
 
@@ -104,7 +84,7 @@ export class Connection<T extends BaseNode = BaseNode> {
 		};
 
 		if (this.resumeKey) headers['Resume-Key'] = this.resumeKey;
-		this.ws = new WebSocket(this.url, Object.assign({ headers }, this.options));
+		this.ws = new WebSocket(this.url, { headers, ...this.options } as WebSocket.ClientOptions);
 		this._registerWSEventListeners();
 	}
 
@@ -118,12 +98,12 @@ export class Connection<T extends BaseNode = BaseNode> {
 		});
 	}
 
-	public send(d: object): Promise<void> {
+	public send(d: OutgoingPayload): Promise<void> {
 		return new Promise((resolve, reject) => {
 			const encoded = JSON.stringify(d);
 			const send = { resolve, reject, data: encoded };
 
-			if (this.ws.readyState === WebSocket.OPEN) this._send(send);
+			if (this.ws.readyState === WebSocket.OPEN) this.wsSend(send);
 			else this._queue.push(send);
 		});
 	}
@@ -131,7 +111,7 @@ export class Connection<T extends BaseNode = BaseNode> {
 	public close(code?: number, data?: string): Promise<void> {
 		if (!this.ws) return Promise.resolve();
 
-		this.ws.removeListener('close', this._listeners.close);
+		this.ws.removeListener('close', this._close);
 		return new Promise((resolve) => {
 			this.ws.once('close', (code: number, reason: string) => {
 				this.node.emit('close', code, reason);
@@ -147,9 +127,11 @@ export class Connection<T extends BaseNode = BaseNode> {
 	}
 
 	private _registerWSEventListeners() {
-		for (const [event, listener] of Object.entries(this._listeners)) {
-			if (!this.ws.listeners(event).includes(listener)) this.ws.on(event, listener);
-		}
+		if (!this.ws.listeners('open').includes(this._open)) this.ws.on('open', this._open);
+		if (!this.ws.listeners('close').includes(this._close)) this.ws.on('close', this._close);
+		if (!this.ws.listeners('upgrade').includes(this._upgrade)) this.ws.on('upgrade', this._upgrade);
+		if (!this.ws.listeners('message').includes(this._message)) this.ws.on('message', this._message);
+		if (!this.ws.listeners('error').includes(this._error)) this.ws.on('error', this._error);
 	}
 
 	private async _flush() {
@@ -157,10 +139,48 @@ export class Connection<T extends BaseNode = BaseNode> {
 		this._queue = [];
 	}
 
-	private _send({ resolve, reject, data }: Sendable) {
+	private wsSend({ resolve, reject, data }: Sendable) {
 		this.ws.send(data, (err) => {
 			if (err) reject(err);
 			else resolve();
 		});
+	}
+
+	private onOpen(): void {
+		this.backoff.reset();
+		this.node.emit('open');
+		this._flush()
+			.then(() => this.configureResuming(this.options.resumeTimeout, this.options.resumeKey))
+			.catch((e) => this.node.emit('error', e));
+	}
+
+	private onClose(code: number, reason: string): void {
+		this.node.emit('close', code, reason);
+		this._reconnect();
+	}
+
+	private onUpgrade(req: IncomingMessage) {
+		this.node.emit('upgrade', req);
+	}
+
+	private onMessage(d: WebSocket.Data): void {
+		if (Array.isArray(d)) d = Buffer.concat(d);
+		else if (d instanceof ArrayBuffer) d = Buffer.from(d);
+
+		let pk: IncomingPayload;
+		try {
+			pk = JSON.parse((d as string | Buffer).toString());
+		} catch (e) {
+			this.node.emit('error', e);
+			return;
+		}
+
+		if ('guildId' in pk) this.node.players.get(pk.guildId)?.emit(pk.op, pk);
+		this.node.emit(pk.op, pk);
+	}
+
+	private onError(err: any): void {
+		this.node.emit('error', err);
+		this._reconnect();
 	}
 }

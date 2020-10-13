@@ -1,25 +1,18 @@
 import type { GatewayVoiceStateUpdate } from 'discord-api-types/v6';
 import { EventEmitter } from 'events';
 import type { BaseNode, VoiceServerUpdate, VoiceStateUpdate } from '../base/BaseNode';
-import type { SendOpcode } from '../types/SendPayloads';
+import type { IncomingEventPayload } from '../types/IncomingPayloads';
+import type { OutgoingPayload } from '../types/OutgoingPayloads';
 import type { Track } from './Http';
 
-export enum Status {
-	INSTANTIATED,
-	PLAYING,
-	PAUSED,
-	ENDED,
-	ERRORED,
-	STUCK,
-	UNKNOWN
-}
-
-export enum EventType {
-	TRACK_START = 'TrackStartEvent',
-	TRACK_END = 'TrackEndEvent',
-	TRACK_EXCEPTION = 'TrackExceptionEvent',
-	TRACK_STUCK = 'TrackStuckEvent',
-	WEBSOCKET_CLOSED = 'WebSocketClosedEvent'
+export const enum Status {
+	Instantiated,
+	Playing,
+	Paused,
+	Ended,
+	Errored,
+	Stuck,
+	Unknown
 }
 
 export interface PlayerOptions {
@@ -41,66 +34,68 @@ export interface JoinOptions {
 export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 	public readonly node: T;
 	public guildID: string;
-	public status: Status = Status.INSTANTIATED;
+	public status: Status = Status.Instantiated;
 
 	public constructor(node: T, guildID: string) {
 		super();
 		this.node = node;
 		this.guildID = guildID;
 
-		this.on('event', (d) => {
+		this.on('event', (d: IncomingEventPayload) => {
 			switch (d.type) {
-				case EventType.TRACK_START:
-					this.status = Status.PLAYING;
+				case 'TrackStartEvent':
+					this.status = Status.Playing;
 					break;
-				case EventType.TRACK_END:
-					if (d.reason !== 'REPLACED') this.status = Status.ENDED;
+				case 'TrackEndEvent':
+					if (d.reason !== 'REPLACED') this.status = Status.Ended;
 					break;
-				case EventType.TRACK_EXCEPTION:
-					this.status = Status.ERRORED;
+				case 'TrackExceptionEvent':
+					this.status = Status.Errored;
 					break;
-				case EventType.TRACK_STUCK:
-					this.status = Status.STUCK;
+				case 'TrackStuckEvent':
+					this.status = Status.Stuck;
 					break;
-				case EventType.WEBSOCKET_CLOSED:
-					this.status = Status.ENDED;
+				case 'WebSocketClosedEvent':
+					this.status = Status.Ended;
 					break;
 				default:
-					this.status = Status.UNKNOWN;
+					this.status = Status.Unknown;
 					break;
 			}
 		});
 	}
 
 	public get playing(): boolean {
-		return this.status === Status.PLAYING;
+		return this.status === Status.Playing;
 	}
 
 	public get paused(): boolean {
-		return this.status === Status.PAUSED;
+		return this.status === Status.Paused;
 	}
 
-	public get voiceState(): VoiceStateUpdate | undefined {
+	public get voiceState(): VoiceStateUpdate | null {
 		const session = this.node.voiceStates.get(this.guildID);
-		if (!session) return;
+		if (!session) return null;
 
 		return {
+			...session,
 			guild_id: this.guildID,
-			user_id: this.node.userID,
-			session_id: session
+			user_id: this.node.userID
 		};
 	}
 
-	public get voiceServer(): VoiceServerUpdate | undefined {
-		return this.node.voiceServers.get(this.guildID);
+	public get voiceServer(): VoiceServerUpdate | null {
+		return this.node.voiceServers.get(this.guildID) ?? null;
 	}
 
 	public async moveTo(node: BaseNode) {
 		if (this.node === node) return;
-		if (!this.voiceServer || !this.voiceState) throw new Error('no voice state/server data to move');
+
+		const { voiceState, voiceServer } = this;
+		if (voiceServer === null || voiceState === null) throw new Error('no voice state/server data to move');
 
 		await this.destroy();
-		await Promise.all([node.voiceStateUpdate(this.voiceState), node.voiceServerUpdate(this.voiceServer)]);
+		await Promise.all([node.voiceStateUpdate(voiceState), node.voiceServerUpdate(voiceServer)]);
 	}
 
 	public leave() {
@@ -134,7 +129,7 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 			noReplace
 		});
 
-		this.status = Status.PLAYING;
+		this.status = Status.Playing;
 	}
 
 	public setVolume(volume: number) {
@@ -145,7 +140,7 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 		});
 	}
 
-	public setEqualizer(bands: EqualizerBand[]) {
+	public setEqualizer(bands: readonly EqualizerBand[]) {
 		return this.send({
 			op: 'equalizer',
 			guildId: this.guildID,
@@ -168,8 +163,8 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 			pause
 		});
 
-		if (pause) this.status = Status.PAUSED;
-		else this.status = Status.PLAYING;
+		if (pause) this.status = Status.Paused;
+		else this.status = Status.Playing;
 	}
 
 	public async stop() {
@@ -178,7 +173,7 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 			guildId: this.guildID
 		});
 
-		this.status = Status.ENDED;
+		this.status = Status.Ended;
 	}
 
 	public async destroy() {
@@ -188,7 +183,7 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 				guildId: this.guildID
 			});
 		}
-		this.status = Status.ENDED;
+		this.status = Status.Ended;
 		this.node.players.delete(this.guildID);
 	}
 
@@ -196,16 +191,12 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 		return this.send({
 			op: 'voiceUpdate',
 			guildId: this.guildID,
-			event: {
-				endpoint: event.endpoint,
-				guildId: event.guild_id,
-				token: event.token
-			},
+			event,
 			sessionId
 		});
 	}
 
-	public send(data: SendOpcode) {
+	public send(data: OutgoingPayload) {
 		const conn = this.node.connection;
 		if (conn) return conn.send(data);
 		return Promise.reject(new Error('no WebSocket connection available'));

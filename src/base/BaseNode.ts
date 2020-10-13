@@ -1,27 +1,12 @@
 import WebSocket from 'ws';
-import type { GatewaySendPayload } from 'discord-api-types/v6';
+import type { GatewaySendPayload, GatewayVoiceState, GatewayVoiceServerUpdateDispatch } from 'discord-api-types/v6';
 import { EventEmitter } from 'events';
 import { Connection, Options as ConnectionOptions } from '../core/Connection';
 import { Http, Track, TrackInfo, TrackResponse } from '../core/Http';
 import { PlayerStore } from '../core/PlayerStore';
 
-export interface VoiceStateUpdate {
-	guild_id: string;
-	channel_id?: string;
-	user_id: string;
-	session_id: string;
-	deaf?: boolean;
-	mute?: boolean;
-	self_deaf?: boolean;
-	self_mute?: boolean;
-	suppress?: boolean;
-}
-
-export interface VoiceServerUpdate {
-	guild_id: string;
-	token: string;
-	endpoint: string;
-}
+export type VoiceServerUpdate = GatewayVoiceServerUpdateDispatch['d'];
+export type VoiceStateUpdate = GatewayVoiceState;
 
 export interface BaseNodeOptions {
 	password: string;
@@ -49,7 +34,7 @@ export abstract class BaseNode extends EventEmitter {
 	public players: PlayerStore<this>;
 	public http?: Http;
 
-	public voiceStates: Map<string, string> = new Map();
+	public voiceStates: Map<string, VoiceStateUpdate> = new Map();
 	public voiceServers: Map<string, VoiceServerUpdate> = new Map();
 
 	private _expectingConnection: Set<string> = new Set();
@@ -93,20 +78,20 @@ export abstract class BaseNode extends EventEmitter {
 		if (packet.user_id !== this.userID) return Promise.resolve(false);
 
 		if (packet.channel_id) {
-			this.voiceStates.set(packet.guild_id, packet.session_id);
-			return this._tryConnection(packet.guild_id);
+			this.voiceStates.set(packet.guild_id!, packet);
+			return this._tryConnection(packet.guild_id!);
 		}
 
-		this.voiceServers.delete(packet.guild_id);
-		this.voiceStates.delete(packet.guild_id);
+		this.voiceServers.delete(packet.guild_id!);
+		this.voiceStates.delete(packet.guild_id!);
 
 		return Promise.resolve(false);
 	}
 
 	public voiceServerUpdate(packet: VoiceServerUpdate): Promise<boolean> {
-		this.voiceServers.set(packet.guild_id, packet);
-		this._expectingConnection.add(packet.guild_id);
-		return this._tryConnection(packet.guild_id);
+		this.voiceServers.set(packet.guild_id!, packet);
+		this._expectingConnection.add(packet.guild_id!);
+		return this._tryConnection(packet.guild_id!);
 	}
 
 	public disconnect(code?: number, data?: string): Promise<void> {
@@ -124,7 +109,7 @@ export abstract class BaseNode extends EventEmitter {
 		const server = this.voiceServers.get(guildID);
 		if (!state || !server || !this._expectingConnection.has(guildID)) return false;
 
-		await this.players.get(guildID).voiceUpdate(state, server);
+		await this.players.get(guildID).voiceUpdate(state.session_id, server);
 		this._expectingConnection.delete(guildID);
 		return true;
 	}

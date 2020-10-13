@@ -61,7 +61,7 @@ export abstract class BaseCluster extends EventEmitter {
 	}
 
 	public voiceStateUpdate(state: VoiceStateUpdate): Promise<boolean> {
-		return this.getNode(state.guild_id).voiceStateUpdate(state);
+		return this.getNode(state.guild_id!).voiceStateUpdate(state);
 	}
 
 	public voiceServerUpdate(server: VoiceServerUpdate): Promise<boolean> {
