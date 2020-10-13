@@ -23,6 +23,10 @@ export abstract class BaseCluster extends EventEmitter {
 		if (options) this.spawn(options);
 	}
 
+	public connect() {
+		for (const node of this.nodes) node.connect();
+	}
+
 	public spawn(options: ClusterNodeOptions): ClusterNode;
 	public spawn(options: ClusterNodeOptions[]): ClusterNode[];
 	public spawn(options: ClusterNodeOptions | ClusterNodeOptions[]): ClusterNode | ClusterNode[] {

@@ -71,12 +71,12 @@ export class Http {
 		this.routeplanner = new RoutePlanner(this);
 	}
 
-	public url() {
+	public get url() {
 		return new URL(this.input, this.base);
 	}
 
 	public load(identifier: string): Promise<TrackResponse> {
-		const url = this.url();
+		const { url } = this;
 		url.pathname = '/loadtracks';
 		url.searchParams.append('identifier', identifier);
 
@@ -87,7 +87,7 @@ export class Http {
 	public decode(tracks: string[]): Promise<Track[]>;
 	public decode(tracks: string | string[]): Promise<TrackInfo | Track[]>;
 	public decode(tracks: string | string[]): Promise<TrackInfo | Track[]> {
-		const url = this.url();
+		const { url } = this;
 		if (Array.isArray(tracks)) {
 			url.pathname = '/decodetracks';
 			return this.do('POST', url, Buffer.from(JSON.stringify(tracks)));
@@ -121,24 +121,12 @@ export class Http {
 
 		if (message.statusCode && message.statusCode >= 200 && message.statusCode < 300) {
 			const chunks: Array<Buffer> = [];
-			message.on('data', (chunk) => {
-				if (typeof chunk === 'string') chunk = Buffer.from(chunk);
-				chunks.push(chunk);
-			});
+			for await (const chunk of message) {
+				chunks.push(typeof chunk === 'string' ? Buffer.from(chunk) : chunk);
+			}
 
-			return new Promise<T>((resolve, reject) => {
-				message.once('error', reject);
-				message.once('end', () => {
-					message.removeAllListeners();
-
-					try {
-						const data = Buffer.concat(chunks);
-						resolve(JSON.parse(data.toString()));
-					} catch (e) {
-						reject(e);
-					}
-				});
-			});
+			const data = Buffer.concat(chunks);
+			return JSON.parse(data.toString());
 		}
 
 		throw new HTTPError(message, method, url);

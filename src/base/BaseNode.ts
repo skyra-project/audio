@@ -57,9 +57,12 @@ export abstract class BaseNode extends EventEmitter {
 		}
 	}
 
+	public connect() {
+		this.connection!.connect();
+	}
+
 	public get connected(): boolean {
-		if (!this.connection) return false;
-		return this.connection.ws.readyState === WebSocket.OPEN;
+		return this.connection?.ws?.readyState === WebSocket.OPEN;
 	}
 
 	public load(identifier: string): Promise<TrackResponse> {

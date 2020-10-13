@@ -29,10 +29,9 @@ export class Connection<T extends BaseNode = BaseNode> {
 	public options: Options;
 	public resumeKey?: string;
 
-	public ws!: WebSocket;
-	public reconnectTimeout = 100; // TODO: remove in next major version
+	public ws: WebSocket | null;
 
-	private _backoff!: Backoff;
+	private backoff: Backoff = exponential();
 	private _queue: Array<Sendable> = [];
 
 	private _send: Connection<T>['wsSend'];
@@ -48,7 +47,7 @@ export class Connection<T extends BaseNode = BaseNode> {
 		this.options = options;
 		this.resumeKey = options.resumeKey;
 
-		this.backoff = exponential();
+		this.ws = null;
 		this._send = this.wsSend.bind(this);
 		this._open = this.onOpen.bind(this);
 		this._close = this.onClose.bind(this);
@@ -57,35 +56,11 @@ export class Connection<T extends BaseNode = BaseNode> {
 		this._error = this.onError.bind(this);
 	}
 
-	public get backoff(): Backoff {
-		return this._backoff;
-	}
-
-	public set backoff(b: Backoff) {
-		// Remove current backoff in case we assign the current one again.
-		if (this._backoff) this._backoff.removeAllListeners();
-
-		b.on('ready', (_number, delay) => {
-			this.reconnectTimeout = delay;
-			this.connect();
-		});
-		b.on('backoff', (_number, delay) => (this.reconnectTimeout = delay));
-
-		this._backoff = b;
-	}
-
 	public connect() {
-		if (this.ws && this.ws.readyState === WebSocket.OPEN) this.ws.close();
-
-		const headers: Headers = {
-			Authorization: this.node.password,
-			'Num-Shards': this.node.shardCount || 1,
-			'User-Id': this.node.userID
-		};
-
-		if (this.resumeKey) headers['Resume-Key'] = this.resumeKey;
-		this.ws = new WebSocket(this.url, { headers, ...this.options } as WebSocket.ClientOptions);
-		this._registerWSEventListeners();
+		// Create a new ready listener if none was set.
+		if (!this.backoff.listenerCount('ready')) {
+			this.backoff.on('ready', () => this._connect());
+		}
 	}
 
 	public configureResuming(timeout = 60, key: string = Math.random().toString(36)): Promise<void> {
@@ -99,11 +74,13 @@ export class Connection<T extends BaseNode = BaseNode> {
 	}
 
 	public send(d: OutgoingPayload): Promise<void> {
+		if (!this.ws) return Promise.reject(new Error('The client has not been initialized.'));
+
 		return new Promise((resolve, reject) => {
 			const encoded = JSON.stringify(d);
 			const send = { resolve, reject, data: encoded };
 
-			if (this.ws.readyState === WebSocket.OPEN) this.wsSend(send);
+			if (this.ws!.readyState === WebSocket.OPEN) this.wsSend(send);
 			else this._queue.push(send);
 		});
 	}
@@ -113,25 +90,41 @@ export class Connection<T extends BaseNode = BaseNode> {
 
 		this.ws.removeListener('close', this._close);
 		return new Promise((resolve) => {
-			this.ws.once('close', (code: number, reason: string) => {
+			this.ws!.once('close', (code: number, reason: string) => {
 				this.node.emit('close', code, reason);
+				this.backoff.removeAllListeners();
+				this.ws = null;
 				resolve();
 			});
 
-			this.ws.close(code, data);
+			this.ws!.close(code, data);
 		});
 	}
 
+	private _connect() {
+		if (this.ws?.readyState === WebSocket.OPEN) this.ws.close();
+
+		const headers: Headers = {
+			Authorization: this.node.password,
+			'Num-Shards': this.node.shardCount || 1,
+			'User-Id': this.node.userID
+		};
+
+		if (this.resumeKey) headers['Resume-Key'] = this.resumeKey;
+		this.ws = new WebSocket(this.url, { headers, ...this.options } as WebSocket.ClientOptions);
+		this._registerWSEventListeners();
+	}
+
 	private _reconnect() {
-		if (this.ws.readyState === WebSocket.CLOSED) this.backoff.backoff();
+		if (this.ws!.readyState === WebSocket.CLOSED) this.backoff.backoff();
 	}
 
 	private _registerWSEventListeners() {
-		if (!this.ws.listeners('open').includes(this._open)) this.ws.on('open', this._open);
-		if (!this.ws.listeners('close').includes(this._close)) this.ws.on('close', this._close);
-		if (!this.ws.listeners('upgrade').includes(this._upgrade)) this.ws.on('upgrade', this._upgrade);
-		if (!this.ws.listeners('message').includes(this._message)) this.ws.on('message', this._message);
-		if (!this.ws.listeners('error').includes(this._error)) this.ws.on('error', this._error);
+		if (!this.ws!.listeners('open').includes(this._open)) this.ws!.on('open', this._open);
+		if (!this.ws!.listeners('close').includes(this._close)) this.ws!.on('close', this._close);
+		if (!this.ws!.listeners('upgrade').includes(this._upgrade)) this.ws!.on('upgrade', this._upgrade);
+		if (!this.ws!.listeners('message').includes(this._message)) this.ws!.on('message', this._message);
+		if (!this.ws!.listeners('error').includes(this._error)) this.ws!.on('error', this._error);
 	}
 
 	private async _flush() {
@@ -140,7 +133,7 @@ export class Connection<T extends BaseNode = BaseNode> {
 	}
 
 	private wsSend({ resolve, reject, data }: Sendable) {
-		this.ws.send(data, (err) => {
+		this.ws!.send(data, (err) => {
 			if (err) reject(err);
 			else resolve();
 		});

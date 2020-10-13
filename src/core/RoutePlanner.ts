@@ -42,13 +42,13 @@ export class RoutePlanner {
 	public constructor(public readonly http: Http) {}
 
 	public status(): Promise<RoutePlannerStatus> {
-		const url = this.http.url();
+		const { url } = this.http;
 		url.pathname = '/routeplanner/status';
 		return this.http.do('get', url);
 	}
 
 	public unmark(address?: string): Promise<void> {
-		const url = this.http.url();
+		const { url } = this.http;
 		if (address) {
 			url.pathname = '/routeplanner/free/address';
 			return this.http.do('post', url, Buffer.from(JSON.stringify({ address })));
