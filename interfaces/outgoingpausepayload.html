@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>BaseSendOpcode | @skyra/audio</title>
+	<title>OutgoingPausePayload | @skyra/audio</title>
 	<meta name="description" content="Documentation for @skyra/audio">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -52,10 +52,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="basesendopcode.html">BaseSendOpcode</a>
+					<a href="outgoingpausepayload.html">OutgoingPausePayload</a>
 				</li>
 			</ul>
-			<h1>Interface BaseSendOpcode</h1>
+			<h1>Interface OutgoingPausePayload</h1>
 		</div>
 	</div>
 </header>
@@ -66,31 +66,10 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">BaseSendOpcode</span>
+						<a href="baseoutgoingpayload.html" class="tsd-signature-type">BaseOutgoingPayload</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<a href="sendopcodedestroy.html" class="tsd-signature-type">SendOpcodeDestroy</a>
-							</li>
-							<li>
-								<a href="sendopcodestop.html" class="tsd-signature-type">SendOpcodeStop</a>
-							</li>
-							<li>
-								<a href="sendopcodeseek.html" class="tsd-signature-type">SendOpcodeSeek</a>
-							</li>
-							<li>
-								<a href="sendopcodepause.html" class="tsd-signature-type">SendOpcodePause</a>
-							</li>
-							<li>
-								<a href="sendopcodeplay.html" class="tsd-signature-type">SendOpcodePlay</a>
-							</li>
-							<li>
-								<a href="sendopcodevoiceupdate.html" class="tsd-signature-type">SendOpcodeVoiceUpdate</a>
-							</li>
-							<li>
-								<a href="sendopcodevolume.html" class="tsd-signature-type">SendOpcodeVolume</a>
-							</li>
-							<li>
-								<a href="sendopcodeequalizer.html" class="tsd-signature-type">SendOpcodeEqualizer</a>
+								<span class="target">OutgoingPausePayload</span>
 							</li>
 						</ul>
 					</li>
@@ -103,7 +82,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="basesendopcode.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="outgoingpausepayload.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="outgoingpausepayload.html#op" class="tsd-kind-icon">op</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="outgoingpausepayload.html#pause" class="tsd-kind-icon">pause</a></li>
 							</ul>
 						</section>
 					</div>
@@ -111,13 +92,34 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="guildid" class="tsd-anchor"></a>
 					<h3>guild<wbr>Id</h3>
 					<div class="tsd-signature tsd-kind-icon">guild<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="baseoutgoingpayload.html">BaseOutgoingPayload</a>.<a href="baseoutgoingpayload.html#guildid">guildId</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/types/SendPayloads.ts#L12">src/types/SendPayloads.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/OutgoingPayloads.ts#L15">src/types/OutgoingPayloads.ts:15</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="op" class="tsd-anchor"></a>
+					<h3>op</h3>
+					<div class="tsd-signature tsd-kind-icon">op<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"pause"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/OutgoingPayloads.ts#L32">src/types/OutgoingPayloads.ts:32</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="pause" class="tsd-anchor"></a>
+					<h3>pause</h3>
+					<div class="tsd-signature tsd-kind-icon">pause<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/OutgoingPayloads.ts#L33">src/types/OutgoingPayloads.ts:33</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -136,10 +138,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="basesendopcode.html" class="tsd-kind-icon">Base<wbr>Send<wbr>Opcode</a>
+						<a href="outgoingpausepayload.html" class="tsd-kind-icon">Outgoing<wbr>Pause<wbr>Payload</a>
 						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="outgoingpausepayload.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="basesendopcode.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a>
+								<a href="outgoingpausepayload.html#op" class="tsd-kind-icon">op</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="outgoingpausepayload.html#pause" class="tsd-kind-icon">pause</a>
 							</li>
 						</ul>
 					</li>
@@ -158,7 +166,6 @@
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>

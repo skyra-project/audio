@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>VoiceServerUpdate | @skyra/audio</title>
+	<title>OutgoingConfigureResumingPayload | @skyra/audio</title>
 	<meta name="description" content="Documentation for @skyra/audio">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -52,10 +52,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="voiceserverupdate.html">VoiceServerUpdate</a>
+					<a href="outgoingconfigureresumingpayload.html">OutgoingConfigureResumingPayload</a>
 				</li>
 			</ul>
-			<h1>Interface VoiceServerUpdate</h1>
+			<h1>Interface OutgoingConfigureResumingPayload</h1>
 		</div>
 	</div>
 </header>
@@ -66,7 +66,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">VoiceServerUpdate</span>
+						<span class="target">OutgoingConfigureResumingPayload</span>
 					</li>
 				</ul>
 			</section>
@@ -77,9 +77,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voiceserverupdate.html#endpoint" class="tsd-kind-icon">endpoint</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voiceserverupdate.html#guild_id" class="tsd-kind-icon">guild_<wbr>id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="voiceserverupdate.html#token" class="tsd-kind-icon">token</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="outgoingconfigureresumingpayload.html#key" class="tsd-kind-icon">key</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="outgoingconfigureresumingpayload.html#op" class="tsd-kind-icon">op</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="outgoingconfigureresumingpayload.html#timeout" class="tsd-kind-icon">timeout</a></li>
 							</ul>
 						</section>
 					</div>
@@ -88,34 +88,45 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="endpoint" class="tsd-anchor"></a>
-					<h3>endpoint</h3>
-					<div class="tsd-signature tsd-kind-icon">endpoint<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="key" class="tsd-anchor"></a>
+					<h3>key</h3>
+					<div class="tsd-signature tsd-kind-icon">key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/base/BaseNode.ts#L23">src/base/BaseNode.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/OutgoingPayloads.ts#L82">src/types/OutgoingPayloads.ts:82</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The string you will need to send when resuming the session. Set to null to disable resuming altogether.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="op" class="tsd-anchor"></a>
+					<h3>op</h3>
+					<div class="tsd-signature tsd-kind-icon">op<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"configureResuming"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/OutgoingPayloads.ts#L77">src/types/OutgoingPayloads.ts:77</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="guild_id" class="tsd-anchor"></a>
-					<h3>guild_<wbr>id</h3>
-					<div class="tsd-signature tsd-kind-icon">guild_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="timeout" class="tsd-anchor"></a>
+					<h3>timeout</h3>
+					<div class="tsd-signature tsd-kind-icon">timeout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/base/BaseNode.ts#L21">src/base/BaseNode.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/OutgoingPayloads.ts#L88">src/types/OutgoingPayloads.ts:88</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="token" class="tsd-anchor"></a>
-					<h3>token</h3>
-					<div class="tsd-signature tsd-kind-icon">token<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/base/BaseNode.ts#L22">src/base/BaseNode.ts:22</a></li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The number of seconds after disconnecting before the session is closed anyways.
+							This is useful for avoiding accidental leaks.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -132,16 +143,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="voiceserverupdate.html" class="tsd-kind-icon">Voice<wbr>Server<wbr>Update</a>
+						<a href="outgoingconfigureresumingpayload.html" class="tsd-kind-icon">Outgoing<wbr>Configure<wbr>Resuming<wbr>Payload</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="voiceserverupdate.html#endpoint" class="tsd-kind-icon">endpoint</a>
+								<a href="outgoingconfigureresumingpayload.html#key" class="tsd-kind-icon">key</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="voiceserverupdate.html#guild_id" class="tsd-kind-icon">guild_<wbr>id</a>
+								<a href="outgoingconfigureresumingpayload.html#op" class="tsd-kind-icon">op</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="voiceserverupdate.html#token" class="tsd-kind-icon">token</a>
+								<a href="outgoingconfigureresumingpayload.html#timeout" class="tsd-kind-icon">timeout</a>
 							</li>
 						</ul>
 					</li>
@@ -160,7 +171,6 @@
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>

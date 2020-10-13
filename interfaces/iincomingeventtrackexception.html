@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SendOpcodeEqualizer | @skyra/audio</title>
+	<title>IIncomingEventTrackException | @skyra/audio</title>
 	<meta name="description" content="Documentation for @skyra/audio">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -52,10 +52,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="sendopcodeequalizer.html">SendOpcodeEqualizer</a>
+					<a href="iincomingeventtrackexception.html">IIncomingEventTrackException</a>
 				</li>
 			</ul>
-			<h1>Interface SendOpcodeEqualizer</h1>
+			<h1>Interface IIncomingEventTrackException</h1>
 		</div>
 	</div>
 </header>
@@ -66,10 +66,18 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="basesendopcode.html" class="tsd-signature-type">BaseSendOpcode</a>
+						<a href="iincomingevent.html" class="tsd-signature-type">IIncomingEvent</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">SendOpcodeEqualizer</span>
+								<span class="target">IIncomingEventTrackException</span>
+								<ul class="tsd-hierarchy">
+									<li>
+										<a href="incomingeventtrackexceptiondetailed.html" class="tsd-signature-type">IncomingEventTrackExceptionDetailed</a>
+									</li>
+									<li>
+										<a href="incomingeventtrackexceptionerrorpayload.html" class="tsd-signature-type">IncomingEventTrackExceptionErrorPayload</a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</li>
@@ -82,9 +90,10 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sendopcodeequalizer.html#bands" class="tsd-kind-icon">bands</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="sendopcodeequalizer.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sendopcodeequalizer.html#op" class="tsd-kind-icon">op</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="iincomingeventtrackexception.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="iincomingeventtrackexception.html#op" class="tsd-kind-icon">op</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iincomingeventtrackexception.html#track" class="tsd-kind-icon">track</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iincomingeventtrackexception.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 					</div>
@@ -92,34 +101,45 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="bands" class="tsd-anchor"></a>
-					<h3>bands</h3>
-					<div class="tsd-signature tsd-kind-icon">bands<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">readonly </span><span class="tsd-signature-symbol">{ </span>band<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>gain<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/types/SendPayloads.ts#L71">src/types/SendPayloads.ts:71</a></li>
-						</ul>
-					</aside>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="guildid" class="tsd-anchor"></a>
 					<h3>guild<wbr>Id</h3>
 					<div class="tsd-signature tsd-kind-icon">guild<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="basesendopcode.html">BaseSendOpcode</a>.<a href="basesendopcode.html#guildid">guildId</a></p>
+						<p>Inherited from <a href="iincomingevent.html">IIncomingEvent</a>.<a href="iincomingevent.html#guildid">guildId</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/types/SendPayloads.ts#L12">src/types/SendPayloads.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L37">src/types/IncomingPayloads.ts:37</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="op" class="tsd-anchor"></a>
+					<h3>op</h3>
+					<div class="tsd-signature tsd-kind-icon">op<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"event"</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="iincomingevent.html">IIncomingEvent</a>.<a href="iincomingevent.html#op">op</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L36">src/types/IncomingPayloads.ts:36</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="op" class="tsd-anchor"></a>
-					<h3>op</h3>
-					<div class="tsd-signature tsd-kind-icon">op<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"equalizer"</span></div>
+					<a name="track" class="tsd-anchor"></a>
+					<h3>track</h3>
+					<div class="tsd-signature tsd-kind-icon">track<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/types/SendPayloads.ts#L70">src/types/SendPayloads.ts:70</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L62">src/types/IncomingPayloads.ts:62</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"TrackExceptionEvent"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L61">src/types/IncomingPayloads.ts:61</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -138,16 +158,19 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="sendopcodeequalizer.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Equalizer</a>
+						<a href="iincomingeventtrackexception.html" class="tsd-kind-icon">IIncoming<wbr>Event<wbr>Track<wbr>Exception</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="sendopcodeequalizer.html#bands" class="tsd-kind-icon">bands</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="iincomingeventtrackexception.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="sendopcodeequalizer.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a>
+								<a href="iincomingeventtrackexception.html#op" class="tsd-kind-icon">op</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="sendopcodeequalizer.html#op" class="tsd-kind-icon">op</a>
+								<a href="iincomingeventtrackexception.html#track" class="tsd-kind-icon">track</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="iincomingeventtrackexception.html#type" class="tsd-kind-icon">type</a>
 							</li>
 						</ul>
 					</li>
@@ -166,7 +189,6 @@
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>

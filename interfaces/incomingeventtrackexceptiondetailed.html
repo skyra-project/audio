@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SendOpcodeVoiceUpdate | @skyra/audio</title>
+	<title>IncomingEventTrackExceptionDetailed | @skyra/audio</title>
 	<meta name="description" content="Documentation for @skyra/audio">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -52,10 +52,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="sendopcodevoiceupdate.html">SendOpcodeVoiceUpdate</a>
+					<a href="incomingeventtrackexceptiondetailed.html">IncomingEventTrackExceptionDetailed</a>
 				</li>
 			</ul>
-			<h1>Interface SendOpcodeVoiceUpdate</h1>
+			<h1>Interface IncomingEventTrackExceptionDetailed</h1>
 		</div>
 	</div>
 </header>
@@ -66,10 +66,10 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="basesendopcode.html" class="tsd-signature-type">BaseSendOpcode</a>
+						<a href="iincomingeventtrackexception.html" class="tsd-signature-type">IIncomingEventTrackException</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">SendOpcodeVoiceUpdate</span>
+								<span class="target">IncomingEventTrackExceptionDetailed</span>
 							</li>
 						</ul>
 					</li>
@@ -82,10 +82,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sendopcodevoiceupdate.html#event" class="tsd-kind-icon">event</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="sendopcodevoiceupdate.html#guildid-1" class="tsd-kind-icon">guild<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sendopcodevoiceupdate.html#op" class="tsd-kind-icon">op</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sendopcodevoiceupdate.html#sessionid" class="tsd-kind-icon">session<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="incomingeventtrackexceptiondetailed.html#exception" class="tsd-kind-icon">exception</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="incomingeventtrackexceptiondetailed.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="incomingeventtrackexceptiondetailed.html#op" class="tsd-kind-icon">op</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="incomingeventtrackexceptiondetailed.html#track" class="tsd-kind-icon">track</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="incomingeventtrackexceptiondetailed.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,57 +95,70 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="event" class="tsd-anchor"></a>
-					<h3>event</h3>
-					<div class="tsd-signature tsd-kind-icon">event<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>endpoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>guildId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
+					<a name="exception" class="tsd-anchor"></a>
+					<h3>exception</h3>
+					<div class="tsd-signature tsd-kind-icon">exception<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>cause<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>severity<span class="tsd-signature-symbol">: </span><a href="../enums/incomingeventtrackexceptiondetailedexceptionseverity.html" class="tsd-signature-type">IncomingEventTrackExceptionDetailedExceptionSeverity</a><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/types/SendPayloads.ts#L57">src/types/SendPayloads.ts:57</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L66">src/types/IncomingPayloads.ts:66</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
-								<h5>endpoint<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<h5>cause<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>guild<wbr>Id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<h5>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5>token<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<h5>severity<span class="tsd-signature-symbol">: </span><a href="../enums/incomingeventtrackexceptiondetailedexceptionseverity.html" class="tsd-signature-type">IncomingEventTrackExceptionDetailedExceptionSeverity</a></h5>
 							</li>
 						</ul>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="guildid-1" class="tsd-anchor"></a>
+					<a name="guildid" class="tsd-anchor"></a>
 					<h3>guild<wbr>Id</h3>
 					<div class="tsd-signature tsd-kind-icon">guild<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="basesendopcode.html">BaseSendOpcode</a>.<a href="basesendopcode.html#guildid">guildId</a></p>
+						<p>Inherited from <a href="iincomingevent.html">IIncomingEvent</a>.<a href="iincomingevent.html#guildid">guildId</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/types/SendPayloads.ts#L12">src/types/SendPayloads.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L37">src/types/IncomingPayloads.ts:37</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="op" class="tsd-anchor"></a>
 					<h3>op</h3>
-					<div class="tsd-signature tsd-kind-icon">op<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"voiceUpdate"</span></div>
+					<div class="tsd-signature tsd-kind-icon">op<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"event"</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="iincomingevent.html">IIncomingEvent</a>.<a href="iincomingevent.html#op">op</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/types/SendPayloads.ts#L55">src/types/SendPayloads.ts:55</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L36">src/types/IncomingPayloads.ts:36</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="sessionid" class="tsd-anchor"></a>
-					<h3>session<wbr>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">session<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="track" class="tsd-anchor"></a>
+					<h3>track</h3>
+					<div class="tsd-signature tsd-kind-icon">track<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="iincomingeventtrackexception.html">IIncomingEventTrackException</a>.<a href="iincomingeventtrackexception.html#track">track</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/types/SendPayloads.ts#L56">src/types/SendPayloads.ts:56</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L62">src/types/IncomingPayloads.ts:62</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"TrackExceptionEvent"</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="iincomingeventtrackexception.html">IIncomingEventTrackException</a>.<a href="iincomingeventtrackexception.html#type">type</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L61">src/types/IncomingPayloads.ts:61</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -163,19 +177,22 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="sendopcodevoiceupdate.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Voice<wbr>Update</a>
+						<a href="incomingeventtrackexceptiondetailed.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>Exception<wbr>Detailed</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="sendopcodevoiceupdate.html#event" class="tsd-kind-icon">event</a>
+								<a href="incomingeventtrackexceptiondetailed.html#exception" class="tsd-kind-icon">exception</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="sendopcodevoiceupdate.html#guildid-1" class="tsd-kind-icon">guild<wbr>Id</a>
+								<a href="incomingeventtrackexceptiondetailed.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="sendopcodevoiceupdate.html#op" class="tsd-kind-icon">op</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="incomingeventtrackexceptiondetailed.html#op" class="tsd-kind-icon">op</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="sendopcodevoiceupdate.html#sessionid" class="tsd-kind-icon">session<wbr>Id</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="incomingeventtrackexceptiondetailed.html#track" class="tsd-kind-icon">track</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="incomingeventtrackexceptiondetailed.html#type" class="tsd-kind-icon">type</a>
 							</li>
 						</ul>
 					</li>
@@ -194,7 +211,6 @@
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>

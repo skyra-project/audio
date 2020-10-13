@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>EqualizerBand | @skyra/audio</title>
+	<title>IncomingEventTrackExceptionDetailedExceptionSeverity | @skyra/audio</title>
 	<meta name="description" content="Documentation for @skyra/audio">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -52,59 +52,80 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="equalizerband.html">EqualizerBand</a>
+					<a href="incomingeventtrackexceptiondetailedexceptionseverity.html">IncomingEventTrackExceptionDetailedExceptionSeverity</a>
 				</li>
 			</ul>
-			<h1>Interface EqualizerBand</h1>
+			<h1>Enumeration IncomingEventTrackExceptionDetailedExceptionSeverity</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
-				<ul class="tsd-hierarchy">
-					<li>
-						<span class="target">EqualizerBand</span>
-					</li>
-				</ul>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Properties</h3>
+							<h3>Enumeration members</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="equalizerband.html#band" class="tsd-kind-icon">band</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="equalizerband.html#gain" class="tsd-kind-icon">gain</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="incomingeventtrackexceptiondetailedexceptionseverity.html#common" class="tsd-kind-icon">Common</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="incomingeventtrackexceptiondetailedexceptionseverity.html#fault" class="tsd-kind-icon">Fault</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="incomingeventtrackexceptiondetailedexceptionseverity.html#suspicious" class="tsd-kind-icon">Suspicious</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="band" class="tsd-anchor"></a>
-					<h3>band</h3>
-					<div class="tsd-signature tsd-kind-icon">band<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<h2>Enumeration members</h2>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="common" class="tsd-anchor"></a>
+					<h3>Common</h3>
+					<div class="tsd-signature tsd-kind-icon">Common<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;COMMON&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/core/Player.ts#L25">src/core/Player.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L77">src/types/IncomingPayloads.ts:77</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The cause is known and expected, indicates that there is nothing wrong with the library itself.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="gain" class="tsd-anchor"></a>
-					<h3>gain</h3>
-					<div class="tsd-signature tsd-kind-icon">gain<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="fault" class="tsd-anchor"></a>
+					<h3>Fault</h3>
+					<div class="tsd-signature tsd-kind-icon">Fault<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;FAULT&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/core/Player.ts#L26">src/core/Player.ts:26</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L90">src/types/IncomingPayloads.ts:90</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>If the probable cause is an issue with the library or when there is no way to tell what the cause might be.
+								This is the default level and other levels are used in cases where the thrower has more in-depth knowledge
+							about the error.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="suspicious" class="tsd-anchor"></a>
+					<h3>Suspicious</h3>
+					<div class="tsd-signature tsd-kind-icon">Suspicious<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;SUSPICIOUS&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L83">src/types/IncomingPayloads.ts:83</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The cause might not be exactly known, but is possibly caused by outside factors. For example when an outside
+							service responds in a format that we do not expect.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -120,14 +141,17 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface">
-						<a href="equalizerband.html" class="tsd-kind-icon">Equalizer<wbr>Band</a>
+					<li class="current tsd-kind-enum">
+						<a href="incomingeventtrackexceptiondetailedexceptionseverity.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>Exception<wbr>Detailed<wbr>Exception<wbr>Severity</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="equalizerband.html#band" class="tsd-kind-icon">band</a>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="incomingeventtrackexceptiondetailedexceptionseverity.html#common" class="tsd-kind-icon">Common</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="equalizerband.html#gain" class="tsd-kind-icon">gain</a>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="incomingeventtrackexceptiondetailedexceptionseverity.html#fault" class="tsd-kind-icon">Fault</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="incomingeventtrackexceptiondetailedexceptionseverity.html#suspicious" class="tsd-kind-icon">Suspicious</a>
 							</li>
 						</ul>
 					</li>

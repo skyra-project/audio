@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SendOpcodeDestroy | @skyra/audio</title>
+	<title>IIncomingEvent | @skyra/audio</title>
 	<meta name="description" content="Documentation for @skyra/audio">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -52,10 +52,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="sendopcodedestroy.html">SendOpcodeDestroy</a>
+					<a href="iincomingevent.html">IIncomingEvent</a>
 				</li>
 			</ul>
-			<h1>Interface SendOpcodeDestroy</h1>
+			<h1>Interface IIncomingEvent</h1>
 		</div>
 	</div>
 </header>
@@ -66,10 +66,22 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="basesendopcode.html" class="tsd-signature-type">BaseSendOpcode</a>
+						<span class="target">IIncomingEvent</span>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">SendOpcodeDestroy</span>
+								<a href="incomingeventstartpayload.html" class="tsd-signature-type">IncomingEventStartPayload</a>
+							</li>
+							<li>
+								<a href="incomingeventtrackendpayload.html" class="tsd-signature-type">IncomingEventTrackEndPayload</a>
+							</li>
+							<li>
+								<a href="iincomingeventtrackexception.html" class="tsd-signature-type">IIncomingEventTrackException</a>
+							</li>
+							<li>
+								<a href="incomingeventtrackstuckpayload.html" class="tsd-signature-type">IncomingEventTrackStuckPayload</a>
+							</li>
+							<li>
+								<a href="incomingeventwebsocketclosedpayload.html" class="tsd-signature-type">IncomingEventWebSocketClosedPayload</a>
 							</li>
 						</ul>
 					</li>
@@ -82,8 +94,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="sendopcodedestroy.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sendopcodedestroy.html#op" class="tsd-kind-icon">op</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iincomingevent.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="iincomingevent.html#op" class="tsd-kind-icon">op</a></li>
 							</ul>
 						</section>
 					</div>
@@ -91,24 +103,23 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="guildid" class="tsd-anchor"></a>
 					<h3>guild<wbr>Id</h3>
 					<div class="tsd-signature tsd-kind-icon">guild<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="basesendopcode.html">BaseSendOpcode</a>.<a href="basesendopcode.html#guildid">guildId</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/types/SendPayloads.ts#L12">src/types/SendPayloads.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L37">src/types/IncomingPayloads.ts:37</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="op" class="tsd-anchor"></a>
 					<h3>op</h3>
-					<div class="tsd-signature tsd-kind-icon">op<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"destroy"</span></div>
+					<div class="tsd-signature tsd-kind-icon">op<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"event"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/types/SendPayloads.ts#L16">src/types/SendPayloads.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L36">src/types/IncomingPayloads.ts:36</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -127,13 +138,13 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="sendopcodedestroy.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Destroy</a>
+						<a href="iincomingevent.html" class="tsd-kind-icon">IIncoming<wbr>Event</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="sendopcodedestroy.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="iincomingevent.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="sendopcodedestroy.html#op" class="tsd-kind-icon">op</a>
+								<a href="iincomingevent.html#op" class="tsd-kind-icon">op</a>
 							</li>
 						</ul>
 					</li>
@@ -152,7 +163,6 @@
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SendOpcodePlay | @skyra/audio</title>
+	<title>OutgoingSeekPayload | @skyra/audio</title>
 	<meta name="description" content="Documentation for @skyra/audio">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -52,10 +52,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="sendopcodeplay.html">SendOpcodePlay</a>
+					<a href="outgoingseekpayload.html">OutgoingSeekPayload</a>
 				</li>
 			</ul>
-			<h1>Interface SendOpcodePlay</h1>
+			<h1>Interface OutgoingSeekPayload</h1>
 		</div>
 	</div>
 </header>
@@ -66,10 +66,10 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="basesendopcode.html" class="tsd-signature-type">BaseSendOpcode</a>
+						<a href="baseoutgoingpayload.html" class="tsd-signature-type">BaseOutgoingPayload</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">SendOpcodePlay</span>
+								<span class="target">OutgoingSeekPayload</span>
 							</li>
 						</ul>
 					</li>
@@ -82,12 +82,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sendopcodeplay.html#endtime" class="tsd-kind-icon">end<wbr>Time</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="sendopcodeplay.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sendopcodeplay.html#noreplace" class="tsd-kind-icon">no<wbr>Replace</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sendopcodeplay.html#op" class="tsd-kind-icon">op</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sendopcodeplay.html#starttime" class="tsd-kind-icon">start<wbr>Time</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sendopcodeplay.html#track" class="tsd-kind-icon">track</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="outgoingseekpayload.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="outgoingseekpayload.html#op" class="tsd-kind-icon">op</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="outgoingseekpayload.html#position" class="tsd-kind-icon">position</a></li>
 							</ul>
 						</section>
 					</div>
@@ -95,80 +92,34 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="endtime" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> end<wbr>Time</h3>
-					<div class="tsd-signature tsd-kind-icon">end<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/types/SendPayloads.ts#L51">src/types/SendPayloads.ts:51</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Determines at the number of milliseconds at which point the track should stop playing. Helpful if you only want
-							to play a snippet of a bigger track. By default the track plays until it&#39;s end as per the encoded data.</p>
-						</div>
-					</div>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="guildid" class="tsd-anchor"></a>
 					<h3>guild<wbr>Id</h3>
 					<div class="tsd-signature tsd-kind-icon">guild<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="basesendopcode.html">BaseSendOpcode</a>.<a href="basesendopcode.html#guildid">guildId</a></p>
+						<p>Inherited from <a href="baseoutgoingpayload.html">BaseOutgoingPayload</a>.<a href="baseoutgoingpayload.html#guildid">guildId</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/types/SendPayloads.ts#L12">src/types/SendPayloads.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/OutgoingPayloads.ts#L15">src/types/OutgoingPayloads.ts:15</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="noreplace" class="tsd-anchor"></a>
-					<h3>no<wbr>Replace</h3>
-					<div class="tsd-signature tsd-kind-icon">no<wbr>Replace<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/types/SendPayloads.ts#L40">src/types/SendPayloads.ts:40</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>If set to true, this operation will be ignored if a track is already playing or paused.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="op" class="tsd-anchor"></a>
 					<h3>op</h3>
-					<div class="tsd-signature tsd-kind-icon">op<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"play"</span></div>
+					<div class="tsd-signature tsd-kind-icon">op<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"seek"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/types/SendPayloads.ts#L34">src/types/SendPayloads.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/OutgoingPayloads.ts#L27">src/types/OutgoingPayloads.ts:27</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="starttime" class="tsd-anchor"></a>
-					<h3>start<wbr>Time</h3>
-					<div class="tsd-signature tsd-kind-icon">start<wbr>Time<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="position" class="tsd-anchor"></a>
+					<h3>position</h3>
+					<div class="tsd-signature tsd-kind-icon">position<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/types/SendPayloads.ts#L45">src/types/SendPayloads.ts:45</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Determines the number of milliseconds to offset the track by. Defaults to 0.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="track" class="tsd-anchor"></a>
-					<h3>track</h3>
-					<div class="tsd-signature tsd-kind-icon">track<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/types/SendPayloads.ts#L35">src/types/SendPayloads.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/OutgoingPayloads.ts#L28">src/types/OutgoingPayloads.ts:28</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -187,25 +138,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="sendopcodeplay.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Play</a>
+						<a href="outgoingseekpayload.html" class="tsd-kind-icon">Outgoing<wbr>Seek<wbr>Payload</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="sendopcodeplay.html#endtime" class="tsd-kind-icon">end<wbr>Time</a>
-							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="sendopcodeplay.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a>
+								<a href="outgoingseekpayload.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="sendopcodeplay.html#noreplace" class="tsd-kind-icon">no<wbr>Replace</a>
+								<a href="outgoingseekpayload.html#op" class="tsd-kind-icon">op</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="sendopcodeplay.html#op" class="tsd-kind-icon">op</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="sendopcodeplay.html#starttime" class="tsd-kind-icon">start<wbr>Time</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="sendopcodeplay.html#track" class="tsd-kind-icon">track</a>
+								<a href="outgoingseekpayload.html#position" class="tsd-kind-icon">position</a>
 							</li>
 						</ul>
 					</li>
@@ -224,7 +166,6 @@
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>

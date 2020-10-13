@@ -125,7 +125,7 @@
         <span class="hljs-comment">// you are responsible for properly serializing and encoding the packet for transmission</span>
         <span class="hljs-keyword">return</span> gateway.connections.get(Long.fromString(guildID).shiftRight(<span class="hljs-number">22</span>).mod(<span class="hljs-built_in">this</span>.shardCount)).send(packet);
     }
-});</code></pre>
+}).connect();</code></pre>
 				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { Node } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@skyra/audio&#x27;</span>;
 
 <span class="hljs-comment">// Same as before</span></code></pre>
@@ -217,7 +217,7 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum">
-						<a href="enums/eventtype.html" class="tsd-kind-icon">Event<wbr>Type</a>
+						<a href="enums/incomingeventtrackexceptiondetailedexceptionseverity.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>Exception<wbr>Detailed<wbr>Exception<wbr>Severity</a>
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/loadtype.html" class="tsd-kind-icon">Load<wbr>Type</a>
@@ -262,10 +262,10 @@
 						<a href="interfaces/basenodeoptions.html" class="tsd-kind-icon">Base<wbr>Node<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/baserouteplannerstatusdetails.html" class="tsd-kind-icon">Base<wbr>Route<wbr>Planner<wbr>Status<wbr>Details</a>
+						<a href="interfaces/baseoutgoingpayload.html" class="tsd-kind-icon">Base<wbr>Outgoing<wbr>Payload</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/basesendopcode.html" class="tsd-kind-icon">Base<wbr>Send<wbr>Opcode</a>
+						<a href="interfaces/baserouteplannerstatusdetails.html" class="tsd-kind-icon">Base<wbr>Route<wbr>Planner<wbr>Status<wbr>Details</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/clusterfilter.html" class="tsd-kind-icon">Cluster<wbr>Filter</a>
@@ -286,6 +286,36 @@
 						<a href="interfaces/headers.html" class="tsd-kind-icon">Headers</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/iincomingevent.html" class="tsd-kind-icon">IIncoming<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/iincomingeventtrackexception.html" class="tsd-kind-icon">IIncoming<wbr>Event<wbr>Track<wbr>Exception</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/incomingeventstartpayload.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Start<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/incomingeventtrackendpayload.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>End<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/incomingeventtrackexceptiondetailed.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>Exception<wbr>Detailed</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/incomingeventtrackexceptionerrorpayload.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>Exception<wbr>Error<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/incomingeventtrackstuckpayload.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>Stuck<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/incomingeventwebsocketclosedpayload.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Web<wbr>Socket<wbr>Closed<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/incomingplayerupdatepayload.html" class="tsd-kind-icon">Incoming<wbr>Player<wbr>Update<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/incomingstatspayload.html" class="tsd-kind-icon">Incoming<wbr>Stats<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/joinoptions.html" class="tsd-kind-icon">Join<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -301,6 +331,33 @@
 						<a href="interfaces/options.html" class="tsd-kind-icon">Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/outgoingconfigureresumingpayload.html" class="tsd-kind-icon">Outgoing<wbr>Configure<wbr>Resuming<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/outgoingdestroypayload.html" class="tsd-kind-icon">Outgoing<wbr>Destroy<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/outgoingequalizerpayload.html" class="tsd-kind-icon">Outgoing<wbr>Equalizer<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/outgoingpausepayload.html" class="tsd-kind-icon">Outgoing<wbr>Pause<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/outgoingplaypayload.html" class="tsd-kind-icon">Outgoing<wbr>Play<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/outgoingseekpayload.html" class="tsd-kind-icon">Outgoing<wbr>Seek<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/outgoingstoppayload.html" class="tsd-kind-icon">Outgoing<wbr>Stop<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/outgoingvoiceupdatepayload.html" class="tsd-kind-icon">Outgoing<wbr>Voice<wbr>Update<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/outgoingvolumepayload.html" class="tsd-kind-icon">Outgoing<wbr>Volume<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/playeroptions.html" class="tsd-kind-icon">Player<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -311,30 +368,6 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/rotatingnanoiprouteplanner.html" class="tsd-kind-icon">Rotating<wbr>Nano<wbr>IpRoute<wbr>Planner</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/sendopcodedestroy.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Destroy</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/sendopcodeequalizer.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Equalizer</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/sendopcodepause.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Pause</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/sendopcodeplay.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Play</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/sendopcodeseek.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Seek</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/sendopcodestop.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Stop</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/sendopcodevoiceupdate.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Voice<wbr>Update</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/sendopcodevolume.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Volume</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/sendable.html" class="tsd-kind-icon">Sendable</a>
@@ -351,17 +384,26 @@
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/trackresponse.html" class="tsd-kind-icon">Track<wbr>Response</a>
 					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/voiceserverupdate.html" class="tsd-kind-icon">Voice<wbr>Server<wbr>Update</a>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#incomingeventpayload" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Payload</a>
 					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/voicestateupdate.html" class="tsd-kind-icon">Voice<wbr>State<wbr>Update</a>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#incomingeventtrackexceptionpayload" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>Exception<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#incomingpayload" class="tsd-kind-icon">Incoming<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#outgoingpayload" class="tsd-kind-icon">Outgoing<wbr>Payload</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#routeplannerstatus" class="tsd-kind-icon">Route<wbr>Planner<wbr>Status</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#sendopcode" class="tsd-kind-icon">Send<wbr>Opcode</a>
+						<a href="globals.html#voiceserverupdate" class="tsd-kind-icon">Voice<wbr>Server<wbr>Update</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#voicestateupdate" class="tsd-kind-icon">Voice<wbr>State<wbr>Update</a>
 					</li>
 				</ul>
 			</nav>
@@ -376,7 +418,6 @@
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>

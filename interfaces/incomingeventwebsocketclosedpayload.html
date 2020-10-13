@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Headers | @skyra/audio</title>
+	<title>IncomingEventWebSocketClosedPayload | @skyra/audio</title>
 	<meta name="description" content="Documentation for @skyra/audio">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -52,10 +52,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="headers.html">Headers</a>
+					<a href="incomingeventwebsocketclosedpayload.html">IncomingEventWebSocketClosedPayload</a>
 				</li>
 			</ul>
-			<h1>Interface Headers</h1>
+			<h1>Interface IncomingEventWebSocketClosedPayload</h1>
 		</div>
 	</div>
 </header>
@@ -66,7 +66,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Headers</span>
+						<a href="iincomingevent.html" class="tsd-signature-type">IIncomingEvent</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">IncomingEventWebSocketClosedPayload</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -77,10 +82,12 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="headers.html#authorization" class="tsd-kind-icon">Authorization</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="headers.html#num_shards" class="tsd-kind-icon">Num-<wbr><wbr>Shards</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="headers.html#resume_key" class="tsd-kind-icon">Resume-<wbr><wbr>Key</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="headers.html#user_id" class="tsd-kind-icon">User-<wbr><wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="incomingeventwebsocketclosedpayload.html#byremote" class="tsd-kind-icon">by<wbr>Remote</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="incomingeventwebsocketclosedpayload.html#code" class="tsd-kind-icon">code</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="incomingeventwebsocketclosedpayload.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="incomingeventwebsocketclosedpayload.html#op" class="tsd-kind-icon">op</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="incomingeventwebsocketclosedpayload.html#reason" class="tsd-kind-icon">reason</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="incomingeventwebsocketclosedpayload.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 					</div>
@@ -89,42 +96,64 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="authorization" class="tsd-anchor"></a>
-					<h3>Authorization</h3>
-					<div class="tsd-signature tsd-kind-icon">Authorization<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="byremote" class="tsd-anchor"></a>
+					<h3>by<wbr>Remote</h3>
+					<div class="tsd-signature tsd-kind-icon">by<wbr>Remote<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/core/Connection.ts#L15">src/core/Connection.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L107">src/types/IncomingPayloads.ts:107</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="num_shards" class="tsd-anchor"></a>
-					<h3>Num-<wbr><wbr>Shards</h3>
-					<div class="tsd-signature tsd-kind-icon">Num-<wbr><wbr>Shards<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="code" class="tsd-anchor"></a>
+					<h3>code</h3>
+					<div class="tsd-signature tsd-kind-icon">code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/core/Connection.ts#L16">src/core/Connection.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L105">src/types/IncomingPayloads.ts:105</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="guildid" class="tsd-anchor"></a>
+					<h3>guild<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">guild<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="iincomingevent.html">IIncomingEvent</a>.<a href="iincomingevent.html#guildid">guildId</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L37">src/types/IncomingPayloads.ts:37</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="op" class="tsd-anchor"></a>
+					<h3>op</h3>
+					<div class="tsd-signature tsd-kind-icon">op<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"event"</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="iincomingevent.html">IIncomingEvent</a>.<a href="iincomingevent.html#op">op</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L36">src/types/IncomingPayloads.ts:36</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="resume_key" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> Resume-<wbr><wbr>Key</h3>
-					<div class="tsd-signature tsd-kind-icon">Resume-<wbr><wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<a name="reason" class="tsd-anchor"></a>
+					<h3>reason</h3>
+					<div class="tsd-signature tsd-kind-icon">reason<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/core/Connection.ts#L18">src/core/Connection.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L106">src/types/IncomingPayloads.ts:106</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="user_id" class="tsd-anchor"></a>
-					<h3>User-<wbr><wbr>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">User-<wbr><wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"WebSocketClosedEvent"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/core/Connection.ts#L17">src/core/Connection.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L104">src/types/IncomingPayloads.ts:104</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -143,19 +172,25 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="headers.html" class="tsd-kind-icon">Headers</a>
+						<a href="incomingeventwebsocketclosedpayload.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Web<wbr>Socket<wbr>Closed<wbr>Payload</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="headers.html#authorization" class="tsd-kind-icon">Authorization</a>
+								<a href="incomingeventwebsocketclosedpayload.html#byremote" class="tsd-kind-icon">by<wbr>Remote</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="headers.html#num_shards" class="tsd-kind-icon">Num-<wbr><wbr>Shards</a>
+								<a href="incomingeventwebsocketclosedpayload.html#code" class="tsd-kind-icon">code</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="incomingeventwebsocketclosedpayload.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="incomingeventwebsocketclosedpayload.html#op" class="tsd-kind-icon">op</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="headers.html#resume_key" class="tsd-kind-icon">Resume-<wbr><wbr>Key</a>
+								<a href="incomingeventwebsocketclosedpayload.html#reason" class="tsd-kind-icon">reason</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="headers.html#user_id" class="tsd-kind-icon">User-<wbr><wbr>Id</a>
+								<a href="incomingeventwebsocketclosedpayload.html#type" class="tsd-kind-icon">type</a>
 							</li>
 						</ul>
 					</li>

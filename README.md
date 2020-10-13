@@ -54,7 +54,7 @@ const node = new Node({
 		// you are responsible for properly serializing and encoding the packet for transmission
 		return gateway.connections.get(Long.fromString(guildID).shiftRight(22).mod(this.shardCount)).send(packet);
 	}
-});
+}).connect();
 ```
 
 ```ts

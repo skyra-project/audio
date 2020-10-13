@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SendOpcodeVolume | @skyra/audio</title>
+	<title>OutgoingEqualizerPayload | @skyra/audio</title>
 	<meta name="description" content="Documentation for @skyra/audio">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -52,10 +52,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="sendopcodevolume.html">SendOpcodeVolume</a>
+					<a href="outgoingequalizerpayload.html">OutgoingEqualizerPayload</a>
 				</li>
 			</ul>
-			<h1>Interface SendOpcodeVolume</h1>
+			<h1>Interface OutgoingEqualizerPayload</h1>
 		</div>
 	</div>
 </header>
@@ -66,10 +66,10 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="basesendopcode.html" class="tsd-signature-type">BaseSendOpcode</a>
+						<a href="baseoutgoingpayload.html" class="tsd-signature-type">BaseOutgoingPayload</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">SendOpcodeVolume</span>
+								<span class="target">OutgoingEqualizerPayload</span>
 							</li>
 						</ul>
 					</li>
@@ -82,9 +82,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="sendopcodevolume.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sendopcodevolume.html#op" class="tsd-kind-icon">op</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sendopcodevolume.html#volume" class="tsd-kind-icon">volume</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="outgoingequalizerpayload.html#bands" class="tsd-kind-icon">bands</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="outgoingequalizerpayload.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="outgoingequalizerpayload.html#op" class="tsd-kind-icon">op</a></li>
 							</ul>
 						</section>
 					</div>
@@ -92,34 +92,34 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="bands" class="tsd-anchor"></a>
+					<h3>bands</h3>
+					<div class="tsd-signature tsd-kind-icon">bands<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">readonly </span><span class="tsd-signature-symbol">{ </span>band<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>gain<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/OutgoingPayloads.ts#L70">src/types/OutgoingPayloads.ts:70</a></li>
+						</ul>
+					</aside>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="guildid" class="tsd-anchor"></a>
 					<h3>guild<wbr>Id</h3>
 					<div class="tsd-signature tsd-kind-icon">guild<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="basesendopcode.html">BaseSendOpcode</a>.<a href="basesendopcode.html#guildid">guildId</a></p>
+						<p>Inherited from <a href="baseoutgoingpayload.html">BaseOutgoingPayload</a>.<a href="baseoutgoingpayload.html#guildid">guildId</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/types/SendPayloads.ts#L12">src/types/SendPayloads.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/OutgoingPayloads.ts#L15">src/types/OutgoingPayloads.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="op" class="tsd-anchor"></a>
 					<h3>op</h3>
-					<div class="tsd-signature tsd-kind-icon">op<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"volume"</span></div>
+					<div class="tsd-signature tsd-kind-icon">op<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"equalizer"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/types/SendPayloads.ts#L65">src/types/SendPayloads.ts:65</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="volume" class="tsd-anchor"></a>
-					<h3>volume</h3>
-					<div class="tsd-signature tsd-kind-icon">volume<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a699ff0/src/types/SendPayloads.ts#L66">src/types/SendPayloads.ts:66</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/OutgoingPayloads.ts#L69">src/types/OutgoingPayloads.ts:69</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -138,16 +138,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="sendopcodevolume.html" class="tsd-kind-icon">Send<wbr>Opcode<wbr>Volume</a>
+						<a href="outgoingequalizerpayload.html" class="tsd-kind-icon">Outgoing<wbr>Equalizer<wbr>Payload</a>
 						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="outgoingequalizerpayload.html#bands" class="tsd-kind-icon">bands</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="sendopcodevolume.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a>
+								<a href="outgoingequalizerpayload.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="sendopcodevolume.html#op" class="tsd-kind-icon">op</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="sendopcodevolume.html#volume" class="tsd-kind-icon">volume</a>
+								<a href="outgoingequalizerpayload.html#op" class="tsd-kind-icon">op</a>
 							</li>
 						</ul>
 					</li>
@@ -166,7 +166,6 @@
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
