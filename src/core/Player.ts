@@ -2,7 +2,7 @@ import type { GatewayVoiceStateUpdate } from 'discord-api-types/v6';
 import { EventEmitter } from 'events';
 import type { BaseNode, VoiceServerUpdate, VoiceStateUpdate } from '../base/BaseNode';
 import type { IncomingEventPayload } from '../types/IncomingPayloads';
-import type { OutgoingPayload } from '../types/OutgoingPayloads';
+import type { OutgoingEqualizerPayload, OutgoingPayload } from '../types/OutgoingPayloads';
 import type { Track } from './Http';
 
 export const enum Status {
@@ -21,10 +21,7 @@ export interface PlayerOptions {
 	noReplace?: boolean;
 }
 
-export interface EqualizerBand {
-	band: number;
-	gain: number;
-}
+export type EqualizerBand = OutgoingEqualizerPayload['bands'];
 
 export interface JoinOptions {
 	mute?: boolean;
@@ -140,7 +137,7 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 		});
 	}
 
-	public setEqualizer(bands: readonly EqualizerBand[]) {
+	public setEqualizer(bands: EqualizerBand) {
 		return this.send({
 			op: 'equalizer',
 			guildId: this.guildID,

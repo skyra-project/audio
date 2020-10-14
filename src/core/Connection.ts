@@ -56,6 +56,9 @@ export class Connection<T extends BaseNode = BaseNode> {
 		this._error = this.onError.bind(this);
 	}
 
+	/**
+	 * Connects to the server.
+	 */
 	public connect() {
 		// Create a new ready listener if none was set.
 		if (!this.backoff.listenerCount('ready')) {

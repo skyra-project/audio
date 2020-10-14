@@ -2,6 +2,7 @@
 	"extends": ["@skyra", "plugin:prettier/recommended"],
 	"rules": {
 		"@typescript-eslint/naming-convention": 0,
-		"@typescript-eslint/init-declarations": 0
+		"@typescript-eslint/init-declarations": 0,
+		"@typescript-eslint/ban-types": 0
 	}
 }
