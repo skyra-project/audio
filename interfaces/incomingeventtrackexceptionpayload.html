@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IncomingEventTrackExceptionDetailed | @skyra/audio</title>
+	<title>IncomingEventTrackExceptionPayload | @skyra/audio</title>
 	<meta name="description" content="Documentation for @skyra/audio">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -52,10 +52,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="incomingeventtrackexceptiondetailed.html">IncomingEventTrackExceptionDetailed</a>
+					<a href="incomingeventtrackexceptionpayload.html">IncomingEventTrackExceptionPayload</a>
 				</li>
 			</ul>
-			<h1>Interface IncomingEventTrackExceptionDetailed</h1>
+			<h1>Interface IncomingEventTrackExceptionPayload</h1>
 		</div>
 	</div>
 </header>
@@ -66,10 +66,10 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="iincomingeventtrackexception.html" class="tsd-signature-type">IIncomingEventTrackException</a>
+						<a href="iincomingevent.html" class="tsd-signature-type">IIncomingEvent</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">IncomingEventTrackExceptionDetailed</span>
+								<span class="target">IncomingEventTrackExceptionPayload</span>
 							</li>
 						</ul>
 					</li>
@@ -82,11 +82,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="incomingeventtrackexceptiondetailed.html#exception" class="tsd-kind-icon">exception</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="incomingeventtrackexceptiondetailed.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="incomingeventtrackexceptiondetailed.html#op" class="tsd-kind-icon">op</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="incomingeventtrackexceptiondetailed.html#track" class="tsd-kind-icon">track</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="incomingeventtrackexceptiondetailed.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="incomingeventtrackexceptionpayload.html#exception" class="tsd-kind-icon">exception</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="incomingeventtrackexceptionpayload.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="incomingeventtrackexceptionpayload.html#op" class="tsd-kind-icon">op</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="incomingeventtrackexceptionpayload.html#track" class="tsd-kind-icon">track</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="incomingeventtrackexceptionpayload.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 					</div>
@@ -97,23 +97,53 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="exception" class="tsd-anchor"></a>
 					<h3>exception</h3>
-					<div class="tsd-signature tsd-kind-icon">exception<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>cause<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>severity<span class="tsd-signature-symbol">: </span><a href="../enums/incomingeventtrackexceptiondetailedexceptionseverity.html" class="tsd-signature-type">IncomingEventTrackExceptionDetailedExceptionSeverity</a><span class="tsd-signature-symbol"> }</span></div>
+					<div class="tsd-signature tsd-kind-icon">exception<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>cause<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>severity<span class="tsd-signature-symbol">: </span><a href="../enums/exceptionseverity.html" class="tsd-signature-type">ExceptionSeverity</a><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L66">src/types/IncomingPayloads.ts:66</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/types/IncomingPayloads.ts#L69">src/types/IncomingPayloads.ts:69</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The exception&#39;s details.</p>
+						</div>
+					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
 							<li class="tsd-parameter">
 								<h5>cause<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The cause for the exception.</p>
+									</div>
+								</div>
 							</li>
 							<li class="tsd-parameter">
 								<h5>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The message explaining the cause of the exception.</p>
+									</div>
+									<dl class="tsd-comment-tags">
+										<dt>example</dt>
+										<dd><pre><code class="language-json"><span class="hljs-string">&quot;The uploader has not made this video available in your country.&quot;</span></code></pre>
+										</dd>
+									</dl>
+								</div>
 							</li>
 							<li class="tsd-parameter">
-								<h5>severity<span class="tsd-signature-symbol">: </span><a href="../enums/incomingeventtrackexceptiondetailedexceptionseverity.html" class="tsd-signature-type">IncomingEventTrackExceptionDetailedExceptionSeverity</a></h5>
+								<h5>severity<span class="tsd-signature-symbol">: </span><a href="../enums/exceptionseverity.html" class="tsd-signature-type">ExceptionSeverity</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The severity of the exception.</p>
+									</div>
+									<dl class="tsd-comment-tags">
+										<dt>example</dt>
+										<dd><pre><code class="language-json"><span class="hljs-string">&quot;COMMON&quot;</span></code></pre>
+										</dd>
+									</dl>
+								</div>
 							</li>
 						</ul>
 					</div>
@@ -125,7 +155,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="iincomingevent.html">IIncomingEvent</a>.<a href="iincomingevent.html#guildid">guildId</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L37">src/types/IncomingPayloads.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/types/IncomingPayloads.ts#L37">src/types/IncomingPayloads.ts:37</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -136,29 +166,32 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="iincomingevent.html">IIncomingEvent</a>.<a href="iincomingevent.html#op">op</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L36">src/types/IncomingPayloads.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/types/IncomingPayloads.ts#L36">src/types/IncomingPayloads.ts:36</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="track" class="tsd-anchor"></a>
 					<h3>track</h3>
 					<div class="tsd-signature tsd-kind-icon">track<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="iincomingeventtrackexception.html">IIncomingEventTrackException</a>.<a href="iincomingeventtrackexception.html#track">track</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L62">src/types/IncomingPayloads.ts:62</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/types/IncomingPayloads.ts#L64">src/types/IncomingPayloads.ts:64</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The track that received the exception.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="type" class="tsd-anchor"></a>
 					<h3>type</h3>
 					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"TrackExceptionEvent"</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="iincomingeventtrackexception.html">IIncomingEventTrackException</a>.<a href="iincomingeventtrackexception.html#type">type</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/types/IncomingPayloads.ts#L61">src/types/IncomingPayloads.ts:61</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/types/IncomingPayloads.ts#L59">src/types/IncomingPayloads.ts:59</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -177,22 +210,22 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="incomingeventtrackexceptiondetailed.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>Exception<wbr>Detailed</a>
+						<a href="incomingeventtrackexceptionpayload.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>Exception<wbr>Payload</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="incomingeventtrackexceptiondetailed.html#exception" class="tsd-kind-icon">exception</a>
+								<a href="incomingeventtrackexceptionpayload.html#exception" class="tsd-kind-icon">exception</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="incomingeventtrackexceptiondetailed.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a>
+								<a href="incomingeventtrackexceptionpayload.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="incomingeventtrackexceptiondetailed.html#op" class="tsd-kind-icon">op</a>
+								<a href="incomingeventtrackexceptionpayload.html#op" class="tsd-kind-icon">op</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="incomingeventtrackexceptiondetailed.html#track" class="tsd-kind-icon">track</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="incomingeventtrackexceptionpayload.html#track" class="tsd-kind-icon">track</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="incomingeventtrackexceptiondetailed.html#type" class="tsd-kind-icon">type</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="incomingeventtrackexceptionpayload.html#type" class="tsd-kind-icon">type</a>
 							</li>
 						</ul>
 					</li>

@@ -121,9 +121,8 @@
     },
     <span class="hljs-attr">host</span>: <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-comment">// a URL to your lavalink instance without protocol (optional, can be used instead of specifying hosts option)</span>
     send(guildID, packet) {
-        <span class="hljs-comment">// send this packet to the gateway</span>
-        <span class="hljs-comment">// you are responsible for properly serializing and encoding the packet for transmission</span>
-        <span class="hljs-keyword">return</span> gateway.connections.get(Long.fromString(guildID).shiftRight(<span class="hljs-number">22</span>).mod(<span class="hljs-built_in">this</span>.shardCount)).send(packet);
+        <span class="hljs-keyword">const</span> guild = client.guilds.cache.get(guildID);
+        <span class="hljs-keyword">if</span> (guild) <span class="hljs-keyword">return</span> guild.shard.send(packet);
     }
 }).connect();</code></pre>
 				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { Node } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@skyra/audio&#x27;</span>;
@@ -217,7 +216,7 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum">
-						<a href="enums/incomingeventtrackexceptiondetailedexceptionseverity.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>Exception<wbr>Detailed<wbr>Exception<wbr>Severity</a>
+						<a href="enums/exceptionseverity.html" class="tsd-kind-icon">Exception<wbr>Severity</a>
 					</li>
 					<li class=" tsd-kind-enum">
 						<a href="enums/loadtype.html" class="tsd-kind-icon">Load<wbr>Type</a>
@@ -280,16 +279,10 @@
 						<a href="interfaces/clustersend.html" class="tsd-kind-icon">Cluster<wbr>Send</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/equalizerband.html" class="tsd-kind-icon">Equalizer<wbr>Band</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/headers.html" class="tsd-kind-icon">Headers</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/iincomingevent.html" class="tsd-kind-icon">IIncoming<wbr>Event</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/iincomingeventtrackexception.html" class="tsd-kind-icon">IIncoming<wbr>Event<wbr>Track<wbr>Exception</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/incomingeventstartpayload.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Start<wbr>Payload</a>
@@ -298,10 +291,7 @@
 						<a href="interfaces/incomingeventtrackendpayload.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>End<wbr>Payload</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/incomingeventtrackexceptiondetailed.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>Exception<wbr>Detailed</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/incomingeventtrackexceptionerrorpayload.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>Exception<wbr>Error<wbr>Payload</a>
+						<a href="interfaces/incomingeventtrackexceptionpayload.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>Exception<wbr>Payload</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/incomingeventtrackstuckpayload.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>Stuck<wbr>Payload</a>
@@ -385,10 +375,10 @@
 						<a href="interfaces/trackresponse.html" class="tsd-kind-icon">Track<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#incomingeventpayload" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Payload</a>
+						<a href="globals.html#equalizerband" class="tsd-kind-icon">Equalizer<wbr>Band</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#incomingeventtrackexceptionpayload" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>Exception<wbr>Payload</a>
+						<a href="globals.html#incomingeventpayload" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Payload</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#incomingpayload" class="tsd-kind-icon">Incoming<wbr>Payload</a>

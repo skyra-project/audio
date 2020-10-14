@@ -62,6 +62,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The options for the node.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -102,9 +109,22 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="basenodeoptions.html">BaseNodeOptions</a>.<a href="basenodeoptions.html#host">host</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/base/BaseNode.ts#L19">src/base/BaseNode.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/base/BaseNode.ts#L87">src/base/BaseNode.ts:87</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A URL to your Lavalink instance without protocol.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-json"><span class="hljs-string">&quot;localhost&quot;</span></code></pre>
+							</dd>
+							<dt>example</dt>
+							<dd><pre><code class="language-json"><span class="hljs-string">&quot;localhost:2333&quot;</span></code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="hosts" class="tsd-anchor"></a>
@@ -113,9 +133,14 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="basenodeoptions.html">BaseNodeOptions</a>.<a href="basenodeoptions.html#hosts">hosts</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/base/BaseNode.ts#L15">src/base/BaseNode.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/base/BaseNode.ts#L45">src/base/BaseNode.ts:45</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The host options to use, this is a more advanced alternative to <a href="basenodeoptions.html#host">BaseNodeOptions.host</a>.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="password" class="tsd-anchor"></a>
@@ -124,9 +149,19 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="basenodeoptions.html">BaseNodeOptions</a>.<a href="basenodeoptions.html#password">password</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/base/BaseNode.ts#L12">src/base/BaseNode.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/base/BaseNode.ts#L22">src/base/BaseNode.ts:22</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The password to use to login to the Lavalink server.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-json"><span class="hljs-string">&quot;you-shall-not-pass&quot;</span></code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="send" class="tsd-anchor"></a>
@@ -134,9 +169,26 @@
 					<div class="tsd-signature tsd-kind-icon">send<span class="tsd-signature-symbol">:</span> <a href="nodesend.html" class="tsd-signature-type">NodeSend</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/Node.ts#L4">src/Node.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/Node.ts#L19">src/Node.ts:19</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The send method, this is used by Lavalink to send gateway events to Discord.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>note</dt>
+							<dd><p>You are responsible for properly serializing and encoding the packet for transmission.</p>
+							</dd>
+							<dt>example</dt>
+							<dd><pre><code class="language-typescript"><span class="hljs-comment">// Example for discord.js</span>
+(guildID, packet) =&gt; {
+  <span class="hljs-keyword">const</span> guild = client.guilds.cache.get(guildID);
+  <span class="hljs-keyword">if</span> (guild) <span class="hljs-keyword">return</span> guild.shard.send(packet);
+};</code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="shardcount" class="tsd-anchor"></a>
@@ -145,9 +197,19 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="basenodeoptions.html">BaseNodeOptions</a>.<a href="basenodeoptions.html#shardcount">shardCount</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/base/BaseNode.ts#L14">src/base/BaseNode.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/base/BaseNode.ts#L40">src/base/BaseNode.ts:40</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The total number of shards that your bot is running. (Optional, useful if you are load balancing).</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-json"><span class="hljs-number">0</span></code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="userid" class="tsd-anchor"></a>
@@ -156,9 +218,19 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="basenodeoptions.html">BaseNodeOptions</a>.<a href="basenodeoptions.html#userid">userID</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/base/BaseNode.ts#L13">src/base/BaseNode.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/base/BaseNode.ts#L31">src/base/BaseNode.ts:31</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The client&#39;s user ID.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-json"><span class="hljs-string">&quot;266624760782258186&quot;</span></code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 			</section>
 		</div>

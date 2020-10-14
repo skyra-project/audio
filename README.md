@@ -50,9 +50,8 @@ const node = new Node({
 	},
 	host: '', // a URL to your lavalink instance without protocol (optional, can be used instead of specifying hosts option)
 	send(guildID, packet) {
-		// send this packet to the gateway
-		// you are responsible for properly serializing and encoding the packet for transmission
-		return gateway.connections.get(Long.fromString(guildID).shiftRight(22).mod(this.shardCount)).send(packet);
+		const guild = client.guilds.cache.get(guildID);
+		if (guild) return guild.shard.send(packet);
 	}
 }).connect();
 ```

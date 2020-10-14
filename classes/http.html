@@ -118,7 +118,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/core/Http.ts#L65">src/core/Http.ts:65</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/core/Http.ts#L259">src/core/Http.ts:259</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -146,7 +146,7 @@
 					<div class="tsd-signature tsd-kind-icon">base<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/core/Http.ts#L64">src/core/Http.ts:64</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/core/Http.ts#L258">src/core/Http.ts:258</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -156,7 +156,7 @@
 					<div class="tsd-signature tsd-kind-icon">input<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/core/Http.ts#L63">src/core/Http.ts:63</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/core/Http.ts#L257">src/core/Http.ts:257</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -166,7 +166,7 @@
 					<div class="tsd-signature tsd-kind-icon">node<span class="tsd-signature-symbol">:</span> <a href="basenode.html" class="tsd-signature-type">BaseNode</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/core/Http.ts#L62">src/core/Http.ts:62</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/core/Http.ts#L256">src/core/Http.ts:256</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -176,7 +176,7 @@
 					<div class="tsd-signature tsd-kind-icon">routeplanner<span class="tsd-signature-symbol">:</span> <a href="routeplanner.html" class="tsd-signature-type">RoutePlanner</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/core/Http.ts#L65">src/core/Http.ts:65</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/core/Http.ts#L259">src/core/Http.ts:259</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -193,7 +193,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/core/Http.ts#L74">src/core/Http.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/core/Http.ts#L268">src/core/Http.ts:268</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">URL</span></h4>
@@ -215,13 +215,39 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/core/Http.ts#L86">src/core/Http.ts:86</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/core/Http.ts#L301">src/core/Http.ts:301</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Decodes a track.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-typescript"><span class="hljs-keyword">const</span> identifier = <span class="hljs-string">&#x27;QAAAjQIAJVJpY2sgQXN0bGV5IC0gTmV2ZXIgR29ubmEgR2l2ZSBZb3UgVXAADlJpY2tBc3RsZXlWRVZPAAAAAAADPCAAC2RRdzR3OVdnWGNRAAEAK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9ZFF3NHc5V2dYY1EAB3lvdXR1YmUAAAAAAAAAAA==&#x27;</span>;
+
+<span class="hljs-keyword">const</span> track = <span class="hljs-keyword">await</span> http.decode(identifier);
+<span class="hljs-built_in">console</span>.log(track);
+<span class="hljs-comment">// Logs: {</span>
+<span class="hljs-comment">//   &quot;identifier&quot;: &quot;dQw4w9WgXcQ&quot;,</span>
+<span class="hljs-comment">//   &quot;isSeekable&quot;: true,</span>
+<span class="hljs-comment">//   &quot;author&quot;: &quot;RickAstleyVEVO&quot;,</span>
+<span class="hljs-comment">//   &quot;length&quot;: 212000,</span>
+<span class="hljs-comment">//   &quot;isStream&quot;: false,</span>
+<span class="hljs-comment">//   &quot;position&quot;: 0,</span>
+<span class="hljs-comment">//   &quot;title&quot;: &quot;Rick Astley - Never Gonna Give You Up&quot;,</span>
+<span class="hljs-comment">//   &quot;uri&quot;: &quot;https://www.youtube.com/watch?v=dQw4w9WgXcQ&quot;</span>
+<span class="hljs-comment">// }</span></code></pre>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>track: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The track to be decoded.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/trackinfo.html" class="tsd-signature-type">TrackInfo</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -229,13 +255,26 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/core/Http.ts#L87">src/core/Http.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/core/Http.ts#L308">src/core/Http.ts:308</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Decodes multiple tracks.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>note</dt>
+									<dd><p>This returns an array of <a href="../interfaces/track.html">Track</a>s, not a <a href="../interfaces/trackinfo.html">TrackInfo</a>.</p>
+									</dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>tracks: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The tracks to be decoded.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/track.html" class="tsd-signature-type">Track</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -243,7 +282,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/core/Http.ts#L88">src/core/Http.ts:88</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/core/Http.ts#L309">src/core/Http.ts:309</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -266,7 +305,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/core/Http.ts#L100">src/core/Http.ts:100</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/core/Http.ts#L321">src/core/Http.ts:321</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -301,7 +340,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/core/Http.ts#L78">src/core/Http.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/core/Http.ts#L272">src/core/Http.ts:272</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>

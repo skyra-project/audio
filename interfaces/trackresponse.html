@@ -62,6 +62,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A track response containing all information about the request.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -77,6 +84,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trackresponse.html#exception" class="tsd-kind-icon">exception</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trackresponse.html#loadtype" class="tsd-kind-icon">load<wbr>Type</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trackresponse.html#playlistinfo" class="tsd-kind-icon">playlist<wbr>Info</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trackresponse.html#tracks" class="tsd-kind-icon">tracks</a></li>
@@ -88,24 +96,73 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="exception" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> exception</h3>
+					<div class="tsd-signature tsd-kind-icon">exception<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>severity<span class="tsd-signature-symbol">: </span><a href="../enums/exceptionseverity.html" class="tsd-signature-type">ExceptionSeverity</a><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/core/Http.ts#L109">src/core/Http.ts:109</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Exception errors.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>note</dt>
+							<dd><p>Only present when <code>loadType</code> is <code>LoadType.LoadFailed</code>.</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="loadtype" class="tsd-anchor"></a>
 					<h3>load<wbr>Type</h3>
 					<div class="tsd-signature tsd-kind-icon">load<wbr>Type<span class="tsd-signature-symbol">:</span> <a href="../enums/loadtype.html" class="tsd-signature-type">LoadType</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/core/Http.ts#L35">src/core/Http.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/core/Http.ts#L65">src/core/Http.ts:65</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The type of response.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-json"><span class="hljs-string">&quot;TRACK_LOADED&quot;</span></code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="playlistinfo" class="tsd-anchor"></a>
 					<h3>playlist<wbr>Info</h3>
-					<div class="tsd-signature tsd-kind-icon">playlist<wbr>Info<span class="tsd-signature-symbol">:</span> <a href="playlistinfo.html" class="tsd-signature-type">PlaylistInfo</a></div>
+					<div class="tsd-signature tsd-kind-icon">playlist<wbr>Info<span class="tsd-signature-symbol">:</span> <a href="playlistinfo.html" class="tsd-signature-type">PlaylistInfo</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/core/Http.ts#L36">src/core/Http.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/core/Http.ts#L82">src/core/Http.ts:82</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The playlist information.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>note</dt>
+							<dd><p>Only filled when <code>loadType</code> is <code>LoadType.PlaylistLoaded</code>.</p>
+							</dd>
+							<dt>example</dt>
+							<dd><pre><code class="language-json">{}</code></pre>
+							</dd>
+							<dt>example</dt>
+							<dd><pre><code class="language-json">{
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;Example YouTube Playlist&quot;</span>,
+  <span class="hljs-attr">&quot;selectedTrack&quot;</span>: <span class="hljs-number">3</span>
+}</code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="tracks" class="tsd-anchor"></a>
@@ -113,9 +170,31 @@
 					<div class="tsd-signature tsd-kind-icon">tracks<span class="tsd-signature-symbol">:</span> <a href="track.html" class="tsd-signature-type">Track</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/core/Http.ts#L37">src/core/Http.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/core/Http.ts#L103">src/core/Http.ts:103</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The loaded tracks.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-json">[{
+  <span class="hljs-attr">&quot;track&quot;</span>: <span class="hljs-string">&quot;QAAAjQIAJVJpY2sgQXN0bGV5IC0gTmV2ZXIgR29ubmEgR2l2ZSBZb3UgVXAADlJpY2tBc3RsZXlWRVZPAAAAAAADPCAAC2RRdzR3OVdnWGNRAAEAK2h0dHBzOi8vd3d3LnlvdXR1YmUuY29tL3dhdGNoP3Y9ZFF3NHc5V2dYY1EAB3lvdXR1YmUAAAAAAAAAAA==&quot;</span>,
+  <span class="hljs-attr">&quot;info&quot;</span>: {
+    <span class="hljs-attr">&quot;identifier&quot;</span>: <span class="hljs-string">&quot;dQw4w9WgXcQ&quot;</span>,
+    <span class="hljs-attr">&quot;isSeekable&quot;</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">&quot;author&quot;</span>: <span class="hljs-string">&quot;RickAstleyVEVO&quot;</span>,
+    <span class="hljs-attr">&quot;length&quot;</span>: <span class="hljs-number">212000</span>,
+    <span class="hljs-attr">&quot;isStream&quot;</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">&quot;position&quot;</span>: <span class="hljs-number">0</span>,
+    <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;Rick Astley - Never Gonna Give You Up&quot;</span>,
+    <span class="hljs-attr">&quot;uri&quot;</span>: <span class="hljs-string">&quot;https://www.youtube.com/watch?v=dQw4w9WgXcQ&quot;</span>
+  }
+}]</code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -134,6 +213,9 @@
 					<li class="current tsd-kind-interface">
 						<a href="trackresponse.html" class="tsd-kind-icon">Track<wbr>Response</a>
 						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="trackresponse.html#exception" class="tsd-kind-icon">exception</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="trackresponse.html#loadtype" class="tsd-kind-icon">load<wbr>Type</a>
 							</li>

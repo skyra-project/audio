@@ -62,6 +62,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The options for the node.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -103,9 +110,22 @@
 					<div class="tsd-signature tsd-kind-icon">host<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/base/BaseNode.ts#L19">src/base/BaseNode.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/base/BaseNode.ts#L87">src/base/BaseNode.ts:87</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A URL to your Lavalink instance without protocol.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-json"><span class="hljs-string">&quot;localhost&quot;</span></code></pre>
+							</dd>
+							<dt>example</dt>
+							<dd><pre><code class="language-json"><span class="hljs-string">&quot;localhost:2333&quot;</span></code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="hosts" class="tsd-anchor"></a>
@@ -113,9 +133,14 @@
 					<div class="tsd-signature tsd-kind-icon">hosts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>rest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>ws<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ConnectionOptions</span><span class="tsd-signature-symbol">; </span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/base/BaseNode.ts#L15">src/base/BaseNode.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/base/BaseNode.ts#L45">src/base/BaseNode.ts:45</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The host options to use, this is a more advanced alternative to <a href="basenodeoptions.html#host">BaseNodeOptions.host</a>.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="password" class="tsd-anchor"></a>
@@ -123,9 +148,19 @@
 					<div class="tsd-signature tsd-kind-icon">password<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/base/BaseNode.ts#L12">src/base/BaseNode.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/base/BaseNode.ts#L22">src/base/BaseNode.ts:22</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The password to use to login to the Lavalink server.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-json"><span class="hljs-string">&quot;you-shall-not-pass&quot;</span></code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="shardcount" class="tsd-anchor"></a>
@@ -133,9 +168,19 @@
 					<div class="tsd-signature tsd-kind-icon">shard<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/base/BaseNode.ts#L14">src/base/BaseNode.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/base/BaseNode.ts#L40">src/base/BaseNode.ts:40</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The total number of shards that your bot is running. (Optional, useful if you are load balancing).</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-json"><span class="hljs-number">0</span></code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="userid" class="tsd-anchor"></a>
@@ -143,9 +188,19 @@
 					<div class="tsd-signature tsd-kind-icon">userID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/548ce13/src/base/BaseNode.ts#L13">src/base/BaseNode.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c759299/src/base/BaseNode.ts#L31">src/base/BaseNode.ts:31</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The client&#39;s user ID.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-json"><span class="hljs-string">&quot;266624760782258186&quot;</span></code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 			</section>
 		</div>
