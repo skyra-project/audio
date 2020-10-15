@@ -1,7 +1,7 @@
 import type { BaseCluster, ClusterSend } from './base/BaseCluster';
-import { BaseNode, BaseNodeOptions } from './base/BaseNode';
+import { BaseNode, NodeOptions } from './base/BaseNode';
 
-export interface ClusterNodeOptions extends BaseNodeOptions {
+export interface ClusterNodeOptions extends NodeOptions {
 	tags?: Iterable<string>;
 }
 

@@ -11,7 +11,7 @@ export type VoiceStateUpdate = GatewayVoiceState;
 /**
  * The options for the node.
  */
-export interface BaseNodeOptions {
+export interface NodeOptions {
 	/**
 	 * The password to use to login to the Lavalink server.
 	 * @example
@@ -102,12 +102,12 @@ export abstract class BaseNode extends EventEmitter {
 	public http: Http | null = null;
 	public connection: Connection | null = null;
 
-	public voiceStates: Map<string, VoiceStateUpdate> = new Map();
-	public voiceServers: Map<string, VoiceServerUpdate> = new Map();
+	public voiceStates = new Map<string, VoiceStateUpdate>();
+	public voiceServers = new Map<string, VoiceServerUpdate>();
 
-	private _expectingConnection: Set<string> = new Set();
+	private _expectingConnection = new Set<string>();
 
-	public constructor({ password, userID, shardCount, hosts, host }: BaseNodeOptions) {
+	public constructor({ password, userID, shardCount, hosts, host }: NodeOptions) {
 		super();
 		this.password = password;
 		this.userID = userID;
