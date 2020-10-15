@@ -1,4 +1,5 @@
 import { Backoff, exponential } from 'backoff';
+import { once } from 'events';
 import type { IncomingMessage } from 'http';
 import WebSocket from 'ws';
 import type { BaseNode } from '../base/BaseNode';
@@ -59,11 +60,15 @@ export class Connection<T extends BaseNode = BaseNode> {
 	/**
 	 * Connects to the server.
 	 */
-	public connect() {
-		// Create a new ready listener if none was set.
-		if (!this.backoff.listenerCount('ready')) {
-			this.backoff.on('ready', () => this._connect());
-		}
+	public connect(): Promise<void> {
+		return new Promise((resolve, reject) => {
+			// Create a new ready listener if none was set.
+			if (this.backoff.listenerCount('ready')) {
+				resolve();
+			} else {
+				this.backoff.on('ready', () => this._connect().then(resolve, reject));
+			}
+		});
 	}
 
 	public configureResuming(timeout = 60, key: string = Math.random().toString(36)): Promise<void> {
@@ -88,24 +93,27 @@ export class Connection<T extends BaseNode = BaseNode> {
 		});
 	}
 
-	public close(code?: number, data?: string): Promise<void> {
-		if (!this.ws) return Promise.resolve();
+	public async close(code?: number, data?: string): Promise<boolean> {
+		if (!this.ws) return false;
 
 		this.ws.removeListener('close', this._close);
-		return new Promise((resolve) => {
-			this.ws!.once('close', (code: number, reason: string) => {
-				this.node.emit('close', code, reason);
-				this.backoff.removeAllListeners();
-				this.ws = null;
-				resolve();
-			});
 
-			this.ws!.close(code, data);
-		});
+		this.ws!.close(code, data);
+
+		this.node.emit('close', ...(await once(this.ws, 'close')));
+		this.backoff.removeAllListeners();
+		this.ws!.removeAllListeners();
+		this.ws = null;
+
+		return true;
 	}
 
-	private _connect() {
-		if (this.ws?.readyState === WebSocket.OPEN) this.ws.close();
+	private async _connect() {
+		if (this.ws?.readyState === WebSocket.OPEN) {
+			this.ws.close();
+			this.ws.removeAllListeners();
+			this.node.emit('close', ...(await once(this.ws, 'close')));
+		}
 
 		const headers: Headers = {
 			Authorization: this.node.password,
@@ -114,8 +122,37 @@ export class Connection<T extends BaseNode = BaseNode> {
 		};
 
 		if (this.resumeKey) headers['Resume-Key'] = this.resumeKey;
-		this.ws = new WebSocket(this.url, { headers, ...this.options } as WebSocket.ClientOptions);
+
+		const ws = new WebSocket(this.url, { headers, ...this.options } as WebSocket.ClientOptions);
+		this.ws = ws;
 		this._registerWSEventListeners();
+
+		return new Promise<void>((resolve, reject) => {
+			function onOpen() {
+				resolve();
+				cleanup();
+			}
+
+			function onError(error: Error) {
+				reject(error);
+				cleanup();
+			}
+
+			function onClose(code: number, reason: string) {
+				reject(new Error(`Closed connection with code ${code} and reason ${reason}`));
+				cleanup();
+			}
+
+			function cleanup() {
+				ws.off('open', onOpen);
+				ws.off('error', onError);
+				ws.off('close', onClose);
+			}
+
+			ws.on('open', onOpen);
+			ws.on('error', onError);
+			ws.on('close', onClose);
+		});
 	}
 
 	private _reconnect() {

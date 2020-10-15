@@ -130,8 +130,8 @@ export abstract class BaseNode extends EventEmitter {
 	/**
 	 * Connects to the server.
 	 */
-	public connect() {
-		this.connection!.connect();
+	public connect(): Promise<void> {
+		return this.connection!.connect();
 	}
 
 	/**
