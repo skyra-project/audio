@@ -258,9 +258,9 @@ export abstract class BaseNode extends EventEmitter {
 		return this._tryConnection(packet.guild_id!);
 	}
 
-	public disconnect(code?: number, data?: string): Promise<void> {
+	public disconnect(code?: number, data?: string): Promise<boolean> {
 		if (this.connection) return this.connection.close(code, data);
-		return Promise.resolve();
+		return Promise.resolve(false);
 	}
 
 	public async destroy(code?: number, data?: string): Promise<void> {
