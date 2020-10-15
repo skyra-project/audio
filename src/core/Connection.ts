@@ -1,7 +1,7 @@
 import { Backoff, exponential } from 'backoff';
 import { once } from 'events';
 import type { IncomingMessage } from 'http';
-import WebSocket from 'ws';
+import * as WebSocket from 'ws';
 import type { BaseNode } from '../base/BaseNode';
 import type { IncomingPayload } from '../types/IncomingPayloads';
 import type { OutgoingPayload } from '../types/OutgoingPayloads';
@@ -61,14 +61,12 @@ export class Connection<T extends BaseNode = BaseNode> {
 	 * Connects to the server.
 	 */
 	public connect(): Promise<void> {
-		return new Promise((resolve, reject) => {
-			// Create a new ready listener if none was set.
-			if (this.backoff.listenerCount('ready')) {
-				resolve();
-			} else {
-				this.backoff.on('ready', () => this._connect().then(resolve, reject));
-			}
-		});
+		// Create a new ready listener if none was set.
+		if (!this.backoff.listenerCount('ready')) {
+			this.backoff.on('ready', () => this._connect());
+		}
+
+		return this._connect();
 	}
 
 	public configureResuming(timeout = 60, key: string = Math.random().toString(36)): Promise<void> {
