@@ -63,7 +63,9 @@ export class Connection<T extends BaseNode = BaseNode> {
 	public connect(): Promise<void> {
 		// Create a new ready listener if none was set.
 		if (!this.backoff.listenerCount('ready')) {
-			this.backoff.on('ready', () => this._connect());
+			return new Promise((resolve, reject) => {
+				this.backoff.on('ready', () => this._connect().then(resolve, reject));
+			});
 		}
 
 		return this._connect();
@@ -126,17 +128,22 @@ export class Connection<T extends BaseNode = BaseNode> {
 		this._registerWSEventListeners();
 
 		return new Promise<void>((resolve, reject) => {
+			// eslint-disable-next-line @typescript-eslint/no-this-alias
+			const self = this;
+
 			function onOpen() {
 				resolve();
 				cleanup();
 			}
 
 			function onError(error: Error) {
+				self.ws = null;
 				reject(error);
 				cleanup();
 			}
 
 			function onClose(code: number, reason: string) {
+				self.ws = null;
 				reject(new Error(`Closed connection with code ${code} and reason ${reason}`));
 				cleanup();
 			}
