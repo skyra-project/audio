@@ -269,6 +269,10 @@ export class Http {
 		return new URL(this.input, this.base);
 	}
 
+	/**
+	 * Loads a track by its identifier.
+	 * @param identifier The track to be loaded.
+	 */
 	public load(identifier: string): Promise<TrackResponse> {
 		const { url } = this;
 		url.pathname = '/loadtracks';

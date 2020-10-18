@@ -1,9 +1,11 @@
 import type { GatewaySendPayload, GatewayVoiceServerUpdateDispatch, GatewayVoiceState } from 'discord-api-types/v6';
 import { EventEmitter } from 'events';
+import type { IncomingMessage } from 'http';
 import WebSocket from 'ws';
-import { Connection, Options as ConnectionOptions } from '../core/Connection';
+import { Connection, ConnectionEvents, Options as ConnectionOptions } from '../core/Connection';
 import { Http, Track, TrackInfo, TrackResponse } from '../core/Http';
 import { PlayerStore } from '../core/PlayerStore';
+import type { IncomingEventPayload, IncomingPlayerUpdatePayload, IncomingStatsPayload } from '../types/IncomingPayloads';
 
 export type VoiceServerUpdate = GatewayVoiceServerUpdateDispatch['d'];
 export type VoiceStateUpdate = GatewayVoiceState;
@@ -278,3 +280,55 @@ export abstract class BaseNode extends EventEmitter {
 		return true;
 	}
 }
+
+/* eslint-disable @typescript-eslint/unified-signatures */
+export interface BaseNode {
+	on(event: ConnectionEvents.Close, cb: (code: number, reason: string) => void): this;
+	on(event: ConnectionEvents.Error, cb: (error: Error) => void): this;
+	on(event: ConnectionEvents.Event, cb: (payload: IncomingEventPayload) => void): this;
+	on(event: ConnectionEvents.Open, cb: () => void): this;
+	on(event: ConnectionEvents.PlayerUpdate, cb: (payload: IncomingPlayerUpdatePayload) => void): this;
+	on(event: ConnectionEvents.Stats, cb: (payload: IncomingStatsPayload) => void): this;
+	on(event: ConnectionEvents.Upgrade, cb: (req: IncomingMessage) => void): this;
+
+	once(event: ConnectionEvents.Close, cb: (code: number, reason: string) => void): this;
+	once(event: ConnectionEvents.Error, cb: (error: Error) => void): this;
+	once(event: ConnectionEvents.Event, cb: (payload: IncomingEventPayload) => void): this;
+	once(event: ConnectionEvents.Open, cb: () => void): this;
+	once(event: ConnectionEvents.PlayerUpdate, cb: (payload: IncomingPlayerUpdatePayload) => void): this;
+	once(event: ConnectionEvents.Stats, cb: (payload: IncomingStatsPayload) => void): this;
+	once(event: ConnectionEvents.Upgrade, cb: (req: IncomingMessage) => void): this;
+
+	addListener(event: ConnectionEvents.Close, cb: (code: number, reason: string) => void): this;
+	addListener(event: ConnectionEvents.Error, cb: (error: Error) => void): this;
+	addListener(event: ConnectionEvents.Event, cb: (payload: IncomingEventPayload) => void): this;
+	addListener(event: ConnectionEvents.Open, cb: () => void): this;
+	addListener(event: ConnectionEvents.PlayerUpdate, cb: (payload: IncomingPlayerUpdatePayload) => void): this;
+	addListener(event: ConnectionEvents.Stats, cb: (payload: IncomingStatsPayload) => void): this;
+	addListener(event: ConnectionEvents.Upgrade, cb: (req: IncomingMessage) => void): this;
+
+	off(event: ConnectionEvents.Close, cb: (code: number, reason: string) => void): this;
+	off(event: ConnectionEvents.Error, cb: (error: Error) => void): this;
+	off(event: ConnectionEvents.Event, cb: (payload: IncomingEventPayload) => void): this;
+	off(event: ConnectionEvents.Open, cb: () => void): this;
+	off(event: ConnectionEvents.PlayerUpdate, cb: (payload: IncomingPlayerUpdatePayload) => void): this;
+	off(event: ConnectionEvents.Stats, cb: (payload: IncomingStatsPayload) => void): this;
+	off(event: ConnectionEvents.Upgrade, cb: (req: IncomingMessage) => void): this;
+
+	removeListener(event: ConnectionEvents.Close, cb: (code: number, reason: string) => void): this;
+	removeListener(event: ConnectionEvents.Error, cb: (error: Error) => void): this;
+	removeListener(event: ConnectionEvents.Event, cb: (payload: IncomingEventPayload) => void): this;
+	removeListener(event: ConnectionEvents.Open, cb: () => void): this;
+	removeListener(event: ConnectionEvents.PlayerUpdate, cb: (payload: IncomingPlayerUpdatePayload) => void): this;
+	removeListener(event: ConnectionEvents.Stats, cb: (payload: IncomingStatsPayload) => void): this;
+	removeListener(event: ConnectionEvents.Upgrade, cb: (req: IncomingMessage) => void): this;
+
+	emit(event: ConnectionEvents.Close, code: number, reason: string): boolean;
+	emit(event: ConnectionEvents.Error, error: Error): boolean;
+	emit(event: ConnectionEvents.Event, payload: IncomingEventPayload): boolean;
+	emit(event: ConnectionEvents.Open): boolean;
+	emit(event: ConnectionEvents.PlayerUpdate, payload: IncomingPlayerUpdatePayload): boolean;
+	emit(event: ConnectionEvents.Stats, payload: IncomingStatsPayload): boolean;
+	emit(event: ConnectionEvents.Upgrade, req: IncomingMessage): boolean;
+}
+/* eslint-enable @typescript-eslint/unified-signatures */
