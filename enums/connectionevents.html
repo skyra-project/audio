@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>LoadType | @skyra/audio</title>
+	<title>ConnectionEvents | @skyra/audio</title>
 	<meta name="description" content="Documentation for @skyra/audio">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -52,10 +52,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="loadtype.html">LoadType</a>
+					<a href="connectionevents.html">ConnectionEvents</a>
 				</li>
 			</ul>
-			<h1>Enumeration LoadType</h1>
+			<h1>Enumeration ConnectionEvents</h1>
 		</div>
 	</div>
 </header>
@@ -69,11 +69,13 @@
 						<section class="tsd-index-section ">
 							<h3>Enumeration members</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="loadtype.html#loadfailed" class="tsd-kind-icon">Load<wbr>Failed</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="loadtype.html#nomatches" class="tsd-kind-icon">No<wbr>Matches</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="loadtype.html#playlistloaded" class="tsd-kind-icon">Playlist<wbr>Loaded</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="loadtype.html#searchresult" class="tsd-kind-icon">Search<wbr>Result</a></li>
-								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="loadtype.html#trackloaded" class="tsd-kind-icon">Track<wbr>Loaded</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="connectionevents.html#close" class="tsd-kind-icon">Close</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="connectionevents.html#error" class="tsd-kind-icon">Error</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="connectionevents.html#event" class="tsd-kind-icon">Event</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="connectionevents.html#open" class="tsd-kind-icon">Open</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="connectionevents.html#playerupdate" class="tsd-kind-icon">Player<wbr>Update</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="connectionevents.html#stats" class="tsd-kind-icon">Stats</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="connectionevents.html#upgrade" class="tsd-kind-icon">Upgrade</a></li>
 							</ul>
 						</section>
 					</div>
@@ -82,79 +84,74 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Enumeration members</h2>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="loadfailed" class="tsd-anchor"></a>
-					<h3>Load<wbr>Failed</h3>
-					<div class="tsd-signature tsd-kind-icon">Load<wbr>Failed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;LOAD_FAILED&quot;</span></div>
+					<a name="close" class="tsd-anchor"></a>
+					<h3>Close</h3>
+					<div class="tsd-signature tsd-kind-icon">Close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;close&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a038396/src/core/Http.ts#L51">src/core/Http.ts:51</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a038396/src/core/Connection.ts#L31">src/core/Connection.ts:31</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Lavaplayer failed to load something for some reason.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="nomatches" class="tsd-anchor"></a>
-					<h3>No<wbr>Matches</h3>
-					<div class="tsd-signature tsd-kind-icon">No<wbr>Matches<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;NO_MATCHES&quot;</span></div>
+					<a name="error" class="tsd-anchor"></a>
+					<h3>Error</h3>
+					<div class="tsd-signature tsd-kind-icon">Error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;error&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a038396/src/core/Http.ts#L46">src/core/Http.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a038396/src/core/Connection.ts#L32">src/core/Connection.ts:32</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>No matches/sources could be found for a given identifier.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="playlistloaded" class="tsd-anchor"></a>
-					<h3>Playlist<wbr>Loaded</h3>
-					<div class="tsd-signature tsd-kind-icon">Playlist<wbr>Loaded<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;PLAYLIST_LOADED&quot;</span></div>
+					<a name="event" class="tsd-anchor"></a>
+					<h3>Event</h3>
+					<div class="tsd-signature tsd-kind-icon">Event<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;event&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a038396/src/core/Http.ts#L36">src/core/Http.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a038396/src/core/Connection.ts#L33">src/core/Connection.ts:33</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>A playlist is loaded.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="searchresult" class="tsd-anchor"></a>
-					<h3>Search<wbr>Result</h3>
-					<div class="tsd-signature tsd-kind-icon">Search<wbr>Result<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;SEARCH_RESULT&quot;</span></div>
+					<a name="open" class="tsd-anchor"></a>
+					<h3>Open</h3>
+					<div class="tsd-signature tsd-kind-icon">Open<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;open&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a038396/src/core/Http.ts#L41">src/core/Http.ts:41</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a038396/src/core/Connection.ts#L34">src/core/Connection.ts:34</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>A search result is made (i.e <code>ytsearch: some song</code>).</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
-					<a name="trackloaded" class="tsd-anchor"></a>
-					<h3>Track<wbr>Loaded</h3>
-					<div class="tsd-signature tsd-kind-icon">Track<wbr>Loaded<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;TRACK_LOADED&quot;</span></div>
+					<a name="playerupdate" class="tsd-anchor"></a>
+					<h3>Player<wbr>Update</h3>
+					<div class="tsd-signature tsd-kind-icon">Player<wbr>Update<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;playerUpdate&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a038396/src/core/Http.ts#L31">src/core/Http.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a038396/src/core/Connection.ts#L35">src/core/Connection.ts:35</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>A single track is loaded.</p>
-						</div>
-					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="stats" class="tsd-anchor"></a>
+					<h3>Stats</h3>
+					<div class="tsd-signature tsd-kind-icon">Stats<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;stats&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a038396/src/core/Connection.ts#L36">src/core/Connection.ts:36</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="upgrade" class="tsd-anchor"></a>
+					<h3>Upgrade</h3>
+					<div class="tsd-signature tsd-kind-icon">Upgrade<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;upgrade&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/a038396/src/core/Connection.ts#L37">src/core/Connection.ts:37</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -171,22 +168,28 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-enum">
-						<a href="loadtype.html" class="tsd-kind-icon">Load<wbr>Type</a>
+						<a href="connectionevents.html" class="tsd-kind-icon">Connection<wbr>Events</a>
 						<ul>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="loadtype.html#loadfailed" class="tsd-kind-icon">Load<wbr>Failed</a>
+								<a href="connectionevents.html#close" class="tsd-kind-icon">Close</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="loadtype.html#nomatches" class="tsd-kind-icon">No<wbr>Matches</a>
+								<a href="connectionevents.html#error" class="tsd-kind-icon">Error</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="loadtype.html#playlistloaded" class="tsd-kind-icon">Playlist<wbr>Loaded</a>
+								<a href="connectionevents.html#event" class="tsd-kind-icon">Event</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="loadtype.html#searchresult" class="tsd-kind-icon">Search<wbr>Result</a>
+								<a href="connectionevents.html#open" class="tsd-kind-icon">Open</a>
 							</li>
 							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
-								<a href="loadtype.html#trackloaded" class="tsd-kind-icon">Track<wbr>Loaded</a>
+								<a href="connectionevents.html#playerupdate" class="tsd-kind-icon">Player<wbr>Update</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="connectionevents.html#stats" class="tsd-kind-icon">Stats</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="connectionevents.html#upgrade" class="tsd-kind-icon">Upgrade</a>
 							</li>
 						</ul>
 					</li>
