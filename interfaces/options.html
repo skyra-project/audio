@@ -587,7 +587,7 @@
 					<div class="tsd-signature tsd-kind-icon">resume<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/6d639ad/src/core/Connection.ts#L45">src/core/Connection.ts:45</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/6f8cd73/src/core/Connection.ts#L45">src/core/Connection.ts:45</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -607,7 +607,7 @@
 					<div class="tsd-signature tsd-kind-icon">resume<wbr>Timeout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/6d639ad/src/core/Connection.ts#L52">src/core/Connection.ts:52</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/6f8cd73/src/core/Connection.ts#L52">src/core/Connection.ts:52</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -688,13 +688,14 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="options.html">Options</a>.<a href="options.html#sessiontimeout">sessionTimeout</a></p>
 						<ul>
-							<li>Defined in node_modules/@types/node/tls.d.ts:717</li>
+							<li>Defined in node_modules/@types/node/tls.d.ts:719</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The number of seconds after which a TLS session created by the server
-							will no longer be resumable.</p>
+							<p>The number of seconds after which a TLS session created by the
+								server will no longer be resumable. See Session Resumption for more
+							information. Default: 300.</p>
 						</div>
 					</div>
 				</section>
@@ -724,12 +725,13 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="options.html">Options</a>.<a href="options.html#ticketkeys">ticketKeys</a></p>
 						<ul>
-							<li>Defined in node_modules/@types/node/tls.d.ts:712</li>
+							<li>Defined in node_modules/@types/node/tls.d.ts:713</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>48 bytes of cryptographically strong pseudo-random data.</p>
+							<p>48-bytes of cryptographically strong pseudo-random data.
+							See Session Resumption for more information.</p>
 						</div>
 					</div>
 				</section>
