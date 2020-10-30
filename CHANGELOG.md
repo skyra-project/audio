@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/skyra-project/audio/compare/v1.0.0...v1.0.1) (2020-10-30)
+
+### Bug Fixes
+
+-   resolved Cannot read property 'OPEN' of undefined ([#3](https://github.com/skyra-project/audio/issues/3)) ([0a86435](https://github.com/skyra-project/audio/commit/0a86435754d733617684b94afa6ff1dc0078c583))
+
 ## 1.0.0 (2020-10-19)
 
 ### Features
