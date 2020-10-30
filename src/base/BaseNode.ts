@@ -1,7 +1,7 @@
 import type { GatewaySendPayload, GatewayVoiceServerUpdateDispatch, GatewayVoiceState } from 'discord-api-types/v6';
 import { EventEmitter } from 'events';
 import type { IncomingMessage } from 'http';
-import WebSocket from 'ws';
+import * as WebSocket from 'ws';
 import { Connection, ConnectionEvents, Options as ConnectionOptions } from '../core/Connection';
 import { Http, Track, TrackInfo, TrackResponse } from '../core/Http';
 import { PlayerStore } from '../core/PlayerStore';
