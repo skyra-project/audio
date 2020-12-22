@@ -40,7 +40,7 @@
 	"devDependencies": {
 		"@commitlint/cli": "^11.0.0",
 		"@commitlint/config-conventional": "^11.0.0",
-		"@sapphire/prettier-config": "^1.0.1",
+		"@sapphire/prettier-config": "^1.0.2",
 		"@skyra/eslint-config": "^5.3.3",
 		"@types/backoff": "^2.5.1",
 		"@types/jest": "^26.0.19",
