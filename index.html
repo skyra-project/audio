@@ -73,19 +73,19 @@
 				<p><strong>Table of Contents</strong></p>
 				<ul>
 					<li><a href="#skyraaudio">@skyra/audio</a><ul>
-							<li><a href="#about">About</a></li>
+							<li>  <a href="#about">About</a></li>
 							<li><a href="#installation-and-usage">Installation and Usage</a><ul>
 									<li><a href="#package-managers">Package managers</a><ul>
-											<li><a href="#usage">Usage</a></li>
+											<li>  <a href="#usage">Usage</a></li>
 										</ul>
 									</li>
 								</ul>
 							</li>
 							<li><a href="#meta">Meta</a><ul>
-									<li><a href="#license">License</a></li>
-									<li><a href="#contributing">Contributing</a></li>
-									<li><a href="#buy-us-some-doughnuts">Buy us some doughnuts</a></li>
-									<li><a href="#contributors-%E2%9C%A8">Contributors ✨</a></li>
+									<li>  <a href="#license">License</a></li>
+									<li>  <a href="#contributing">Contributing</a></li>
+									<li>  <a href="#buy-us-some-doughnuts">Buy us some doughnuts</a></li>
+									<li>  <a href="#contributors-%E2%9C%A8">Contributors ✨</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -95,8 +95,8 @@
 					<h2>About</h2>
 				</a>
 				<ul>
-					<li>A JavaScript wrapper for the <a href="https://github.com/Frederikam/Lavalink">Lavalink</a> audio client for Discord. Only supports Lavalink v3.</li>
-					<li>This is a derivative work of <a href="https://github.com/lavalibs/lavalink.js">lavalink.js</a>, this wouldn&#39;t be possible without the author&#39;s work.</li>
+					<li>  A JavaScript wrapper for the <a href="https://github.com/Frederikam/Lavalink">Lavalink</a> audio client for Discord. Only supports Lavalink v3.</li>
+					<li>  This is a derivative work of <a href="https://github.com/lavalibs/lavalink.js">lavalink.js</a>, this wouldn&#39;t be possible without the author&#39;s work.</li>
 				</ul>
 				<a href="#installation-and-usage" id="installation-and-usage" style="color: inherit; text-decoration: none;">
 					<h2>Installation and Usage</h2>
@@ -120,7 +120,7 @@
         <span class="hljs-attr">ws</span>: <span class="hljs-string">&#x27;&#x27;</span> <span class="hljs-comment">// the ws host of your lavalink instance (optional)</span>
     },
     <span class="hljs-attr">host</span>: <span class="hljs-string">&#x27;&#x27;</span>, <span class="hljs-comment">// a URL to your lavalink instance without protocol (optional, can be used instead of specifying hosts option)</span>
-    send(guildID, packet) {
+    <span class="hljs-function"><span class="hljs-title">send</span>(<span class="hljs-params">guildID, packet</span>)</span> {
         <span class="hljs-keyword">const</span> guild = client.guilds.cache.get(guildID);
         <span class="hljs-keyword">if</span> (guild) <span class="hljs-keyword">return</span> guild.shard.send(packet);
     }
