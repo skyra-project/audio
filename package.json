@@ -5,15 +5,17 @@
 	"author": "@skyra",
 	"license": "MIT",
 	"main": "dist/index.js",
-	"module": "dist/index.es.js",
-	"browser": "dist/index.umd.js",
-	"unpkg": "dist/index.umd.js",
+	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
+	"exports": {
+		"require": "./dist/index.js",
+		"import": "./index.mjs"
+	},
 	"homepage": "https://skyra-project.github.io/audio",
 	"private": false,
 	"files": [
 		"dist",
-		"!dist/.tsbuildinfo"
+		"!dist/*.tsbuildinfo"
 	],
 	"scripts": {
 		"prepublishOnly": "yarn build",
@@ -25,6 +27,7 @@
 		"update": "yarn upgrade-interactive --latest",
 		"clean": "tsc -b src --clean",
 		"build": "tsc -b src",
+		"postbuild": "gen-esm-wrapper dist/index.js dist/index.mjs",
 		"watch": "tsc -b src -w",
 		"sversion": "standard-version",
 		"commit": "git-cz",
@@ -32,35 +35,37 @@
 	},
 	"dependencies": {
 		"backoff": "^2.5.0",
-		"ws": "^7.4.0"
+		"ws": "^7.4.1"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^11.0.0",
 		"@commitlint/config-conventional": "^11.0.0",
+		"@sapphire/prettier-config": "^1.0.1",
 		"@skyra/eslint-config": "^5.3.3",
 		"@types/backoff": "^2.5.1",
-		"@types/jest": "^26.0.15",
-		"@types/node": "^14.14.10",
+		"@types/jest": "^26.0.19",
+		"@types/node": "^14.14.14",
 		"@types/ws": "^7.4.0",
-		"@typescript-eslint/eslint-plugin": "^4.9.0",
-		"@typescript-eslint/parser": "^4.9.0",
+		"@typescript-eslint/eslint-plugin": "^4.11.0",
+		"@typescript-eslint/parser": "^4.11.0",
 		"cz-conventional-changelog": "^3.3.0",
-		"discord-api-types": "^0.7.0",
-		"eslint": "^7.14.0",
-		"eslint-config-prettier": "^6.15.0",
-		"eslint-plugin-prettier": "^3.1.4",
-		"husky": "^4.3.0",
+		"discord-api-types": "^0.11.2",
+		"eslint": "^7.16.0",
+		"eslint-config-prettier": "^7.1.0",
+		"eslint-plugin-prettier": "^3.3.0",
+		"gen-esm-wrapper": "^1.1.1",
+		"husky": "^4.3.6",
 		"jest": "^26.6.3",
 		"jest-circus": "^26.6.3",
-		"lint-staged": "^10.5.2",
-		"prettier": "^2.2.0",
+		"lint-staged": "^10.5.3",
+		"prettier": "^2.2.1",
 		"pretty-quick": "^3.1.0",
 		"standard-version": "^9.0.0",
 		"ts-jest": "^26.4.4",
-		"ts-node": "^9.0.0",
+		"ts-node": "^9.1.1",
 		"typedoc": "^0.19.2",
 		"typedoc-plugin-nojekyll": "^1.0.1",
-		"typescript": "^4.1.2"
+		"typescript": "^4.1.3"
 	},
 	"repository": {
 		"type": "git",
@@ -108,6 +113,7 @@
 		"kind-of": "^6.0.3",
 		"jest-environment-jsdom": "https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.0.2.tgz",
 		"jest-jasmine2": "https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.0.2.tgz",
-		"dot-prop": "^6.0.0"
-	}
+		"dot-prop": "^6.0.1"
+	},
+	"prettier": "@sapphire/prettier-config"
 }
