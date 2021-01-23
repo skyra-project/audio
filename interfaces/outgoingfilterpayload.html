@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TrackInfo | @skyra/audio</title>
+	<title>OutgoingFilterPayload | @skyra/audio</title>
 	<meta name="description" content="Documentation for @skyra/audio">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -52,10 +52,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="trackinfo.html">TrackInfo</a>
+					<a href="outgoingfilterpayload.html">OutgoingFilterPayload</a>
 				</li>
 			</ul>
-			<h1>Interface TrackInfo</h1>
+			<h1>Interface OutgoingFilterPayload</h1>
 		</div>
 	</div>
 </header>
@@ -66,7 +66,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">TrackInfo</span>
+						<a href="baseoutgoingpayload.html" class="tsd-signature-type">BaseOutgoingPayload</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">OutgoingFilterPayload</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -77,14 +82,14 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trackinfo.html#author" class="tsd-kind-icon">author</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trackinfo.html#identifier" class="tsd-kind-icon">identifier</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trackinfo.html#isseekable" class="tsd-kind-icon">is<wbr>Seekable</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trackinfo.html#isstream" class="tsd-kind-icon">is<wbr>Stream</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trackinfo.html#length" class="tsd-kind-icon">length</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trackinfo.html#position" class="tsd-kind-icon">position</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trackinfo.html#title" class="tsd-kind-icon">title</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trackinfo.html#uri" class="tsd-kind-icon">uri</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="outgoingfilterpayload.html#bands" class="tsd-kind-icon">bands</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="outgoingfilterpayload.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="outgoingfilterpayload.html#karaoke" class="tsd-kind-icon">karaoke</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="outgoingfilterpayload.html#op" class="tsd-kind-icon">op</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="outgoingfilterpayload.html#timescale" class="tsd-kind-icon">timescale</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="outgoingfilterpayload.html#tremolo" class="tsd-kind-icon">tremolo</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="outgoingfilterpayload.html#vibrato" class="tsd-kind-icon">vibrato</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="outgoingfilterpayload.html#volume" class="tsd-kind-icon">volume</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,163 +98,119 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="author" class="tsd-anchor"></a>
-					<h3>author</h3>
-					<div class="tsd-signature tsd-kind-icon">author<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="bands" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> bands</h3>
+					<div class="tsd-signature tsd-kind-icon">bands<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">readonly </span><a href="equalizerband.html" class="tsd-signature-type">EqualizerBand</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/core/Http.ts#L176">src/core/Http.ts:176</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/types/OutgoingPayloads.ts#L160">src/types/OutgoingPayloads.ts:160</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The author of the track.</p>
+							<p>The equalizer bands.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>example</dt>
-							<dd><pre><code class="language-json"><span class="hljs-string">&quot;RickAstleyVEVO&quot;</span></code></pre>
-							</dd>
-						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="guildid" class="tsd-anchor"></a>
+					<h3>guild<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">guild<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="baseoutgoingpayload.html">BaseOutgoingPayload</a>.<a href="baseoutgoingpayload.html#guildid">guildId</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/types/OutgoingPayloads.ts#L19">src/types/OutgoingPayloads.ts:19</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The guild&#39;s ID to identify the player.</p>
+						</div>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="identifier" class="tsd-anchor"></a>
-					<h3>identifier</h3>
-					<div class="tsd-signature tsd-kind-icon">identifier<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="karaoke" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> karaoke</h3>
+					<div class="tsd-signature tsd-kind-icon">karaoke<span class="tsd-signature-symbol">:</span> <a href="karaokeoptions.html" class="tsd-signature-type">KaraokeOptions</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/core/Http.ts#L158">src/core/Http.ts:158</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/types/OutgoingPayloads.ts#L165">src/types/OutgoingPayloads.ts:165</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The identifier of the track.</p>
+							<p>The karaoke options.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>example</dt>
-							<dd><pre><code class="language-json"><span class="hljs-string">&quot;dQw4w9WgXcQ&quot;</span></code></pre>
-							</dd>
-						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="isseekable" class="tsd-anchor"></a>
-					<h3>is<wbr>Seekable</h3>
-					<div class="tsd-signature tsd-kind-icon">is<wbr>Seekable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="op" class="tsd-anchor"></a>
+					<h3>op</h3>
+					<div class="tsd-signature tsd-kind-icon">op<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"filters"</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/core/Http.ts#L167">src/core/Http.ts:167</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/types/OutgoingPayloads.ts#L150">src/types/OutgoingPayloads.ts:150</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="timescale" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> timescale</h3>
+					<div class="tsd-signature tsd-kind-icon">timescale<span class="tsd-signature-symbol">:</span> <a href="timescaleoptions.html" class="tsd-signature-type">TimescaleOptions</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/types/OutgoingPayloads.ts#L170">src/types/OutgoingPayloads.ts:170</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Whether or not the track can be seeked.</p>
+							<p>The timescale options.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>example</dt>
-							<dd><pre><code class="language-json">true</code></pre>
-							</dd>
-						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="isstream" class="tsd-anchor"></a>
-					<h3>is<wbr>Stream</h3>
-					<div class="tsd-signature tsd-kind-icon">is<wbr>Stream<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="tremolo" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> tremolo</h3>
+					<div class="tsd-signature tsd-kind-icon">tremolo<span class="tsd-signature-symbol">:</span> <a href="frequencydepthoptions.html" class="tsd-signature-type">FrequencyDepthOptions</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/core/Http.ts#L194">src/core/Http.ts:194</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/types/OutgoingPayloads.ts#L175">src/types/OutgoingPayloads.ts:175</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Whether or not the track is a stream.</p>
+							<p>The tremolo options.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>example</dt>
-							<dd><pre><code class="language-json">false</code></pre>
-							</dd>
-						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="length" class="tsd-anchor"></a>
-					<h3>length</h3>
-					<div class="tsd-signature tsd-kind-icon">length<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="vibrato" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> vibrato</h3>
+					<div class="tsd-signature tsd-kind-icon">vibrato<span class="tsd-signature-symbol">:</span> <a href="frequencydepthoptions.html" class="tsd-signature-type">FrequencyDepthOptions</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/core/Http.ts#L185">src/core/Http.ts:185</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/types/OutgoingPayloads.ts#L180">src/types/OutgoingPayloads.ts:180</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The length in milliseconds of the track.</p>
+							<p>The vibrato options.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>example</dt>
-							<dd><pre><code class="language-json"><span class="hljs-number">212000</span></code></pre>
-							</dd>
-						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="position" class="tsd-anchor"></a>
-					<h3>position</h3>
-					<div class="tsd-signature tsd-kind-icon">position<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="volume" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> volume</h3>
+					<div class="tsd-signature tsd-kind-icon">volume<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/core/Http.ts#L203">src/core/Http.ts:203</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/types/OutgoingPayloads.ts#L155">src/types/OutgoingPayloads.ts:155</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The position at which the track was selected.</p>
+							<p>The volume to set the track.</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>example</dt>
-							<dd><pre><code class="language-json"><span class="hljs-number">0</span></code></pre>
-							</dd>
-						</dl>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="title" class="tsd-anchor"></a>
-					<h3>title</h3>
-					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/core/Http.ts#L212">src/core/Http.ts:212</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The title of the track.</p>
-						</div>
-						<dl class="tsd-comment-tags">
-							<dt>example</dt>
-							<dd><pre><code class="language-json"><span class="hljs-string">&quot;Rick Astley - Never Gonna Give You Up&quot;</span></code></pre>
-							</dd>
-						</dl>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="uri" class="tsd-anchor"></a>
-					<h3>uri</h3>
-					<div class="tsd-signature tsd-kind-icon">uri<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/core/Http.ts#L221">src/core/Http.ts:221</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The URI of the track.</p>
-						</div>
-						<dl class="tsd-comment-tags">
-							<dt>example</dt>
-							<dd><pre><code class="language-json"><span class="hljs-string">&quot;https://www.youtube.com/watch?v=dQw4w9WgXcQ&quot;</span></code></pre>
-							</dd>
-						</dl>
 					</div>
 				</section>
 			</section>
@@ -267,31 +228,31 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="trackinfo.html" class="tsd-kind-icon">Track<wbr>Info</a>
+						<a href="outgoingfilterpayload.html" class="tsd-kind-icon">Outgoing<wbr>Filter<wbr>Payload</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trackinfo.html#author" class="tsd-kind-icon">author</a>
+								<a href="outgoingfilterpayload.html#bands" class="tsd-kind-icon">bands</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="outgoingfilterpayload.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trackinfo.html#identifier" class="tsd-kind-icon">identifier</a>
+								<a href="outgoingfilterpayload.html#karaoke" class="tsd-kind-icon">karaoke</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trackinfo.html#isseekable" class="tsd-kind-icon">is<wbr>Seekable</a>
+								<a href="outgoingfilterpayload.html#op" class="tsd-kind-icon">op</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trackinfo.html#isstream" class="tsd-kind-icon">is<wbr>Stream</a>
+								<a href="outgoingfilterpayload.html#timescale" class="tsd-kind-icon">timescale</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trackinfo.html#length" class="tsd-kind-icon">length</a>
+								<a href="outgoingfilterpayload.html#tremolo" class="tsd-kind-icon">tremolo</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trackinfo.html#position" class="tsd-kind-icon">position</a>
+								<a href="outgoingfilterpayload.html#vibrato" class="tsd-kind-icon">vibrato</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trackinfo.html#title" class="tsd-kind-icon">title</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trackinfo.html#uri" class="tsd-kind-icon">uri</a>
+								<a href="outgoingfilterpayload.html#volume" class="tsd-kind-icon">volume</a>
 							</li>
 						</ul>
 					</li>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IncomingEventStartPayload | @skyra/audio</title>
+	<title>FrequencyDepthOptions | @skyra/audio</title>
 	<meta name="description" content="Documentation for @skyra/audio">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -52,10 +52,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="incomingeventstartpayload.html">IncomingEventStartPayload</a>
+					<a href="frequencydepthoptions.html">FrequencyDepthOptions</a>
 				</li>
 			</ul>
-			<h1>Interface IncomingEventStartPayload</h1>
+			<h1>Interface FrequencyDepthOptions</h1>
 		</div>
 	</div>
 </header>
@@ -66,12 +66,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="iincomingevent.html" class="tsd-signature-type">IIncomingEvent</a>
-						<ul class="tsd-hierarchy">
-							<li>
-								<span class="target">IncomingEventStartPayload</span>
-							</li>
-						</ul>
+						<span class="target">FrequencyDepthOptions</span>
 					</li>
 				</ul>
 			</section>
@@ -82,10 +77,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="incomingeventstartpayload.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="incomingeventstartpayload.html#op" class="tsd-kind-icon">op</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="incomingeventstartpayload.html#track" class="tsd-kind-icon">track</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="incomingeventstartpayload.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="frequencydepthoptions.html#depth" class="tsd-kind-icon">depth</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="frequencydepthoptions.html#frequency" class="tsd-kind-icon">frequency</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,47 +86,45 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="guildid" class="tsd-anchor"></a>
-					<h3>guild<wbr>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">guild<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="depth" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> depth</h3>
+					<div class="tsd-signature tsd-kind-icon">depth<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="iincomingevent.html">IIncomingEvent</a>.<a href="iincomingevent.html#guildid">guildId</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/types/IncomingPayloads.ts#L37">src/types/IncomingPayloads.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/types/OutgoingPayloads.ts#L240">src/types/OutgoingPayloads.ts:240</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="op" class="tsd-anchor"></a>
-					<h3>op</h3>
-					<div class="tsd-signature tsd-kind-icon">op<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"event"</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="iincomingevent.html">IIncomingEvent</a>.<a href="iincomingevent.html#op">op</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/types/IncomingPayloads.ts#L36">src/types/IncomingPayloads.ts:36</a></li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The depth for the selected frequency. Must be &gt;0 and &lt;=1.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>0.5</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="track" class="tsd-anchor"></a>
-					<h3>track</h3>
-					<div class="tsd-signature tsd-kind-icon">track<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="frequency" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> frequency</h3>
+					<div class="tsd-signature tsd-kind-icon">frequency<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/types/IncomingPayloads.ts#L49">src/types/IncomingPayloads.ts:49</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/types/OutgoingPayloads.ts#L234">src/types/OutgoingPayloads.ts:234</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="type" class="tsd-anchor"></a>
-					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"TrackStartEvent"</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/31d9edb/src/types/IncomingPayloads.ts#L48">src/types/IncomingPayloads.ts:48</a></li>
-						</ul>
-					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The frequency to edit. Must be &gt;0 and &lt;=14.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>2.0</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -150,19 +141,13 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="incomingeventstartpayload.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Start<wbr>Payload</a>
+						<a href="frequencydepthoptions.html" class="tsd-kind-icon">Frequency<wbr>Depth<wbr>Options</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="incomingeventstartpayload.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="incomingeventstartpayload.html#op" class="tsd-kind-icon">op</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="frequencydepthoptions.html#depth" class="tsd-kind-icon">depth</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="incomingeventstartpayload.html#track" class="tsd-kind-icon">track</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="incomingeventstartpayload.html#type" class="tsd-kind-icon">type</a>
+								<a href="frequencydepthoptions.html#frequency" class="tsd-kind-icon">frequency</a>
 							</li>
 						</ul>
 					</li>
