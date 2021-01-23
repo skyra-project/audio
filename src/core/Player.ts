@@ -2,7 +2,7 @@ import type { GatewayVoiceStateUpdate } from 'discord-api-types/v6';
 import { EventEmitter } from 'events';
 import type { BaseNode, VoiceServerUpdate, VoiceStateUpdate } from '../base/BaseNode';
 import type { IncomingEventPayload } from '../types/IncomingPayloads';
-import type { OutgoingEqualizerPayload, OutgoingPayload } from '../types/OutgoingPayloads';
+import type { EqualizerBand, OutgoingFilterPayload, OutgoingPayload } from '../types/OutgoingPayloads';
 import type { Track } from './Http';
 
 export const enum Status {
@@ -19,9 +19,10 @@ export interface PlayerOptions {
 	start?: number;
 	end?: number;
 	noReplace?: boolean;
+	pause?: boolean;
 }
 
-export type EqualizerBand = OutgoingEqualizerPayload['bands'];
+export interface FilterOptions extends Omit<OutgoingFilterPayload, 'op' | 'guildId'> {}
 
 export interface JoinOptions {
 	mute?: boolean;
@@ -116,33 +117,43 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 		return this.node.send(this.guildID, data);
 	}
 
-	public async play(track: string | Track, { start = 0, end = 0, noReplace = false }: PlayerOptions = {}) {
+	public async play(track: string | Track, { start, end, noReplace, pause }: PlayerOptions = {}) {
 		await this.send({
 			op: 'play',
 			guildId: this.guildID,
 			track: typeof track === 'object' ? track.track : track,
 			startTime: start,
 			endTime: end,
-			noReplace
+			noReplace,
+			pause
 		});
 
-		this.status = Status.Playing;
+		if (pause) this.status = Status.Paused;
+		else this.status = Status.Playing;
 	}
 
+	public setFilters(options: FilterOptions) {
+		return this.send({
+			op: 'filters',
+			guildId: this.guildID,
+			...options
+		});
+	}
+
+	/**
+	 * @deprecated Please use `setFilters({ volume })` instead.
+	 * @param volume The new volume to be set.
+	 */
 	public setVolume(volume: number) {
-		return this.send({
-			op: 'volume',
-			guildId: this.guildID,
-			volume
-		});
+		return this.setFilters({ volume });
 	}
 
-	public setEqualizer(bands: EqualizerBand) {
-		return this.send({
-			op: 'equalizer',
-			guildId: this.guildID,
-			bands
-		});
+	/**
+	 * @deprecated Please use `setFilters({ bands })` instead.
+	 * @param bands The equalizer bads to be set.
+	 */
+	public setEqualizer(bands: readonly EqualizerBand[]) {
+		return this.setFilters({ bands });
 	}
 
 	public seek(position: number) {

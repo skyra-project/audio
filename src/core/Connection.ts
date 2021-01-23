@@ -16,6 +16,7 @@ interface Headers {
 	Authorization: string;
 	'Num-Shards': number;
 	'User-Id': string;
+	'Client-Name': string;
 	'Resume-Key'?: string;
 }
 
@@ -214,6 +215,7 @@ export class Connection<T extends BaseNode = BaseNode> {
 		const headers: Headers = {
 			Authorization: this.node.password,
 			'Num-Shards': this.node.shardCount || 1,
+			'Client-Name': '@skyra/audio',
 			'User-Id': this.node.userID
 		};
 
