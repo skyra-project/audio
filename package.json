@@ -18,7 +18,6 @@
 		"!dist/*.tsbuildinfo"
 	],
 	"scripts": {
-		"prepublishOnly": "yarn build",
 		"lint": "eslint src tests --ext ts --fix",
 		"format": "prettier --write {src,tests}/**/*.ts",
 		"docs": "typedoc",
@@ -31,11 +30,14 @@
 		"watch": "tsc -b src -w",
 		"sversion": "standard-version",
 		"commit": "git-cz",
-		"cz": "git-cz"
+		"cz": "git-cz",
+		"prepublishOnly": "yarn build && pinst --disable",
+		"postinstall": "husky install .github/husky",
+		"postpublish": "pinst --enable"
 	},
 	"dependencies": {
 		"backoff": "^2.5.0",
-		"ws": "^7.4.2"
+		"ws": "^7.4.3"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^11.0.0",
@@ -44,28 +46,29 @@
 		"@skyra/eslint-config": "^5.3.3",
 		"@types/backoff": "^2.5.1",
 		"@types/jest": "^26.0.20",
-		"@types/node": "^14.14.22",
+		"@types/node": "^14.14.25",
 		"@types/ws": "^7.4.0",
-		"@typescript-eslint/eslint-plugin": "^4.14.0",
-		"@typescript-eslint/parser": "^4.14.0",
+		"@typescript-eslint/eslint-plugin": "^4.15.0",
+		"@typescript-eslint/parser": "^4.15.0",
 		"cz-conventional-changelog": "^3.3.0",
 		"discord-api-types": "^0.12.1",
-		"eslint": "^7.18.0",
+		"eslint": "^7.19.0",
 		"eslint-config-prettier": "^7.2.0",
 		"eslint-plugin-prettier": "^3.3.1",
 		"gen-esm-wrapper": "^1.1.1",
-		"husky": "^4.3.8",
+		"husky": "^5.0.9",
 		"jest": "^26.6.3",
 		"jest-circus": "^26.6.3",
-		"lint-staged": "^10.5.3",
+		"lint-staged": "^10.5.4",
+		"pinst": "^2.1.4",
 		"prettier": "^2.2.1",
 		"pretty-quick": "^3.1.0",
 		"standard-version": "^9.1.0",
-		"ts-jest": "^26.4.4",
+		"ts-jest": "^26.5.1",
 		"ts-node": "^9.1.1",
-		"typedoc": "^0.19.2",
+		"typedoc": "^0.20.23",
 		"typedoc-plugin-nojekyll": "^1.0.1",
-		"typescript": "^4.1.3"
+		"typescript": "^4.1.5"
 	},
 	"repository": {
 		"type": "git",
@@ -85,12 +88,6 @@
 	"bugs": {
 		"url": "https://github.com/skyra-project/audio/issues"
 	},
-	"husky": {
-		"hooks": {
-			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-			"pre-commit": "yarn pretty-quick --staged && yarn lint-staged"
-		}
-	},
 	"commitlint": {
 		"extends": [
 			"@commitlint/config-conventional"
@@ -108,7 +105,7 @@
 		"access": "public"
 	},
 	"resolutions": {
-		"acorn": "^8.0.4",
+		"acorn": "^8.0.5",
 		"minimist": "^1.2.5",
 		"kind-of": "^6.0.3",
 		"jest-environment-jsdom": "https://registry.yarnpkg.com/@favware/skip-dependency/-/skip-dependency-1.0.2.tgz",
