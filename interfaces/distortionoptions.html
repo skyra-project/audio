@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TrackInfo | @skyra/audio</title>
+	<title>DistortionOptions | @skyra/audio</title>
 	<meta name="description" content="Documentation for @skyra/audio">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -53,10 +53,10 @@
 					<a href="../modules.html">@skyra/audio</a>
 				</li>
 				<li>
-					<a href="trackinfo.html">TrackInfo</a>
+					<a href="distortionoptions.html">DistortionOptions</a>
 				</li>
 			</ul>
-			<h1>Interface TrackInfo</h1>
+			<h1>Interface DistortionOptions</h1>
 		</div>
 	</div>
 </header>
@@ -67,7 +67,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">TrackInfo</span>
+						<span class="target">DistortionOptions</span>
 					</li>
 				</ul>
 			</section>
@@ -78,14 +78,14 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trackinfo.html#author" class="tsd-kind-icon">author</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trackinfo.html#identifier" class="tsd-kind-icon">identifier</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trackinfo.html#isseekable" class="tsd-kind-icon">is<wbr>Seekable</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trackinfo.html#isstream" class="tsd-kind-icon">is<wbr>Stream</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trackinfo.html#length" class="tsd-kind-icon">length</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trackinfo.html#position" class="tsd-kind-icon">position</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trackinfo.html#title" class="tsd-kind-icon">title</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="trackinfo.html#uri" class="tsd-kind-icon">uri</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="distortionoptions.html#cosoffset" class="tsd-kind-icon">cos<wbr>Offset</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="distortionoptions.html#cosscale" class="tsd-kind-icon">cos<wbr>Scale</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="distortionoptions.html#offset" class="tsd-kind-icon">offset</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="distortionoptions.html#scale" class="tsd-kind-icon">scale</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="distortionoptions.html#sinoffset" class="tsd-kind-icon">sin<wbr>Offset</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="distortionoptions.html#sinscale" class="tsd-kind-icon">sin<wbr>Scale</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="distortionoptions.html#tanoffset" class="tsd-kind-icon">tan<wbr>Offset</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="distortionoptions.html#tanscale" class="tsd-kind-icon">tan<wbr>Scale</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,169 +94,161 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="author" class="tsd-anchor"></a>
-					<h3>author</h3>
-					<div class="tsd-signature tsd-kind-icon">author<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="cosoffset" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> cos<wbr>Offset</h3>
+					<div class="tsd-signature tsd-kind-icon">cos<wbr>Offset<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/5396625/src/core/Http.ts#L176">core/Http.ts:176</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/5396625/src/types/OutgoingPayloads.ts#L272">types/OutgoingPayloads.ts:272</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The author of the track.</p>
+							<p>The cosine&#39;s offset.</p>
 						</div>
 						<dl class="tsd-comment-tags">
-							<dt>example</dt>
-							<dd><pre><code class="language-json"><span style="color: #A31515">&quot;RickAstleyVEVO&quot;</span>
-</code></pre>
+							<dt>default</dt>
+							<dd><p>0.0</p>
 							</dd>
 						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="identifier" class="tsd-anchor"></a>
-					<h3>identifier</h3>
-					<div class="tsd-signature tsd-kind-icon">identifier<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="cosscale" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> cos<wbr>Scale</h3>
+					<div class="tsd-signature tsd-kind-icon">cos<wbr>Scale<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/5396625/src/core/Http.ts#L158">core/Http.ts:158</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/5396625/src/types/OutgoingPayloads.ts#L278">types/OutgoingPayloads.ts:278</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The identifier of the track.</p>
+							<p>The cosine&#39;s scale.</p>
 						</div>
 						<dl class="tsd-comment-tags">
-							<dt>example</dt>
-							<dd><pre><code class="language-json"><span style="color: #A31515">&quot;dQw4w9WgXcQ&quot;</span>
-</code></pre>
+							<dt>default</dt>
+							<dd><p>1.0</p>
 							</dd>
 						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="isseekable" class="tsd-anchor"></a>
-					<h3>is<wbr>Seekable</h3>
-					<div class="tsd-signature tsd-kind-icon">is<wbr>Seekable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="offset" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> offset</h3>
+					<div class="tsd-signature tsd-kind-icon">offset<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/5396625/src/core/Http.ts#L167">core/Http.ts:167</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/5396625/src/types/OutgoingPayloads.ts#L296">types/OutgoingPayloads.ts:296</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Whether or not the track can be seeked.</p>
+							<p>The overall offset for all waves.</p>
 						</div>
 						<dl class="tsd-comment-tags">
-							<dt>example</dt>
-							<dd><pre><code class="language-json"><span style="color: #0000FF">true</span>
-</code></pre>
+							<dt>default</dt>
+							<dd><p>0.0</p>
 							</dd>
 						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="isstream" class="tsd-anchor"></a>
-					<h3>is<wbr>Stream</h3>
-					<div class="tsd-signature tsd-kind-icon">is<wbr>Stream<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="scale" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> scale</h3>
+					<div class="tsd-signature tsd-kind-icon">scale<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/5396625/src/core/Http.ts#L194">core/Http.ts:194</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/5396625/src/types/OutgoingPayloads.ts#L302">types/OutgoingPayloads.ts:302</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Whether or not the track is a stream.</p>
+							<p>The overall scale for all waves.</p>
 						</div>
 						<dl class="tsd-comment-tags">
-							<dt>example</dt>
-							<dd><pre><code class="language-json"><span style="color: #0000FF">false</span>
-</code></pre>
+							<dt>default</dt>
+							<dd><p>1.0</p>
 							</dd>
 						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="length" class="tsd-anchor"></a>
-					<h3>length</h3>
-					<div class="tsd-signature tsd-kind-icon">length<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="sinoffset" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> sin<wbr>Offset</h3>
+					<div class="tsd-signature tsd-kind-icon">sin<wbr>Offset<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/5396625/src/core/Http.ts#L185">core/Http.ts:185</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/5396625/src/types/OutgoingPayloads.ts#L260">types/OutgoingPayloads.ts:260</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The length in milliseconds of the track.</p>
+							<p>The sine&#39;s offset.</p>
 						</div>
 						<dl class="tsd-comment-tags">
-							<dt>example</dt>
-							<dd><pre><code class="language-json"><span style="color: #098658">212000</span>
-</code></pre>
+							<dt>default</dt>
+							<dd><p>0.0</p>
 							</dd>
 						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="position" class="tsd-anchor"></a>
-					<h3>position</h3>
-					<div class="tsd-signature tsd-kind-icon">position<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="sinscale" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> sin<wbr>Scale</h3>
+					<div class="tsd-signature tsd-kind-icon">sin<wbr>Scale<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/5396625/src/core/Http.ts#L203">core/Http.ts:203</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/5396625/src/types/OutgoingPayloads.ts#L266">types/OutgoingPayloads.ts:266</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The position at which the track was selected.</p>
+							<p>The sine&#39;s scale.</p>
 						</div>
 						<dl class="tsd-comment-tags">
-							<dt>example</dt>
-							<dd><pre><code class="language-json"><span style="color: #098658">0</span>
-</code></pre>
+							<dt>default</dt>
+							<dd><p>1.0</p>
 							</dd>
 						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="title" class="tsd-anchor"></a>
-					<h3>title</h3>
-					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="tanoffset" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> tan<wbr>Offset</h3>
+					<div class="tsd-signature tsd-kind-icon">tan<wbr>Offset<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/5396625/src/core/Http.ts#L212">core/Http.ts:212</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/5396625/src/types/OutgoingPayloads.ts#L284">types/OutgoingPayloads.ts:284</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The title of the track.</p>
+							<p>The tangent offset.</p>
 						</div>
 						<dl class="tsd-comment-tags">
-							<dt>example</dt>
-							<dd><pre><code class="language-json"><span style="color: #A31515">&quot;Rick Astley - Never Gonna Give You Up&quot;</span>
-</code></pre>
+							<dt>default</dt>
+							<dd><p>0.0</p>
 							</dd>
 						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="uri" class="tsd-anchor"></a>
-					<h3>uri</h3>
-					<div class="tsd-signature tsd-kind-icon">uri<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="tanscale" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> tan<wbr>Scale</h3>
+					<div class="tsd-signature tsd-kind-icon">tan<wbr>Scale<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/5396625/src/core/Http.ts#L221">core/Http.ts:221</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/5396625/src/types/OutgoingPayloads.ts#L290">types/OutgoingPayloads.ts:290</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The URI of the track.</p>
+							<p>The tangent scale.</p>
 						</div>
 						<dl class="tsd-comment-tags">
-							<dt>example</dt>
-							<dd><pre><code class="language-json"><span style="color: #A31515">&quot;https://www.youtube.com/watch?v=dQw4w9WgXcQ&quot;</span>
-</code></pre>
+							<dt>default</dt>
+							<dd><p>1.0</p>
 							</dd>
 						</dl>
 					</div>
@@ -276,31 +268,31 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="trackinfo.html" class="tsd-kind-icon">Track<wbr>Info</a>
+						<a href="distortionoptions.html" class="tsd-kind-icon">Distortion<wbr>Options</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trackinfo.html#author" class="tsd-kind-icon">author</a>
+								<a href="distortionoptions.html#cosoffset" class="tsd-kind-icon">cos<wbr>Offset</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trackinfo.html#identifier" class="tsd-kind-icon">identifier</a>
+								<a href="distortionoptions.html#cosscale" class="tsd-kind-icon">cos<wbr>Scale</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trackinfo.html#isseekable" class="tsd-kind-icon">is<wbr>Seekable</a>
+								<a href="distortionoptions.html#offset" class="tsd-kind-icon">offset</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trackinfo.html#isstream" class="tsd-kind-icon">is<wbr>Stream</a>
+								<a href="distortionoptions.html#scale" class="tsd-kind-icon">scale</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trackinfo.html#length" class="tsd-kind-icon">length</a>
+								<a href="distortionoptions.html#sinoffset" class="tsd-kind-icon">sin<wbr>Offset</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trackinfo.html#position" class="tsd-kind-icon">position</a>
+								<a href="distortionoptions.html#sinscale" class="tsd-kind-icon">sin<wbr>Scale</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trackinfo.html#title" class="tsd-kind-icon">title</a>
+								<a href="distortionoptions.html#tanoffset" class="tsd-kind-icon">tan<wbr>Offset</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="trackinfo.html#uri" class="tsd-kind-icon">uri</a>
+								<a href="distortionoptions.html#tanscale" class="tsd-kind-icon">tan<wbr>Scale</a>
 							</li>
 						</ul>
 					</li>
