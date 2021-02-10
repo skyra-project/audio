@@ -150,10 +150,10 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 
 	/**
 	 * @deprecated Please use `setFilters({ bands })` instead.
-	 * @param bands The equalizer bads to be set.
+	 * @param equalizer The equalizer bads to be set.
 	 */
-	public setEqualizer(bands: readonly EqualizerBand[]) {
-		return this.setFilters({ bands });
+	public setEqualizer(equalizer: readonly EqualizerBand[]) {
+		return this.setFilters({ equalizer });
 	}
 
 	public seek(position: number) {
