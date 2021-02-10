@@ -155,29 +155,41 @@ export interface OutgoingFilterPayload extends BaseOutgoingPayload {
 	volume?: number;
 
 	/**
-	 * The equalizer bands.
+	 * The equalizer bands, there are 15 bands (0-14) that can be changed.
 	 */
-	bands?: readonly EqualizerBand[];
+	equalizer?: readonly EqualizerBand[];
 
 	/**
-	 * The karaoke options.
+	 * The karaoke options, uses equalization to eliminate a part of a band, usually targeting vocals.
 	 */
 	karaoke?: KaraokeOptions;
 
 	/**
-	 * The timescale options.
+	 * The timescale options, used to change the speed, pitch, and rate.
 	 */
 	timescale?: TimescaleOptions;
 
 	/**
-	 * The tremolo options.
+	 * The tremolo options, uses amplification to create a shuddering effect, where the volume quickly oscillates,
+	 * {@link https://en.wikipedia.org/wiki/File:Fuse_Electronics_Tremolo_MK-III_Quick_Demo.ogv example}.
 	 */
 	tremolo?: FrequencyDepthOptions;
 
 	/**
-	 * The vibrato options.
+	 * The vibrato options. Similar to tremolo, while tremolo oscillates the volume, vibrato oscillates the pitch.
 	 */
 	vibrato?: FrequencyDepthOptions;
+
+	/**
+	 * The distortion options.
+	 */
+	distortion?: DistortionOptions;
+
+	/**
+	 * The rotation options. This rotates the sound around the stereo channels/user headphones, also known as
+	 * {@link https://en.wikipedia.org/wiki/Panning_(audio) Audio Panning}.
+	 */
+	rotation?: RotationOptions;
 }
 
 export interface KaraokeOptions {
@@ -238,4 +250,62 @@ export interface FrequencyDepthOptions {
 	 * @default 0.5
 	 */
 	depth?: number;
+}
+
+export interface DistortionOptions {
+	/**
+	 * The sine's offset.
+	 * @default 0.0
+	 */
+	sinOffset?: number;
+
+	/**
+	 * The sine's scale.
+	 * @default 1.0
+	 */
+	sinScale?: number;
+
+	/**
+	 * The cosine's offset.
+	 * @default 0.0
+	 */
+	cosOffset?: number;
+
+	/**
+	 * The cosine's scale.
+	 * @default 1.0
+	 */
+	cosScale?: number;
+
+	/**
+	 * The tangent offset.
+	 * @default 0.0
+	 */
+	tanOffset?: number;
+
+	/**
+	 * The tangent scale.
+	 * @default 1.0
+	 */
+	tanScale?: number;
+
+	/**
+	 * The overall offset for all waves.
+	 * @default 0.0
+	 */
+	offset?: number;
+
+	/**
+	 * The overall scale for all waves.
+	 * @default 1.0
+	 */
+	scale?: number;
+}
+
+export interface RotationOptions {
+	/**
+	 * The frequency in Hz to rotate.
+	 * @default 2.0
+	 */
+	rotationHz?: number;
 }
