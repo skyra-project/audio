@@ -1,11 +1,6 @@
 {
-	"extends": "@skyra/eslint-config",
+	"extends": "@sapphire/ts-config",
 	"compilerOptions": {
-		"target": "ES2019",
-		"declaration": true,
-		"declarationMap": true,
-		"importsNotUsedAsValues": "error",
-		"preserveConstEnums": true,
-		"removeComments": false
+		"target": "ES2019"
 	}
 }
