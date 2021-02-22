@@ -1,7 +1,7 @@
 import { Backoff, exponential } from 'backoff';
 import { once } from 'events';
 import type { IncomingMessage } from 'http';
-import * as WebSocket from 'ws';
+import WebSocket from 'ws';
 import type { BaseNode } from '../base/BaseNode';
 import type { IncomingPayload } from '../types/IncomingPayloads';
 import type { OutgoingPayload } from '../types/OutgoingPayloads';
