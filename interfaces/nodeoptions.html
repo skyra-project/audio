@@ -105,10 +105,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="host" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> host</h3>
-					<div class="tsd-signature tsd-kind-icon">host<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<div class="tsd-signature tsd-kind-icon">host<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/552d7c8/src/base/BaseNode.ts#L89">base/BaseNode.ts:89</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c10d5d0/src/base/BaseNode.ts#L89">base/BaseNode.ts:89</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -130,16 +130,57 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="hosts" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> hosts</h3>
-					<div class="tsd-signature tsd-kind-icon">hosts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>rest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>ws<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>options<span class="tsd-signature-symbol">: </span><a href="options.html" class="tsd-signature-type" data-tsd-kind="Interface">Options</a><span class="tsd-signature-symbol">; </span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></div>
+					<div class="tsd-signature tsd-kind-icon">hosts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>rest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>ws<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>options<span class="tsd-signature-symbol">: </span><a href="options.html" class="tsd-signature-type" data-tsd-kind="Interface">Options</a><span class="tsd-signature-symbol">; </span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/552d7c8/src/base/BaseNode.ts#L47">base/BaseNode.ts:47</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c10d5d0/src/base/BaseNode.ts#L47">base/BaseNode.ts:47</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>The host options to use, this is a more advanced alternative to [[BaseNodeOptions.host]].</p>
 						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> rest<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The HTTP host of your Lavalink instance.</p>
+									</div>
+									<dl class="tsd-comment-tags">
+										<dt>example</dt>
+										<dd><pre><code class="language-json"><span style="color: #A31515">&quot;http://localhost&quot;</span>
+</code></pre>
+										</dd>
+										<dt>example</dt>
+										<dd><pre><code class="language-json"><span style="color: #A31515">&quot;http://localhost:2333&quot;</span>
+</code></pre>
+										</dd>
+									</dl>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> ws<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>options<span class="tsd-signature-symbol">: </span><a href="options.html" class="tsd-signature-type" data-tsd-kind="Interface">Options</a><span class="tsd-signature-symbol">; </span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>The WS host of your Lavalink instance.</p>
+									</div>
+									<dl class="tsd-comment-tags">
+										<dt>example</dt>
+										<dd><pre><code class="language-json"><span style="color: #A31515">&quot;ws://localhost&quot;</span>
+</code></pre>
+										</dd>
+										<dt>example</dt>
+										<dd><pre><code class="language-json"><span style="color: #A31515">&quot;ws://localhost:2333&quot;</span>
+</code></pre>
+										</dd>
+									</dl>
+								</div>
+							</li>
+						</ul>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -148,7 +189,7 @@
 					<div class="tsd-signature tsd-kind-icon">password<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/552d7c8/src/base/BaseNode.ts#L24">base/BaseNode.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c10d5d0/src/base/BaseNode.ts#L24">base/BaseNode.ts:24</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -166,10 +207,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="shardcount" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> shard<wbr>Count</h3>
-					<div class="tsd-signature tsd-kind-icon">shard<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+					<div class="tsd-signature tsd-kind-icon">shard<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/552d7c8/src/base/BaseNode.ts#L42">base/BaseNode.ts:42</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c10d5d0/src/base/BaseNode.ts#L42">base/BaseNode.ts:42</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -190,7 +231,7 @@
 					<div class="tsd-signature tsd-kind-icon">userID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/552d7c8/src/base/BaseNode.ts#L33">base/BaseNode.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/c10d5d0/src/base/BaseNode.ts#L33">base/BaseNode.ts:33</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
