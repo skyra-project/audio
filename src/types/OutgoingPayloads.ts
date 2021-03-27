@@ -89,9 +89,6 @@ export interface OutgoingVoiceUpdatePayload extends BaseOutgoingPayload {
 	event: VoiceServerUpdate;
 }
 
-/**
- * @deprecated Use `OutgoingFilterPayload` instead.
- */
 export interface OutgoingVolumePayload extends BaseOutgoingPayload {
 	op: 'volume';
 
@@ -114,14 +111,11 @@ export interface EqualizerBand {
 	 * The multiplier of the band. Valid values range from -0.25 to 1.0, where -0.25 means the given band is
 	 * completely muted, and 0.25 means it is doubled. Modifying the gain could also change the volume of the output.
 	 * @default 0
-	 * @range [-0.25, -1]
+	 * @range [-0.25, 1]
 	 */
 	gain: number;
 }
 
-/**
- * @deprecated Use `OutgoingFilterPayload` instead.
- */
 export interface OutgoingEqualizerPayload extends BaseOutgoingPayload {
 	op: 'equalizer';
 
@@ -146,11 +140,16 @@ export interface OutgoingConfigureResumingPayload {
 	timeout?: number;
 }
 
+/**
+ * @note This is not available in Lavalink v3.3.
+ */
 export interface OutgoingFilterPayload extends BaseOutgoingPayload {
 	op: 'filters';
 
 	/**
-	 * The volume to set the track.
+	 * The volume to set the track. Valid values range from 0 to 5.0, where 0 means the stream is completely muted, and
+	 * 2 means it is doubled.
+	 * @range [0, 5]
 	 */
 	volume?: number;
 
@@ -192,6 +191,9 @@ export interface OutgoingFilterPayload extends BaseOutgoingPayload {
 	rotation?: RotationOptions;
 }
 
+/**
+ * @note This is not available in Lavalink v3.3.
+ */
 export interface KaraokeOptions {
 	/**
 	 * The level.
@@ -218,6 +220,9 @@ export interface KaraokeOptions {
 	filterWidth?: number;
 }
 
+/**
+ * @note This is not available in Lavalink v3.3.
+ */
 export interface TimescaleOptions {
 	/**
 	 * The speed of the track. Must be >=0.
@@ -238,6 +243,9 @@ export interface TimescaleOptions {
 	rate?: number;
 }
 
+/**
+ * @note This is not available in Lavalink v3.3.
+ */
 export interface FrequencyDepthOptions {
 	/**
 	 * The frequency to edit. Must be >0 and <=14.
@@ -252,6 +260,9 @@ export interface FrequencyDepthOptions {
 	depth?: number;
 }
 
+/**
+ * @note This is not available in Lavalink v3.3.
+ */
 export interface DistortionOptions {
 	/**
 	 * The sine's offset.
@@ -302,6 +313,9 @@ export interface DistortionOptions {
 	scale?: number;
 }
 
+/**
+ * @note This is not available in Lavalink v3.3.
+ */
 export interface RotationOptions {
 	/**
 	 * The frequency in Hz to rotate.
