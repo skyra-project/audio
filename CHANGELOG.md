@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/skyra-project/audio/compare/v1.0.2...v1.1.0) (2021-03-27)
+
+### Features
+
+-   **filters:** added `distortion` and `rotation` ([#11](https://github.com/skyra-project/audio/issues/11)) ([5396625](https://github.com/skyra-project/audio/commit/539662515be3d67741cd08d327d6bcafba30cd69))
+-   prepare library for Lavalink v4 ([#10](https://github.com/skyra-project/audio/issues/10)) ([31d9edb](https://github.com/skyra-project/audio/commit/31d9edb1729817ee845ab80f22f854ebf43af6c3))
+
 ### [1.0.2](https://github.com/skyra-project/audio/compare/v1.0.1...v1.0.2) (2020-12-22)
 
 ### [1.0.1](https://github.com/skyra-project/audio/compare/v1.0.0...v1.0.1) (2020-10-30)
