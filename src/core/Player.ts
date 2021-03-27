@@ -86,7 +86,7 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 		return this.node.voiceServers.get(this.guildID) ?? null;
 	}
 
-	public async moveTo(node: BaseNode) {
+	public async moveTo(node: BaseNode): Promise<void> {
 		if (this.node === node) return;
 
 		const { voiceState, voiceServer } = this;
@@ -96,11 +96,11 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 		await Promise.all([node.voiceStateUpdate(voiceState), node.voiceServerUpdate(voiceServer)]);
 	}
 
-	public leave() {
+	public leave(): Promise<void> {
 		return this.join(null);
 	}
 
-	public join(channel: string | null, { deaf = false, mute = false }: JoinOptions = {}) {
+	public join(channel: string | null, { deaf = false, mute = false }: JoinOptions = {}): Promise<void> {
 		this.node.voiceServers.delete(this.guildID);
 		this.node.voiceStates.delete(this.guildID);
 
@@ -117,7 +117,7 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 		return this.node.send(this.guildID, data);
 	}
 
-	public async play(track: string | Track, { start, end, noReplace, pause }: PlayerOptions = {}) {
+	public async play(track: string | Track, { start, end, noReplace, pause }: PlayerOptions = {}): Promise<void> {
 		await this.send({
 			op: 'play',
 			guildId: this.guildID,
@@ -132,7 +132,12 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 		else this.status = Status.Playing;
 	}
 
-	public setFilters(options: FilterOptions) {
+	/**
+	 * Sets the filters for the player.
+	 * @note This is not available in Lavalink v3.3.
+	 * @param options The filters to be sent.
+	 */
+	public setFilters(options: FilterOptions): Promise<void> {
 		return this.send({
 			op: 'filters',
 			guildId: this.guildID,
@@ -141,22 +146,28 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 	}
 
 	/**
-	 * @deprecated Please use `setFilters({ volume })` instead.
 	 * @param volume The new volume to be set.
 	 */
-	public setVolume(volume: number) {
-		return this.setFilters({ volume });
+	public setVolume(volume: number): Promise<void> {
+		return this.send({
+			op: 'volume',
+			guildId: this.guildID,
+			volume
+		});
 	}
 
 	/**
-	 * @deprecated Please use `setFilters({ bands })` instead.
 	 * @param equalizer The equalizer bads to be set.
 	 */
-	public setEqualizer(equalizer: readonly EqualizerBand[]) {
-		return this.setFilters({ equalizer });
+	public setEqualizer(equalizer: readonly EqualizerBand[]): Promise<void> {
+		return this.send({
+			op: 'equalizer',
+			guildId: this.guildID,
+			bands: equalizer
+		});
 	}
 
-	public seek(position: number) {
+	public seek(position: number): Promise<void> {
 		return this.send({
 			op: 'seek',
 			guildId: this.guildID,
@@ -164,7 +175,7 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 		});
 	}
 
-	public async pause(pause = true) {
+	public async pause(pause = true): Promise<void> {
 		await this.send({
 			op: 'pause',
 			guildId: this.guildID,
@@ -175,7 +186,7 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 		else this.status = Status.Playing;
 	}
 
-	public async stop() {
+	public async stop(): Promise<void> {
 		await this.send({
 			op: 'stop',
 			guildId: this.guildID
@@ -184,7 +195,7 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 		this.status = Status.Ended;
 	}
 
-	public async destroy() {
+	public async destroy(): Promise<void> {
 		if (this.node.connected) {
 			await this.send({
 				op: 'destroy',
@@ -195,7 +206,7 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 		this.node.players.delete(this.guildID);
 	}
 
-	public voiceUpdate(sessionId: string, event: VoiceServerUpdate) {
+	public voiceUpdate(sessionId: string, event: VoiceServerUpdate): Promise<void> {
 		return this.send({
 			op: 'voiceUpdate',
 			guildId: this.guildID,
@@ -204,7 +215,7 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 		});
 	}
 
-	public send(data: OutgoingPayload) {
+	public send(data: OutgoingPayload): Promise<void> {
 		const conn = this.node.connection;
 		if (conn) return conn.send(data);
 		return Promise.reject(new Error('no WebSocket connection available'));
