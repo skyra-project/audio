@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/skyra-project/audio/compare/v1.1.0...v1.1.1) (2021-03-27)
+
+### Bug Fixes
+
+-   revert regressions ([#18](https://github.com/skyra-project/audio/issues/18)) ([a3bf758](https://github.com/skyra-project/audio/commit/a3bf7585c59a815c6b3ed96d951806c9f077bd3b))
+
 ## [1.1.0](https://github.com/skyra-project/audio/compare/v1.0.2...v1.1.0) (2021-03-27)
 
 ### Features
