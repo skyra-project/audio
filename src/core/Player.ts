@@ -22,7 +22,7 @@ export interface PlayerOptions {
 	pause?: boolean;
 }
 
-export interface FilterOptions extends Omit<OutgoingFilterPayload, 'op' | 'guildId'> { }
+export interface FilterOptions extends Omit<OutgoingFilterPayload, 'op' | 'guildId'> {}
 
 export interface JoinOptions {
 	mute?: boolean;
