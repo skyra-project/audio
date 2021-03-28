@@ -22,7 +22,7 @@ export interface PlayerOptions {
 	pause?: boolean;
 }
 
-export interface FilterOptions extends Omit<OutgoingFilterPayload, 'op' | 'guildId'> {}
+export interface FilterOptions extends Omit<OutgoingFilterPayload, 'op' | 'guildId'> { }
 
 export interface JoinOptions {
 	mute?: boolean;
@@ -97,7 +97,12 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 	}
 
 	public get position(): number {
-		return this.lastPosition ? this.lastPosition.position + (Date.now() - this.lastPosition.time) : 0;
+		// We haven't received data yet so return 0
+		if (!this.lastPosition) return 0;
+		// If we are paused don't need to account for time offset.
+		if (this.paused) return this.lastPosition.position;
+		// Otherwise we do account for time offset.
+		return this.lastPosition.position + (Date.now() - this.lastPosition.time);
 	}
 
 	public async moveTo(node: BaseNode): Promise<void> {
