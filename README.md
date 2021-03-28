@@ -56,8 +56,8 @@ const node = new Node({
 	})
 await node.connect();
 
-// This sends the required raw Voice State and Server 
-// Update data to lavalink so it can make a connection.
+// This sends the required raw Voice State and Voice 
+// Sever data to lavalink so it can make a connection.
 client.ws.on("VOICE_STATE_UPDATE", async (data) => {
 	try {
 		await client.lavalink.voiceStateUpdate(data);
