@@ -1,7 +1,7 @@
 import type { GatewayVoiceStateUpdate } from 'discord-api-types/v6';
 import { EventEmitter } from 'events';
 import type { BaseNode, VoiceServerUpdate, VoiceStateUpdate } from '../base/BaseNode';
-import type { IncomingEventPayload } from '../types/IncomingPayloads';
+import type { IncomingEventPayload, IncomingPlayerUpdatePayload } from '../types/IncomingPayloads';
 import type { EqualizerBand, OutgoingFilterPayload, OutgoingPayload } from '../types/OutgoingPayloads';
 import type { Track } from './Http';
 
@@ -29,10 +29,16 @@ export interface JoinOptions {
 	deaf?: boolean;
 }
 
+export interface LastPosition {
+	position: number;
+	time: number;
+}
+
 export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 	public readonly node: T;
 	public guildID: string;
 	public status: Status = Status.Instantiated;
+	private lastPosition: LastPosition | null = null;
 
 	public constructor(node: T, guildID: string) {
 		super();
@@ -61,6 +67,10 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 					break;
 			}
 		});
+
+		this.on('playerUpdate', (d: IncomingPlayerUpdatePayload) => {
+			this.lastPosition = d.state;
+		});
 	}
 
 	public get playing(): boolean {
@@ -84,6 +94,10 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 
 	public get voiceServer(): VoiceServerUpdate | null {
 		return this.node.voiceServers.get(this.guildID) ?? null;
+	}
+
+	public get position(): number {
+		return this.lastPosition ? this.lastPosition.position + (Date.now() - this.lastPosition.time) : 0;
 	}
 
 	public async moveTo(node: BaseNode): Promise<void> {
