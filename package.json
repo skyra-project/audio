@@ -9,7 +9,7 @@
 	"types": "dist/index.d.ts",
 	"exports": {
 		"require": "./dist/index.js",
-		"import": "./index.mjs"
+		"import": "./dist/index.mjs"
 	},
 	"homepage": "https://skyra-project.github.io/audio",
 	"private": false,
