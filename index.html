@@ -117,11 +117,30 @@
 <span style="color: #000000">        </span><span style="color: #001080">ws:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000"> </span><span style="color: #008000">// the ws host of your lavalink instance (optional)</span>
 <span style="color: #000000">    },</span>
 <span style="color: #000000">    </span><span style="color: #001080">host:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// a URL to your lavalink instance without protocol (optional, can be used instead of specifying hosts option)</span>
-<span style="color: #000000">    </span><span style="color: #795E26">send</span><span style="color: #000000">(</span><span style="color: #001080">guildID</span><span style="color: #000000">, </span><span style="color: #001080">packet</span><span style="color: #000000">) {</span>
+<span style="color: #000000">},</span>
+<span style="color: #000000">    (</span><span style="color: #001080">guildID</span><span style="color: #000000">, </span><span style="color: #001080">packet</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
 <span style="color: #000000">        </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">guild</span><span style="color: #000000"> = </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">guilds</span><span style="color: #000000">.</span><span style="color: #001080">cache</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #001080">guildID</span><span style="color: #000000">);</span>
 <span style="color: #000000">        </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">guild</span><span style="color: #000000">) </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">guild</span><span style="color: #000000">.</span><span style="color: #001080">shard</span><span style="color: #000000">.</span><span style="color: #795E26">send</span><span style="color: #000000">(</span><span style="color: #001080">packet</span><span style="color: #000000">);</span>
+<span style="color: #000000">    })</span>
+<span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">node</span><span style="color: #000000">.</span><span style="color: #795E26">connect</span><span style="color: #000000">();</span>
+
+<span style="color: #008000">// This sends the required raw Voice State and Voice </span>
+<span style="color: #008000">// Sever data to lavalink so it can make a connection.</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">ws</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;VOICE_STATE_UPDATE&quot;</span><span style="color: #000000">, </span><span style="color: #0000FF">async</span><span style="color: #000000"> (</span><span style="color: #001080">data</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">try</span><span style="color: #000000"> {</span>
+<span style="color: #000000">        </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">lavalink</span><span style="color: #000000">.</span><span style="color: #795E26">voiceStateUpdate</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000">);</span>
+<span style="color: #000000">    } </span><span style="color: #AF00DB">catch</span><span style="color: #000000"> (</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
+<span style="color: #000000">        </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">error</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">);</span>
 <span style="color: #000000">    }</span>
-<span style="color: #000000">}).</span><span style="color: #795E26">connect</span><span style="color: #000000">();</span>
+<span style="color: #000000">});</span>
+
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">ws</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;VOICE_SERVER_UPDATE&quot;</span><span style="color: #000000">, </span><span style="color: #0000FF">async</span><span style="color: #000000"> (</span><span style="color: #001080">data</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">try</span><span style="color: #000000"> {</span>
+<span style="color: #000000">        </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">node</span><span style="color: #000000">.</span><span style="color: #795E26">voiceServerUpdate</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000">);</span>
+<span style="color: #000000">    } </span><span style="color: #AF00DB">catch</span><span style="color: #000000"> (</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
+<span style="color: #000000">        </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">error</span><span style="color: #000000">(</span><span style="color: #001080">error</span><span style="color: #000000">);</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">});</span>
 </code></pre>
 				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">Node</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@skyra/audio&#039;</span><span style="color: #000000">;</span>
 
@@ -302,6 +321,9 @@
 						<a href="interfaces/incomingeventtrackexceptionpayload.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>Exception<wbr>Payload</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/incomingeventtrackexceptionpayloadexception.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>Exception<wbr>Payload<wbr>Exception</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/incomingeventtrackstuckpayload.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>Stuck<wbr>Payload</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -311,7 +333,19 @@
 						<a href="interfaces/incomingplayerupdatepayload.html" class="tsd-kind-icon">Incoming<wbr>Player<wbr>Update<wbr>Payload</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/incomingplayerupdatepayloadstate.html" class="tsd-kind-icon">Incoming<wbr>Player<wbr>Update<wbr>Payload<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/incomingstatspayload.html" class="tsd-kind-icon">Incoming<wbr>Stats<wbr>Payload</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/incomingstatspayloadcpu.html" class="tsd-kind-icon">Incoming<wbr>Stats<wbr>PayloadCPU</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/incomingstatspayloadframes.html" class="tsd-kind-icon">Incoming<wbr>Stats<wbr>Payload<wbr>Frames</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/incomingstatspayloadmemory.html" class="tsd-kind-icon">Incoming<wbr>Stats<wbr>Payload<wbr>Memory</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/joinoptions.html" class="tsd-kind-icon">Join<wbr>Options</a>

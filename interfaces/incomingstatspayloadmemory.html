@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>JoinOptions | @skyra/audio</title>
+	<title>IncomingStatsPayloadMemory | @skyra/audio</title>
 	<meta name="description" content="Documentation for @skyra/audio">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -53,10 +53,10 @@
 					<a href="../modules.html">@skyra/audio</a>
 				</li>
 				<li>
-					<a href="joinoptions.html">JoinOptions</a>
+					<a href="incomingstatspayloadmemory.html">IncomingStatsPayloadMemory</a>
 				</li>
 			</ul>
-			<h1>Interface JoinOptions</h1>
+			<h1>Interface IncomingStatsPayloadMemory</h1>
 		</div>
 	</div>
 </header>
@@ -67,7 +67,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">JoinOptions</span>
+						<span class="target">IncomingStatsPayloadMemory</span>
 					</li>
 				</ul>
 			</section>
@@ -78,8 +78,10 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="joinoptions.html#deaf" class="tsd-kind-icon">deaf</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="joinoptions.html#mute" class="tsd-kind-icon">mute</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="incomingstatspayloadmemory.html#allocated" class="tsd-kind-icon">allocated</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="incomingstatspayloadmemory.html#free" class="tsd-kind-icon">free</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="incomingstatspayloadmemory.html#reservable" class="tsd-kind-icon">reservable</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="incomingstatspayloadmemory.html#used" class="tsd-kind-icon">used</a></li>
 							</ul>
 						</section>
 					</div>
@@ -88,22 +90,42 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="deaf" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> deaf</h3>
-					<div class="tsd-signature tsd-kind-icon">deaf<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="allocated" class="tsd-anchor"></a>
+					<h3>allocated</h3>
+					<div class="tsd-signature tsd-kind-icon">allocated<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/ec1db2a/src/core/Player.ts#L29">core/Player.ts:29</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/ec1db2a/src/types/IncomingPayloads.ts#L17">types/IncomingPayloads.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="mute" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> mute</h3>
-					<div class="tsd-signature tsd-kind-icon">mute<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="free" class="tsd-anchor"></a>
+					<h3>free</h3>
+					<div class="tsd-signature tsd-kind-icon">free<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/ec1db2a/src/core/Player.ts#L28">core/Player.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/ec1db2a/src/types/IncomingPayloads.ts#L15">types/IncomingPayloads.ts:15</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="reservable" class="tsd-anchor"></a>
+					<h3>reservable</h3>
+					<div class="tsd-signature tsd-kind-icon">reservable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/ec1db2a/src/types/IncomingPayloads.ts#L18">types/IncomingPayloads.ts:18</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="used" class="tsd-anchor"></a>
+					<h3>used</h3>
+					<div class="tsd-signature tsd-kind-icon">used<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/ec1db2a/src/types/IncomingPayloads.ts#L16">types/IncomingPayloads.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -122,13 +144,19 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="joinoptions.html" class="tsd-kind-icon">Join<wbr>Options</a>
+						<a href="incomingstatspayloadmemory.html" class="tsd-kind-icon">Incoming<wbr>Stats<wbr>Payload<wbr>Memory</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="joinoptions.html#deaf" class="tsd-kind-icon">deaf</a>
+								<a href="incomingstatspayloadmemory.html#allocated" class="tsd-kind-icon">allocated</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="joinoptions.html#mute" class="tsd-kind-icon">mute</a>
+								<a href="incomingstatspayloadmemory.html#free" class="tsd-kind-icon">free</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="incomingstatspayloadmemory.html#reservable" class="tsd-kind-icon">reservable</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="incomingstatspayloadmemory.html#used" class="tsd-kind-icon">used</a>
 							</li>
 						</ul>
 					</li>

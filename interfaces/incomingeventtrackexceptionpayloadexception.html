@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>JoinOptions | @skyra/audio</title>
+	<title>IncomingEventTrackExceptionPayloadException | @skyra/audio</title>
 	<meta name="description" content="Documentation for @skyra/audio">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -53,10 +53,10 @@
 					<a href="../modules.html">@skyra/audio</a>
 				</li>
 				<li>
-					<a href="joinoptions.html">JoinOptions</a>
+					<a href="incomingeventtrackexceptionpayloadexception.html">IncomingEventTrackExceptionPayloadException</a>
 				</li>
 			</ul>
-			<h1>Interface JoinOptions</h1>
+			<h1>Interface IncomingEventTrackExceptionPayloadException</h1>
 		</div>
 	</div>
 </header>
@@ -67,7 +67,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">JoinOptions</span>
+						<span class="target">IncomingEventTrackExceptionPayloadException</span>
 					</li>
 				</ul>
 			</section>
@@ -78,8 +78,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="joinoptions.html#deaf" class="tsd-kind-icon">deaf</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="joinoptions.html#mute" class="tsd-kind-icon">mute</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="incomingeventtrackexceptionpayloadexception.html#cause" class="tsd-kind-icon">cause</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="incomingeventtrackexceptionpayloadexception.html#message" class="tsd-kind-icon">message</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="incomingeventtrackexceptionpayloadexception.html#severity" class="tsd-kind-icon">severity</a></li>
 							</ul>
 						</section>
 					</div>
@@ -88,24 +89,61 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="deaf" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> deaf</h3>
-					<div class="tsd-signature tsd-kind-icon">deaf<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="cause" class="tsd-anchor"></a>
+					<h3>cause</h3>
+					<div class="tsd-signature tsd-kind-icon">cause<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/ec1db2a/src/core/Player.ts#L29">core/Player.ts:29</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/ec1db2a/src/types/IncomingPayloads.ts#L88">types/IncomingPayloads.ts:88</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The cause for the exception.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="mute" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> mute</h3>
-					<div class="tsd-signature tsd-kind-icon">mute<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="message" class="tsd-anchor"></a>
+					<h3>message</h3>
+					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/ec1db2a/src/core/Player.ts#L28">core/Player.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/ec1db2a/src/types/IncomingPayloads.ts#L74">types/IncomingPayloads.ts:74</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The message explaining the cause of the exception.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-json"><span style="color: #A31515">&quot;The uploader has not made this video available in your country.&quot;</span>
+</code></pre>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="severity" class="tsd-anchor"></a>
+					<h3>severity</h3>
+					<div class="tsd-signature tsd-kind-icon">severity<span class="tsd-signature-symbol">:</span> <a href="../enums/exceptionseverity.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ExceptionSeverity</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/ec1db2a/src/types/IncomingPayloads.ts#L83">types/IncomingPayloads.ts:83</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The severity of the exception.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-json"><span style="color: #A31515">&quot;COMMON&quot;</span>
+</code></pre>
+							</dd>
+						</dl>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -122,13 +160,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="joinoptions.html" class="tsd-kind-icon">Join<wbr>Options</a>
+						<a href="incomingeventtrackexceptionpayloadexception.html" class="tsd-kind-icon">Incoming<wbr>Event<wbr>Track<wbr>Exception<wbr>Payload<wbr>Exception</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="joinoptions.html#deaf" class="tsd-kind-icon">deaf</a>
+								<a href="incomingeventtrackexceptionpayloadexception.html#cause" class="tsd-kind-icon">cause</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="joinoptions.html#mute" class="tsd-kind-icon">mute</a>
+								<a href="incomingeventtrackexceptionpayloadexception.html#message" class="tsd-kind-icon">message</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="incomingeventtrackexceptionpayloadexception.html#severity" class="tsd-kind-icon">severity</a>
 							</li>
 						</ul>
 					</li>
