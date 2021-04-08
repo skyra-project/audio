@@ -9,7 +9,7 @@ export interface ClusterFilter {
 }
 
 export interface ClusterSend {
-	(guildID: string, packet: GatewaySendPayload): any;
+	(guildID: string, packet: GatewaySendPayload): unknown;
 }
 
 export abstract class BaseCluster extends EventEmitter {

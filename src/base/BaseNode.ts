@@ -90,7 +90,7 @@ export interface NodeOptions {
 }
 
 export interface NodeSend {
-	(guildID: string, packet: GatewaySendPayload): Promise<any>;
+	(guildID: string, packet: GatewaySendPayload): unknown;
 }
 
 export abstract class BaseNode extends EventEmitter {
