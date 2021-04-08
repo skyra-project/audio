@@ -40,25 +40,33 @@ yarn add @skyra/audio
 ```js
 const { Node } = require('@skyra/audio');
 
-const node = new Node({
-	password: '', // your Lavalink password
-	userID: '', // the user ID of your bot
-	shardCount: 0, // the total number of shards that your bot is running (optional, useful if you're load balancing)
-	hosts: {
-		rest: '', // the http host of your lavalink instance (optional)
-		ws: '' // the ws host of your lavalink instance (optional)
+const node = new Node(
+	{
+		// Your Lavalink password:
+		password: '',
+		// The user ID of your bot:
+		userID: '',
+		// The total number of shards that your bot is running (optional, useful if you're load balancing):
+		shardCount: 0,
+		// A URL to your lavalink instance without protocol (optional, can be used instead of specifying hosts option):
+		host: '',
+		// Alternatively, define a custom rest and ws host links:
+		hosts: {
+			// The http host of your lavalink instance (optional):
+			rest: '',
+			// The ws host of your lavalink instance (optional):
+			ws: ''
+		}
 	},
-	host: '', // a URL to your lavalink instance without protocol (optional, can be used instead of specifying hosts option)
-},
 	(guildID, packet) => {
 		const guild = client.guilds.cache.get(guildID);
 		if (guild) return guild.shard.send(packet);
-	})
+	}
+);
 await node.connect();
 
-// This sends the required raw Voice State and Voice 
-// Sever data to lavalink so it can make a connection.
-client.ws.on("VOICE_STATE_UPDATE", async (data) => {
+// This sends the required raw Voice State and Voice Server data to lavalink so it can make a connection.
+client.ws.on('VOICE_STATE_UPDATE', async (data) => {
 	try {
 		await client.lavalink.voiceStateUpdate(data);
 	} catch (error) {
@@ -66,7 +74,7 @@ client.ws.on("VOICE_STATE_UPDATE", async (data) => {
 	}
 });
 
-client.ws.on("VOICE_SERVER_UPDATE", async (data) => {
+client.ws.on('VOICE_SERVER_UPDATE', async (data) => {
 	try {
 		await node.voiceServerUpdate(data);
 	} catch (error) {

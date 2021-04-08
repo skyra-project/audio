@@ -108,25 +108,33 @@
 				</a>
 				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">Node</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;@skyra/audio&#039;</span><span style="color: #000000">);</span>
 
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">node</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Node</span><span style="color: #000000">({</span>
-<span style="color: #000000">    </span><span style="color: #001080">password:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// your Lavalink password</span>
-<span style="color: #000000">    </span><span style="color: #001080">userID:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// the user ID of your bot</span>
-<span style="color: #000000">    </span><span style="color: #001080">shardCount:</span><span style="color: #000000"> </span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #008000">// the total number of shards that your bot is running (optional, useful if you&#039;re load balancing)</span>
-<span style="color: #000000">    </span><span style="color: #001080">hosts:</span><span style="color: #000000"> {</span>
-<span style="color: #000000">        </span><span style="color: #001080">rest:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// the http host of your lavalink instance (optional)</span>
-<span style="color: #000000">        </span><span style="color: #001080">ws:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000"> </span><span style="color: #008000">// the ws host of your lavalink instance (optional)</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">node</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Node</span><span style="color: #000000">(</span>
+<span style="color: #000000">    {</span>
+<span style="color: #000000">        </span><span style="color: #008000">// Your Lavalink password:</span>
+<span style="color: #000000">        </span><span style="color: #001080">password:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #008000">// The user ID of your bot:</span>
+<span style="color: #000000">        </span><span style="color: #001080">userID:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #008000">// The total number of shards that your bot is running (optional, useful if you&#039;re load balancing):</span>
+<span style="color: #000000">        </span><span style="color: #001080">shardCount:</span><span style="color: #000000"> </span><span style="color: #098658">0</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #008000">// A URL to your lavalink instance without protocol (optional, can be used instead of specifying hosts option):</span>
+<span style="color: #000000">        </span><span style="color: #001080">host:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #008000">// Alternatively, define a custom rest and ws host links:</span>
+<span style="color: #000000">        </span><span style="color: #001080">hosts:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">            </span><span style="color: #008000">// The http host of your lavalink instance (optional):</span>
+<span style="color: #000000">            </span><span style="color: #001080">rest:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">            </span><span style="color: #008000">// The ws host of your lavalink instance (optional):</span>
+<span style="color: #000000">            </span><span style="color: #001080">ws:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;&#039;</span>
+<span style="color: #000000">        }</span>
 <span style="color: #000000">    },</span>
-<span style="color: #000000">    </span><span style="color: #001080">host:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;&#039;</span><span style="color: #000000">, </span><span style="color: #008000">// a URL to your lavalink instance without protocol (optional, can be used instead of specifying hosts option)</span>
-<span style="color: #000000">},</span>
 <span style="color: #000000">    (</span><span style="color: #001080">guildID</span><span style="color: #000000">, </span><span style="color: #001080">packet</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
 <span style="color: #000000">        </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">guild</span><span style="color: #000000"> = </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">guilds</span><span style="color: #000000">.</span><span style="color: #001080">cache</span><span style="color: #000000">.</span><span style="color: #795E26">get</span><span style="color: #000000">(</span><span style="color: #001080">guildID</span><span style="color: #000000">);</span>
 <span style="color: #000000">        </span><span style="color: #AF00DB">if</span><span style="color: #000000"> (</span><span style="color: #001080">guild</span><span style="color: #000000">) </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">guild</span><span style="color: #000000">.</span><span style="color: #001080">shard</span><span style="color: #000000">.</span><span style="color: #795E26">send</span><span style="color: #000000">(</span><span style="color: #001080">packet</span><span style="color: #000000">);</span>
-<span style="color: #000000">    })</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">);</span>
 <span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">node</span><span style="color: #000000">.</span><span style="color: #795E26">connect</span><span style="color: #000000">();</span>
 
-<span style="color: #008000">// This sends the required raw Voice State and Voice </span>
-<span style="color: #008000">// Sever data to lavalink so it can make a connection.</span>
-<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">ws</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;VOICE_STATE_UPDATE&quot;</span><span style="color: #000000">, </span><span style="color: #0000FF">async</span><span style="color: #000000"> (</span><span style="color: #001080">data</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #008000">// This sends the required raw Voice State and Voice Server data to lavalink so it can make a connection.</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">ws</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;VOICE_STATE_UPDATE&#039;</span><span style="color: #000000">, </span><span style="color: #0000FF">async</span><span style="color: #000000"> (</span><span style="color: #001080">data</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
 <span style="color: #000000">    </span><span style="color: #AF00DB">try</span><span style="color: #000000"> {</span>
 <span style="color: #000000">        </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">lavalink</span><span style="color: #000000">.</span><span style="color: #795E26">voiceStateUpdate</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000">);</span>
 <span style="color: #000000">    } </span><span style="color: #AF00DB">catch</span><span style="color: #000000"> (</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
@@ -134,7 +142,7 @@
 <span style="color: #000000">    }</span>
 <span style="color: #000000">});</span>
 
-<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">ws</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;VOICE_SERVER_UPDATE&quot;</span><span style="color: #000000">, </span><span style="color: #0000FF">async</span><span style="color: #000000"> (</span><span style="color: #001080">data</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #001080">ws</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;VOICE_SERVER_UPDATE&#039;</span><span style="color: #000000">, </span><span style="color: #0000FF">async</span><span style="color: #000000"> (</span><span style="color: #001080">data</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
 <span style="color: #000000">    </span><span style="color: #AF00DB">try</span><span style="color: #000000"> {</span>
 <span style="color: #000000">        </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">node</span><span style="color: #000000">.</span><span style="color: #795E26">voiceServerUpdate</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000">);</span>
 <span style="color: #000000">    } </span><span style="color: #AF00DB">catch</span><span style="color: #000000"> (</span><span style="color: #001080">error</span><span style="color: #000000">) {</span>
@@ -411,9 +419,6 @@
 						<a href="interfaces/rotationoptions.html" class="tsd-kind-icon">Rotation<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/stats.html" class="tsd-kind-icon">Stats</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/timescaleoptions.html" class="tsd-kind-icon">Timescale<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -436,6 +441,9 @@
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#routeplannerstatus" class="tsd-kind-icon">Route<wbr>Planner<wbr>Status</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="modules.html#stats" class="tsd-kind-icon">Stats</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="modules.html#voiceserverupdate" class="tsd-kind-icon">Voice<wbr>Server<wbr>Update</a>
