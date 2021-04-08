@@ -8,27 +8,7 @@ export interface ClusterNodeOptions extends NodeOptions {
 	tags?: Iterable<string>;
 }
 
-export interface Stats {
-	players: number;
-	playingPlayers: number;
-	uptime: number;
-	memory?: {
-		free: number;
-		used: number;
-		allocated: number;
-		reservable: number;
-	};
-	cpu?: {
-		cores: number;
-		systemLoad: number;
-		lavalinkLoad: number;
-	};
-	frameStats?: {
-		sent: number;
-		nulled: number;
-		deficit: number;
-	};
-}
+export type Stats = Omit<IncomingStatsPayload, 'op'>;
 
 export class ClusterNode extends BaseNode {
 	public tags: Set<string>;
