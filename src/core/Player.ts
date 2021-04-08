@@ -1,7 +1,7 @@
 import type { GatewayVoiceStateUpdate } from 'discord-api-types/v6';
 import { EventEmitter } from 'events';
 import type { BaseNode, VoiceServerUpdate, VoiceStateUpdate } from '../base/BaseNode';
-import type { IncomingEventPayload } from '../types/IncomingPayloads';
+import type { IncomingEventPayload, IncomingPlayerUpdatePayload, IncomingPlayerUpdatePayloadState } from '../types/IncomingPayloads';
 import type { EqualizerBand, OutgoingFilterPayload, OutgoingPayload } from '../types/OutgoingPayloads';
 import type { Track } from './Http';
 
@@ -33,6 +33,7 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 	public readonly node: T;
 	public guildID: string;
 	public status: Status = Status.Instantiated;
+	private lastPosition: IncomingPlayerUpdatePayloadState | null = null;
 
 	public constructor(node: T, guildID: string) {
 		super();
@@ -61,6 +62,10 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 					break;
 			}
 		});
+
+		this.on('playerUpdate', (d: IncomingPlayerUpdatePayload) => {
+			this.lastPosition = d.state;
+		});
 	}
 
 	public get playing(): boolean {
@@ -84,6 +89,15 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 
 	public get voiceServer(): VoiceServerUpdate | null {
 		return this.node.voiceServers.get(this.guildID) ?? null;
+	}
+
+	public get position(): number {
+		// We haven't received data yet so return 0
+		if (!this.lastPosition) return 0;
+		// If we are paused don't need to account for time offset.
+		if (this.paused) return this.lastPosition.position;
+		// Otherwise we do account for time offset.
+		return this.lastPosition.position + (Date.now() - this.lastPosition.time);
 	}
 
 	public async moveTo(node: BaseNode): Promise<void> {

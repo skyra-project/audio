@@ -49,11 +49,30 @@ const node = new Node({
 		ws: '' // the ws host of your lavalink instance (optional)
 	},
 	host: '', // a URL to your lavalink instance without protocol (optional, can be used instead of specifying hosts option)
-	send(guildID, packet) {
+},
+	(guildID, packet) => {
 		const guild = client.guilds.cache.get(guildID);
 		if (guild) return guild.shard.send(packet);
+	})
+await node.connect();
+
+// This sends the required raw Voice State and Voice 
+// Sever data to lavalink so it can make a connection.
+client.ws.on("VOICE_STATE_UPDATE", async (data) => {
+	try {
+		await client.lavalink.voiceStateUpdate(data);
+	} catch (error) {
+		console.error(error);
 	}
-}).connect();
+});
+
+client.ws.on("VOICE_SERVER_UPDATE", async (data) => {
+	try {
+		await node.voiceServerUpdate(data);
+	} catch (error) {
+		console.error(error);
+	}
+});
 ```
 
 ```ts

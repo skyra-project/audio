@@ -1,12 +1,33 @@
 export type IncomingPayload = IncomingPlayerUpdatePayload | IncomingStatsPayload | IncomingEventPayload;
 
+export interface IncomingPlayerUpdatePayloadState {
+	time: number;
+	position: number;
+}
+
 export interface IncomingPlayerUpdatePayload {
 	op: 'playerUpdate';
 	guildId: string;
-	state: {
-		time: number;
-		position: number;
-	};
+	state: IncomingPlayerUpdatePayloadState;
+}
+
+export interface IncomingStatsPayloadMemory {
+	free: number;
+	used: number;
+	allocated: number;
+	reservable: number;
+}
+
+export interface IncomingStatsPayloadCPU {
+	cores: number;
+	systemLoad: number;
+	lavalinkLoad: number;
+}
+
+export interface IncomingStatsPayloadFrames {
+	sent: number;
+	nulled: number;
+	deficit: number;
 }
 
 export interface IncomingStatsPayload {
@@ -14,22 +35,9 @@ export interface IncomingStatsPayload {
 	players: number;
 	playingPlayers: number;
 	uptime: number;
-	memory: {
-		free: number;
-		used: number;
-		allocated: number;
-		reservable: number;
-	};
-	cpu: {
-		cores: number;
-		systemLoad: number;
-		lavalinkLoad: number;
-	};
-	frames?: {
-		sent: number;
-		nulled: number;
-		deficit: number;
-	};
+	memory: IncomingStatsPayloadMemory;
+	cpu: IncomingStatsPayloadCPU;
+	frames?: IncomingStatsPayloadFrames;
 }
 
 interface IIncomingEvent {
@@ -55,6 +63,31 @@ export interface IncomingEventTrackEndPayload extends IIncomingEvent {
 	reason: string;
 }
 
+export interface IncomingEventTrackExceptionPayloadException {
+	/**
+	 * The message explaining the cause of the exception.
+	 * @example
+	 * ```json
+	 * "The uploader has not made this video available in your country."
+	 * ```
+	 */
+	message: string;
+
+	/**
+	 * The severity of the exception.
+	 * @example
+	 * ```json
+	 * "COMMON"
+	 * ```
+	 */
+	severity: ExceptionSeverity;
+
+	/**
+	 * The cause for the exception.
+	 */
+	cause: string;
+}
+
 export interface IncomingEventTrackExceptionPayload extends IIncomingEvent {
 	type: 'TrackExceptionEvent';
 
@@ -66,30 +99,7 @@ export interface IncomingEventTrackExceptionPayload extends IIncomingEvent {
 	/**
 	 * The exception's details.
 	 */
-	exception: {
-		/**
-		 * The message explaining the cause of the exception.
-		 * @example
-		 * ```json
-		 * "The uploader has not made this video available in your country."
-		 * ```
-		 */
-		message: string;
-
-		/**
-		 * The severity of the exception.
-		 * @example
-		 * ```json
-		 * "COMMON"
-		 * ```
-		 */
-		severity: ExceptionSeverity;
-
-		/**
-		 * The cause for the exception.
-		 */
-		cause: string;
-	};
+	exception: IncomingEventTrackExceptionPayloadException;
 }
 
 export interface IncomingEventTrackStuckPayload extends IIncomingEvent {
