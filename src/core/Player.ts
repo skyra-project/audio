@@ -110,11 +110,11 @@ export class Player<T extends BaseNode = BaseNode> extends EventEmitter {
 		await Promise.all([node.voiceStateUpdate(voiceState), node.voiceServerUpdate(voiceServer)]);
 	}
 
-	public leave(): Promise<void> {
+	public leave(): unknown {
 		return this.join(null);
 	}
 
-	public join(channel: string | null, { deaf = false, mute = false }: JoinOptions = {}): Promise<void> {
+	public join(channel: string | null, { deaf = false, mute = false }: JoinOptions = {}): unknown {
 		this.node.voiceServers.delete(this.guildID);
 		this.node.voiceStates.delete(this.guildID);
 

@@ -31,9 +31,9 @@ export class ClusterNode extends BaseNode {
 	public emit(event: ConnectionEvents.PlayerUpdate, payload: IncomingPlayerUpdatePayload): boolean;
 	public emit(event: ConnectionEvents.Stats, payload: IncomingStatsPayload): boolean;
 	public emit(event: ConnectionEvents.Upgrade, req: IncomingMessage): boolean;
-	public emit(event: ConnectionEvents, ...args: any[]): boolean {
+	public emit(event: ConnectionEvents, ...args: readonly any[]): boolean {
 		// @ts-expect-error Expect same arguments as parent.
-		if (this.listenerCount(name)) super.emit(name, ...args);
+		if (this.listenerCount(event)) super.emit(event, ...args);
 		return this.cluster.emit(event, ...args);
 	}
 

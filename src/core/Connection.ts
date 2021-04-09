@@ -317,7 +317,7 @@ export class Connection<T extends BaseNode = BaseNode> {
 		this.node.emit(pk.op, pk);
 	}
 
-	private onError(err: any): void {
+	private onError(err: Error): void {
 		this.node.emit(ConnectionEvents.Error, err);
 		this._reconnect();
 	}

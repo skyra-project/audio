@@ -322,7 +322,7 @@ export class Http {
 		return this.do('GET', url);
 	}
 
-	public async do<T = any>(method: string, url: URL, data?: Buffer): Promise<T> {
+	public async do<T = unknown>(method: string, url: URL, data?: Buffer): Promise<T> {
 		const message = await new Promise<IncomingMessage>((resolve) => {
 			const req = request(
 				{
