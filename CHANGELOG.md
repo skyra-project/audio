@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/skyra-project/audio/compare/v1.1.1...v1.1.2) (2021-05-19)
+
+### Bug Fixes
+
+-   correct some types and fixed a bug ([#22](https://github.com/skyra-project/audio/issues/22)) ([9bccab5](https://github.com/skyra-project/audio/commit/9bccab5133224b939b348e0dc5d5cad0d7bd142e))
+-   mark package as side effect free ([cb5c824](https://github.com/skyra-project/audio/commit/cb5c82475d69890b02595ab43c193bf1899f72ed))
+-   **cluster:** use the correct type for ClusterNode#stats ([6623fe5](https://github.com/skyra-project/audio/commit/6623fe5fa817ad424bd86b3fbc9b574f68e3dd35))
+-   **docs:** prettify README example ([e9aa809](https://github.com/skyra-project/audio/commit/e9aa809a95495e464de6cc918606b42071cf7f46))
+-   **package:** define the correct MJS export ([1c027cc](https://github.com/skyra-project/audio/commit/1c027cc0929d357f3544d5cf105fa121f147aa12))
+
 ### [1.1.1](https://github.com/skyra-project/audio/compare/v1.1.0...v1.1.1) (2021-03-27)
 
 ### Bug Fixes
