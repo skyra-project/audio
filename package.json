@@ -24,7 +24,7 @@
 		"test": "jest",
 		"test:watch": "jest --watch",
 		"update": "yarn upgrade-interactive --latest",
-		"clean": "tsc -b src --clean",
+		"clean": "node scripts/clean.mjs",
 		"build": "tsc -b src",
 		"postbuild": "gen-esm-wrapper dist/index.js dist/index.mjs",
 		"watch": "tsc -b src -w",
