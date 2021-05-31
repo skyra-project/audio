@@ -1,6 +1,6 @@
 {
 	"name": "@skyra/audio",
-	"version": "1.1.2",
+	"version": "1.2.0",
 	"description": "A TypeScript wrapper for Lavalink.",
 	"author": "@skyra",
 	"license": "MIT",
