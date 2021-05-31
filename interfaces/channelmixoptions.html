@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>OutgoingSeekPayload | @skyra/audio</title>
+	<title>ChannelMixOptions | @skyra/audio</title>
 	<meta name="description" content="Documentation for @skyra/audio">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -53,26 +53,37 @@
 					<a href="../modules.html">@skyra/audio</a>
 				</li>
 				<li>
-					<a href="outgoingseekpayload.html">OutgoingSeekPayload</a>
+					<a href="channelmixoptions.html">ChannelMixOptions</a>
 				</li>
 			</ul>
-			<h1>Interface OutgoingSeekPayload</h1>
+			<h1>Interface ChannelMixOptions</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Mixes both channels (left and right), with a configurable factor on how much each channel affects the other.
+						With the defaults, both channels are kept independent from each other.</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>note</dt>
+						<dd><p>Setting all factors to 0.5 means both channels get the same audio.</p>
+						</dd>
+						<dt>note</dt>
+						<dd><p>This is not available in Lavalink v3.3.</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="baseoutgoingpayload.html" class="tsd-signature-type" data-tsd-kind="Interface">BaseOutgoingPayload</a>
-						<ul class="tsd-hierarchy">
-							<li>
-								<span class="target">OutgoingSeekPayload</span>
-							</li>
-						</ul>
+						<span class="target">ChannelMixOptions</span>
 					</li>
 				</ul>
 			</section>
@@ -83,9 +94,10 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="outgoingseekpayload.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="outgoingseekpayload.html#op" class="tsd-kind-icon">op</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="outgoingseekpayload.html#position" class="tsd-kind-icon">position</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="channelmixoptions.html#lefttoleft" class="tsd-kind-icon">left<wbr>ToLeft</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="channelmixoptions.html#lefttoright" class="tsd-kind-icon">left<wbr>ToRight</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="channelmixoptions.html#righttoleft" class="tsd-kind-icon">right<wbr>ToLeft</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="channelmixoptions.html#righttoright" class="tsd-kind-icon">right<wbr>ToRight</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,45 +105,84 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="guildid" class="tsd-anchor"></a>
-					<h3>guild<wbr>Id</h3>
-					<div class="tsd-signature tsd-kind-icon">guild<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="lefttoleft" class="tsd-anchor"></a>
+					<h3>left<wbr>ToLeft</h3>
+					<div class="tsd-signature tsd-kind-icon">left<wbr>ToLeft<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="baseoutgoingpayload.html">BaseOutgoingPayload</a>.<a href="baseoutgoingpayload.html#guildid">guildId</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/2ef7f7c/src/types/OutgoingPayloads.ts#L19">types/OutgoingPayloads.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/2ef7f7c/src/types/OutgoingPayloads.ts#L348">types/OutgoingPayloads.ts:348</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The guild&#39;s ID to identify the player.</p>
+							<p>The left-to-left mix, modifies the volume in the left channel.</p>
 						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>1.0</p>
+							</dd>
+						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="op" class="tsd-anchor"></a>
-					<h3>op</h3>
-					<div class="tsd-signature tsd-kind-icon">op<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;seek&quot;</span></div>
+					<a name="lefttoright" class="tsd-anchor"></a>
+					<h3>left<wbr>ToRight</h3>
+					<div class="tsd-signature tsd-kind-icon">left<wbr>ToRight<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/2ef7f7c/src/types/OutgoingPayloads.ts#L31">types/OutgoingPayloads.ts:31</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="position" class="tsd-anchor"></a>
-					<h3>position</h3>
-					<div class="tsd-signature tsd-kind-icon">position<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/2ef7f7c/src/types/OutgoingPayloads.ts#L36">types/OutgoingPayloads.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/2ef7f7c/src/types/OutgoingPayloads.ts#L354">types/OutgoingPayloads.ts:354</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The offset in milliseconds to play the current track from.</p>
+							<p>The left-to-right mix, modifies how much of the left channel goes to the right one.</p>
 						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>0.0</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="righttoleft" class="tsd-anchor"></a>
+					<h3>right<wbr>ToLeft</h3>
+					<div class="tsd-signature tsd-kind-icon">right<wbr>ToLeft<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/2ef7f7c/src/types/OutgoingPayloads.ts#L360">types/OutgoingPayloads.ts:360</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The right-to-left mix, modifies how much of the right channel goes to the left one.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>0.0</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="righttoright" class="tsd-anchor"></a>
+					<h3>right<wbr>ToRight</h3>
+					<div class="tsd-signature tsd-kind-icon">right<wbr>ToRight<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/skyra-project/audio/blob/2ef7f7c/src/types/OutgoingPayloads.ts#L366">types/OutgoingPayloads.ts:366</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The right-to-right mix, modifies the volume in the right channel.</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>default</dt>
+							<dd><p>1.0</p>
+							</dd>
+						</dl>
 					</div>
 				</section>
 			</section>
@@ -149,16 +200,19 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="outgoingseekpayload.html" class="tsd-kind-icon">Outgoing<wbr>Seek<wbr>Payload</a>
+						<a href="channelmixoptions.html" class="tsd-kind-icon">Channel<wbr>Mix<wbr>Options</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="outgoingseekpayload.html#guildid" class="tsd-kind-icon">guild<wbr>Id</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="channelmixoptions.html#lefttoleft" class="tsd-kind-icon">left<wbr>ToLeft</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="outgoingseekpayload.html#op" class="tsd-kind-icon">op</a>
+								<a href="channelmixoptions.html#lefttoright" class="tsd-kind-icon">left<wbr>ToRight</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="outgoingseekpayload.html#position" class="tsd-kind-icon">position</a>
+								<a href="channelmixoptions.html#righttoleft" class="tsd-kind-icon">right<wbr>ToLeft</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="channelmixoptions.html#righttoright" class="tsd-kind-icon">right<wbr>ToRight</a>
 							</li>
 						</ul>
 					</li>
