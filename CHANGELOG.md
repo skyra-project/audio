@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.1](https://github.com/skyra-project/audio/compare/v1.2.0...v1.2.1) (2021-06-19)
+
+### Bug Fixes
+
+-   bump gen-esm-wrapper to fix ESM bundle ([6abd375](https://github.com/skyra-project/audio/commit/6abd37564e8d199c482104ebb304c553470b83d4))
+
 ## [1.2.0](https://github.com/skyra-project/audio/compare/v1.1.2...v1.2.0) (2021-05-31)
 
 ### Features
