@@ -38,7 +38,7 @@
 	"dependencies": {
 		"backoff": "^2.5.0",
 		"tslib": "^2.3.0",
-		"ws": "^7.5.0"
+		"ws": "^7.5.3"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^12.1.4",
@@ -46,10 +46,10 @@
 		"@sapphire/eslint-config": "^3.2.1",
 		"@sapphire/prettier-config": "^1.1.6",
 		"@sapphire/ts-config": "^2.3.1",
-		"@types/backoff": "^2.5.1",
-		"@types/jest": "^26.0.23",
-		"@types/node": "^15.12.4",
-		"@types/ws": "^7.4.5",
+		"@types/backoff": "^2.5.2",
+		"@types/jest": "^26.0.24",
+		"@types/node": "^15.14.0",
+		"@types/ws": "^7.4.6",
 		"@typescript-eslint/eslint-plugin": "^4.27.0",
 		"@typescript-eslint/parser": "^4.28.0",
 		"cz-conventional-changelog": "^3.3.0",
@@ -66,7 +66,7 @@
 		"pretty-quick": "^3.1.1",
 		"standard-version": "^9.3.0",
 		"ts-jest": "^27.0.3",
-		"ts-node": "^10.0.0",
+		"ts-node": "^10.1.0",
 		"typedoc": "^0.21.0",
 		"typedoc-plugin-nojekyll": "^1.0.1",
 		"typescript": "^4.3.5"
