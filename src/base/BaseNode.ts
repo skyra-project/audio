@@ -1,4 +1,4 @@
-import type { GatewaySendPayload, GatewayVoiceServerUpdateDispatch, GatewayVoiceState } from 'discord-api-types/v6';
+import type { GatewaySendPayload, GatewayVoiceServerUpdateDispatch, GatewayVoiceState } from 'discord-api-types/v9';
 import { EventEmitter } from 'events';
 import type { IncomingMessage } from 'http';
 import * as WebSocket from 'ws';

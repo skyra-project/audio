@@ -1,4 +1,4 @@
-import type { GatewaySendPayload } from 'discord-api-types/v6';
+import type { GatewaySendPayload } from 'discord-api-types/v9';
 import { EventEmitter } from 'events';
 import { ClusterNode, ClusterNodeOptions } from '../ClusterNode';
 import type { Player } from '../core/Player';
