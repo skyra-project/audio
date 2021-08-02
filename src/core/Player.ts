@@ -1,4 +1,4 @@
-import type { GatewayVoiceStateUpdate } from 'discord-api-types/v6';
+import type { GatewayVoiceStateUpdate } from 'discord-api-types/v9';
 import { EventEmitter } from 'events';
 import type { BaseNode, VoiceServerUpdate, VoiceStateUpdate } from '../base/BaseNode';
 import type { IncomingEventPayload, IncomingPlayerUpdatePayload, IncomingPlayerUpdatePayloadState } from '../types/IncomingPayloads';
