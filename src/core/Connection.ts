@@ -307,7 +307,7 @@ export class Connection<T extends BaseNode = BaseNode> {
 		try {
 			pk = JSON.parse((d as string | Buffer).toString());
 		} catch (e) {
-			this.node.emit(ConnectionEvents.Error, e);
+			this.node.emit(ConnectionEvents.Error, e as Error);
 			return;
 		}
 
