@@ -38,7 +38,7 @@
 	"dependencies": {
 		"backoff": "^2.5.0",
 		"tslib": "^2.3.1",
-		"ws": "^8.2.0"
+		"ws": "^8.2.2"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^13.1.0",
@@ -48,7 +48,7 @@
 		"@sapphire/ts-config": "^3.0.0",
 		"@types/backoff": "^2.5.2",
 		"@types/jest": "^26.0.24",
-		"@types/node": "^16.6.2",
+		"@types/node": "^16.9.1",
 		"@types/ws": "^7.4.7",
 		"@typescript-eslint/eslint-plugin": "^4.29.3",
 		"@typescript-eslint/parser": "^4.30.0",
@@ -62,7 +62,7 @@
 		"jest": "^27.1.0",
 		"jest-circus": "^27.1.0",
 		"lint-staged": "^11.1.2",
-		"prettier": "^2.3.2",
+		"prettier": "^2.4.1",
 		"pretty-quick": "^3.1.1",
 		"standard-version": "^9.3.1",
 		"ts-jest": "^27.0.5",
