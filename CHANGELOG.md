@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/skyra-project/audio/compare/v1.2.1...v2.0.0) (2021-09-22)
+
+### ⚠ BREAKING CHANGES
+
+-   Updated discord-api-types version from API v6 to API v9
+
+### Features
+
+-   update discord-api-types from API v6 to API v9 ([#39](https://github.com/skyra-project/audio/issues/39)) ([640e33c](https://github.com/skyra-project/audio/commit/640e33c06a4aff93e426d49578a78145ebc100f7))
+
 ### [1.2.1](https://github.com/skyra-project/audio/compare/v1.2.0...v1.2.1) (2021-06-19)
 
 ### Bug Fixes
