@@ -2,7 +2,6 @@
 
 [![GitHub](https://img.shields.io/github/license/skyra-project/audio)](https://github.com/skyra-project/audio/blob/main/LICENSE.md)
 [![codecov](https://codecov.io/gh/skyra-project/tags/branch/main/graph/badge.svg?token=WW5BOGTTKW)](https://codecov.io/gh/skyra-project/tags)
-[![Depfu](https://badges.depfu.com/badges/f67681c7b5f9b8357a4ab749f381f5da/count.svg)](https://depfu.com/github/skyra-project/audio?project_id=17045)
 [![npm](https://img.shields.io/npm/v/@skyra/audio?color=crimson&label=NPM&logo=npm&style=flat-square)](https://www.npmjs.com/package/@skyra/audio)
 ![npm bundle size minified (scoped)](https://img.shields.io/bundlephobia/min/@skyra/audio?label=minified&logo=webpack)
 
