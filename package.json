@@ -76,7 +76,7 @@
 	},
 	"engines": {
 		"node": ">=v12.22.6",
-		"npm": ">=6"
+		"npm": ">=6.14.15"
 	},
 	"keywords": [
 		"audio",
