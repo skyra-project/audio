@@ -79,8 +79,6 @@ export class Connection<T extends BaseNode = BaseNode> {
 	 */
 	public ws: WebSocket | null;
 
-	/* eslint-disable @typescript-eslint/explicit-member-accessibility */
-
 	/**
 	 * The back-off queue.
 	 */
@@ -120,8 +118,6 @@ export class Connection<T extends BaseNode = BaseNode> {
 	 * The bound callback function for `onError`.
 	 */
 	#error: Connection<T>['onError'];
-
-	/* eslint-enable @typescript-eslint/explicit-member-accessibility */
 
 	public constructor(node: T, url: string, options: Options = {}) {
 		this.node = node;
